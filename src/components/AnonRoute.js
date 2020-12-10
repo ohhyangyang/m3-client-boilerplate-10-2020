@@ -21,7 +21,7 @@ function AnonRoute (routeProps) {
       path={path}
       render={
         function(props) {
-          if (isLoggedIn) return <Redirect to="/private" />
+          if (isLoggedIn) return <Redirect to="/wusic/dashboard" />
           else if (! isLoggedIn) return <ComponentToShow {...props} />
         }
       }
