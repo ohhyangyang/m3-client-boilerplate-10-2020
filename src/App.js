@@ -19,6 +19,9 @@ import ProjectDetail from './pages/ProjectDetail'
 import EditProfile from './pages/EditProfile'
 import EditProject from './pages/EditProject'
 import AddProject from './pages/AddProject'
+import Menu from './components/Menu'
+import {withAuth} from './context/auth-context'
+import About from './pages/About'
 
 
 
@@ -28,7 +31,11 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <Navbar />
+      <Navbar/>
+        {
+          this.props.isLoggedIn?<Menu />:null
+        }
+        
 
         <Switch>
 
@@ -44,6 +51,7 @@ class App extends Component {
           <PrivateRoute exact path="/wusic/edit-profile" component={EditProfile} />
           <PrivateRoute exact path="/wusic/edit-project/:projectId" component={EditProject} />
           <PrivateRoute exact path="/wusic/add-project" component={AddProject} />
+          <PrivateRoute exact path="/wusic/about" component={About} />
 
 
           <AnonRoute exact path="/signup" component={Signup} />
@@ -56,4 +64,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuth(App);

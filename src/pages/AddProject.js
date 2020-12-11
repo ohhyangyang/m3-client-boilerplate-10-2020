@@ -46,7 +46,11 @@ class AddProject extends Component {
       )
       .then((createdProject) => {
         console.log(createdProject);
-      });
+        this.props.history.push(`/wusic/musicians/${this.props.user._id}`)
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
   };
   handleCheckbox = (event) => {
     const { name, checked, value } = event.target;

@@ -47,7 +47,10 @@ class EditProfile extends Component {
         spotifyLink: spotifyLink,
         spotifyEmbed: spotifyEmbed,
       });
-    });
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
     //更新state
   }
   handleFormSubmit = (event) => {
@@ -72,8 +75,11 @@ class EditProfile extends Component {
       username,email, profileURL, description, location, genre, artistType, instrument, spotifyLink, spotifyEmbed
     ).then((response)=>{
       console.log("updateUser",response.data)
-      this.props.history.push(`/wusic/musicians`)
+      this.props.history.push(`/wusic/musicians/${this.props.user._id}`)
 
+    })
+    .catch((err)=>{
+      console.log(err)
     })
   };
   handleText = (event) => {
@@ -418,7 +424,7 @@ class EditProfile extends Component {
             />
             <label htmlFor="floatingInput">SPOTIFY LINK</label>
           </div>
-          <div className="form-floating mb-3">
+          {/* <div className="form-floating mb-3">
             <input
               type="text"
               className="form-control"
@@ -428,7 +434,7 @@ class EditProfile extends Component {
               placeholder="SPOTIFY EMBED"
             />
             <label htmlFor="floatingInput">SPOTIFY EMBED</label>
-          </div>
+          </div> */}
           <div className="form-floating mb-3">
             <textarea
               type="text"

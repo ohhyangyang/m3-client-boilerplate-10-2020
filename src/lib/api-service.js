@@ -93,6 +93,47 @@ class ApiService {
     const pr = this.api.get(`/users/${userId}`)
     return pr
   }
+
+  acceptRequest=(projectId,userId)=>{
+    const pr =this.api.get(`/projects/acceptation/${projectId}/${userId}`)
+    return pr
+  }
+
+  rejectRequest=(projectId,userId)=>{
+    const pr =this.api.get(`/projects/rejection/${projectId}/${userId}`)
+    return pr
+  }
+
+  getAllUsers=()=>{
+    const pr=this.api.get(`/users`)
+    return pr
+  }
+
+  likeOneUser=(userId)=>{
+    const pr=this.api.get(`/users/like/${userId}`)
+    return pr
+  }
+
+  disLikeOneUser=(userId)=>{
+    const pr = this.api.get(`/users/dislike/${userId}`)
+    return pr
+  }
+
+  sendRequest=(projectId,userId)=>{
+    const pr = this.api.get(`/projects/request/${projectId}/${userId}`)
+    return pr
+  }
+
+  cancelRequest=(projectId,userId)=>{
+    const pr = this.api.get(`/projects/cancel-request/${projectId}/${userId}`)
+    return pr
+  }
+
+  getAllProjects=()=>{
+    const pr = this.api.get(`/projects`)
+    return pr
+  }
+
   // create = (data) => {
   //   const pr = this.api.post(`/example/${id}`, data )
 
@@ -104,6 +145,7 @@ class ApiService {
 
     return pr;
   };
+
 }
 
 // Create instance (object) containing all axios calls as methods

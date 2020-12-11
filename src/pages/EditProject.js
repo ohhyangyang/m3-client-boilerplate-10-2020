@@ -41,7 +41,10 @@ class EditProject extends Component {
         description: description,
         status,
       });
-    });
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
   }
   handleText = (event) => {
     const { name, value } = event.target;
@@ -118,7 +121,10 @@ class EditProject extends Component {
       .then((response) => {
         console.log("updatedProject", response.data);
         this.props.history.push(`/wusic/musicians`);
-      });
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
   };
   handleStatus = () => {
     if (this.state.status === "open") {
@@ -141,6 +147,9 @@ class EditProject extends Component {
     apiService.deleteProject(projectId)
       .then(()=>{
         this.props.history.push(`/wusic/musicians`);
+      })
+      .catch((err)=>{
+        console.log(err)
       })
   };
   render() {
