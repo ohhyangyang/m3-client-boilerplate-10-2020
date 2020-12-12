@@ -54,9 +54,9 @@ class Menu extends Component {
           
             <div>
               <p>{this.props.user && this.props.user.username}</p>
-              <Link>
+              
               <button onClick={this.props.logout}>Logout</button>
-              </Link>
+              
             </div>
           
           <div>

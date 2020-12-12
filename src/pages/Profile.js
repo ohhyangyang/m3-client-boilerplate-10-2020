@@ -81,13 +81,13 @@ class Profile extends Component {
       <div>
         <div>
           {/* {console.log("userData", this.state.userInfo)} */}
-          {/* <p>MUSIC PLAYER</p>
+          <p>MUSIC PLAYER</p>
           <SpotifyPlayer
             uri={this.state.userInfo.spotifyLink}
             // size={{ width: "100%", height: '300' }}
             view="list"
             theme="black"
-          /> */}
+          />
           {this.state.userId == this.state.visitorId ?
           null
           :(
