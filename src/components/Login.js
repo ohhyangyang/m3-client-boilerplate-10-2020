@@ -2,11 +2,22 @@ import React, { Component } from "react";
 import { withAuth } from './../context/auth-context';
 
 class Login extends Component {
-  state = { username: "", password: "" };
+  state = { username: "", password: "", errorMessage:false };
 
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
+
+    if (
+      username === "" ||
+      password === "" 
+     
+    ) {
+      this.setState({
+        errorMessage: "Must fill in all the forms",
+      });
+      return
+    }
     // Call funciton coming from AuthProvider ( via withAuth )
     this.props.login(username, password);
   };
@@ -37,7 +48,7 @@ class Login extends Component {
             <label htmlFor="floatingInput">NAME</label>
           </div>
 
-          <label>Password:</label>
+
           <div className="form-floating mb-3">
             <input
               type="password"
@@ -48,6 +59,9 @@ class Login extends Component {
               placeholder="PASSWORD"
             />
             <label htmlFor="floatingInput">PASSWORD</label>
+          </div>
+          <div>
+            {this.state.errorMessage}
           </div>
           
           {/* <div>

@@ -40,18 +40,22 @@ class Signup extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const { username, password, email, artistType, instrument } = this.state;
-    // if (
-    //   username === "" ||
-    //   password === "" ||
-    //   email === "" ||
-    //   artistType === "" ||
-    //   instrument === ""
-    // ) {
-    //   this.setState({
-    //     errorMessage: true,
-    //   });
-    // }
-    this.props.signup(username, password, email, artistType, instrument);
+    if (
+      username === "" ||
+      password === "" ||
+      email === "" ||
+      artistType === "" ||
+      instrument === ""
+    ) {
+      this.setState({
+        errorMessage: "Must fill in all the forms",
+      });
+      return
+    }
+    
+    this.props.signup(username, password, email, artistType, instrument)
+    
+    
   };
 
   handleText = (event) => {
@@ -98,7 +102,7 @@ class Signup extends Component {
       
       <div>
         <h3>Sign Up</h3>
-
+        
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-floating mb-3">
             <input
@@ -363,10 +367,10 @@ class Signup extends Component {
             </div>
           </div> */}
 
-          {/* <div>
-            {this.state.errorMessage ? "Must fill in all the forms" : null}
-          </div> */}
-          
+          <div>
+            {this.state.errorMessage}
+          </div>
+
           {/* <div>
           
             {this.props.error}
