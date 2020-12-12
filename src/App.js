@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-      <Navbar/>
+      
         {
           this.props.isLoggedIn?<Menu />:null
         }

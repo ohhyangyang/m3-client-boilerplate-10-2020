@@ -66,9 +66,7 @@ class ApiService {
           coverURL,
           description
         })
-        .then((createdProject)=>{
-          console.log("createdProejct",createdProject)
-        })
+        
         return pr
       
   };

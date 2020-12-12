@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "./../context/auth-context";
 import axios from "axios";
 import apiService from "./../lib/api-service";
+import Select from "react-select";
 
 class EditProject extends Component {
   state = {
@@ -15,36 +16,60 @@ class EditProject extends Component {
     status: "",
 
     showConfirmation: false,
+
+    lookingForOptions: [
+      { value: "Singer", label: "Singer" },
+      { value: "Rapper", label: "Rapper" },
+      { value: "Composer", label: "Composer" },
+      { value: "Mixing engineer", label: "Mixing engineer" },
+      { value: "Producer", label: "Producer" },
+      { value: "Songwriter", label: "Songwriter" },
+      { value: "Sound designer", label: "Sound designer" },
+      { value: "Beatmaker", label: "Beatmaker" },
+      { value: "Guitar", label: "Guitar" },
+      { value: "Piano", label: "Piano" },
+      { value: "Sax", label: "Sax" },
+      { value: "Violin", label: "Violin" },
+      { value: "Horn", label: "Horn" },
+      { value: "Drum", label: "Drum" },
+      { value: "Trumpet", label: "Trumpet" },
+      { value: "Ukelele", label: "Ukelele" },
+      { value: "Accordion", label: "Accordion" },
+      { value: "Bass", label: "Bass" },
+      { value: "Keyboard", label: "Keyboard" }
+    ]
   };
 
   componentDidMount() {
     const { projectId } = this.props.match.params;
     console.log("projectId", projectId);
-    apiService.getOneProject(projectId).then((response) => {
-      console.log("response.data", response.data);
-      const {
-        title,
+    apiService
+      .getOneProject(projectId)
+      .then((response) => {
+        console.log("response.data", response.data);
+        const {
+          title,
 
-        location,
-        fee,
-        coverURL,
-        description,
-        status,
-      } = response.data;
-      this.setState({
-        title: title,
+          location,
+          fee,
+          coverURL,
+          description,
+          status,
+        } = response.data;
+        this.setState({
+          title: title,
 
-        location: location,
+          location: location,
 
-        fee: fee,
-        coverURL: coverURL,
-        description: description,
-        status,
+          fee: fee,
+          coverURL: coverURL,
+          description: description,
+          status,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
   }
   handleText = (event) => {
     const { name, value } = event.target;
@@ -120,11 +145,11 @@ class EditProject extends Component {
       )
       .then((response) => {
         console.log("updatedProject", response.data);
-        this.props.history.push(`/wusic/musicians`);
+        this.props.history.push(`/wusic/dashboard`);
       })
-      .catch((err)=>{
-        console.log(err)
-      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   handleStatus = () => {
     if (this.state.status === "open") {
@@ -144,15 +169,23 @@ class EditProject extends Component {
   };
   handleDelete = () => {
     const { projectId } = this.props.match.params;
-    apiService.deleteProject(projectId)
-      .then(()=>{
+    apiService
+      .deleteProject(projectId)
+      .then(() => {
         this.props.history.push(`/wusic/musicians`);
       })
-      .catch((err)=>{
-        console.log(err)
-      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  handleLookingForSelect = (lookingFor) => {
+    console.log(lookingFor);
+    // const arr=artistType.map()
+    this.setState({ lookingFor });
   };
   render() {
+    const {lookingFor}=this.state
     return (
       <div>
         <h1>EDIT PROJECT</h1>
@@ -194,6 +227,17 @@ class EditProject extends Component {
             <label htmlFor="floatingInput">FEE</label>
           </div>
 
+          <div>
+          <p>LOOKING FOR</p>
+          <Select
+            value={lookingFor}
+            onChange={this.handleLookingForSelect}
+            options={this.state.lookingForOptions}
+            isMulti
+          />
+          </div>
+
+          
           <div>
             <p>TYPE</p>
             <div className="form-check">
@@ -240,8 +284,11 @@ class EditProject extends Component {
               Movies&TV
             </div>
           </div>
-
-          <div>
+          
+          
+          
+          
+          {/* <div>
             <p>LOOKING FOR</p>
             <div className="form-check">
               <input
@@ -441,7 +488,10 @@ class EditProject extends Component {
               Ukelele
             </div>
 
-            <div className="">
+            
+            </div>
+          </div> */}
+          <div className="">
               <label>COVER</label>
               <input
                 type="file"
@@ -478,8 +528,7 @@ class EditProject extends Component {
               </div>
 
               <input type="submit" value="UPDATE" />
-            </div>
-          </div>
+              </div>
         </form>
 
         {this.state.showConfirmation ? (

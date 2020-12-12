@@ -6,7 +6,10 @@ export default class OngoingProjectCard extends Component {
     hideRequests: true,
     image: "/images/whitearrow-down.png",
   };
-  changeArrToString = (arr) => {
+  changeToString = (obj) => {
+    const arr=obj.map((obj)=>{
+      return obj.value
+    })
     const str = arr.join(", ");
     return str;
   };
@@ -87,7 +90,7 @@ export default class OngoingProjectCard extends Component {
 
                 <div>
                   <p>{request.username}</p>
-                  <p>{this.changeArrToString(request.artistType)}</p>
+                  <p>{this.changeToString(request.artistType)}</p>
                 </div>
                 <img
                   src="/images/accept white.png"
@@ -115,7 +118,7 @@ export default class OngoingProjectCard extends Component {
                     <img src={request.profileURL} alt="" />
                     <div>
                       <p>{request.username}</p>
-                      <p>{this.changeArrToString(request.artistType)}</p>
+                      <p>{this.changeToString(request.artistType)}</p>
                     </div>
                     <img
                       src="/images/accept white.png"

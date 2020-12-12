@@ -68,7 +68,7 @@ class Dashboard extends Component {
           <h3>YOUR SAVED ARTIST</h3>
           {this.state.likedUser.map((user) => {
             return (
-              <div>
+              <div key={user._id}>
               <Link to={`/wusic/musicians/${user._id}`}>
               <img src={user.profileURL} alt="" />
               </Link>

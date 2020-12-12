@@ -37,6 +37,13 @@ class ProjectDetail extends Component {
     const str = arr.join(", ");
     return str;
   };
+  changeObjToString = (obj) => {
+    const arr=obj.map((obj)=>{
+      return obj.value
+    })
+    const str = arr.join(", ");
+    return str;
+  };
   sendRequest=()=>{
       apiService.sendRequest(this.props.match.params.projectId,this.props.user._id)
         .then((response)=>{
@@ -98,7 +105,7 @@ class ProjectDetail extends Component {
             <p>
               LOOKING FOR:{" "}
               {this.state.projectInfo.lookingFor &&
-                this.changeArrToString(this.state.projectInfo.lookingFor)}
+                this.changeObjToString(this.state.projectInfo.lookingFor)}
             </p>
             <p>LOCATION: {this.state.projectInfo.location}</p>
             <p>FEE: {this.state.projectInfo.fee}</p>

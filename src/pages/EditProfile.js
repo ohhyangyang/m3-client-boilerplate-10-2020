@@ -3,11 +3,12 @@ import { withAuth } from "./../context/auth-context";
 import axios from "axios";
 import apiService from "./../lib/api-service";
 // import { Redirect } from "react-router";
+import Select from "react-select";
 
 class EditProfile extends Component {
   state = {
     username: "",
-    
+
     email: "",
     profileURL: "",
     description: "",
@@ -17,47 +18,73 @@ class EditProfile extends Component {
     instrument: [],
     spotifyLink: "",
     spotifyEmbed: "",
+
+    artistTypeOptions: [
+      { value: "Singer", label: "Singer" },
+      { value: "Rapper", label: "Rapper" },
+      { value: "Composer", label: "Composer" },
+      { value: "Mixing engineer", label: "Mixing engineer" },
+      { value: "Producer", label: "Producer" },
+      { value: "Songwriter", label: "Songwriter" },
+      { value: "Sound designer", label: "Sound designer" },
+      { value: "Beatmaker", label: "Beatmaker" },
+    ],
+    instrumentOptions: [
+      { value: "Guitar", label: "Guitar" },
+      { value: "Piano", label: "Piano" },
+      { value: "Sax", label: "Sax" },
+      { value: "Violin", label: "Violin" },
+      { value: "Horn", label: "Horn" },
+      { value: "Drum", label: "Drum" },
+      { value: "Trumpet", label: "Trumpet" },
+      { value: "Ukelele", label: "Ukelele" },
+      { value: "Accordion", label: "Accordion" },
+      { value: "Bass", label: "Bass" },
+      { value: "Keyboard", label: "Keyboard" }
+    ]
   };
   componentDidMount() {
     // 获取数据库中该用户数据
     // console.log("this.props.user._id", this.props.user._id);
-    apiService.getOneUser(this.props.user._id).then((response) => {
-      // console.log("response.data", response.data);
-      const {
-        username,
-        
-        email,
-        profileURL,
-        description,
-        location,
-        genre,
-        
-        spotifyLink,
-        spotifyEmbed,
-      } = response.data;
-      this.setState({
-        username: username,
-        
-        email: email,
-        profileURL: profileURL,
-        description: description,
-        location: location,
-        genre: genre,
-        
-        spotifyLink: spotifyLink,
-        spotifyEmbed: spotifyEmbed,
+    apiService
+      .getOneUser(this.props.user._id)
+      .then((response) => {
+        // console.log("response.data", response.data);
+        const {
+          username,
+
+          email,
+          profileURL,
+          description,
+          location,
+          genre,
+
+          spotifyLink,
+          spotifyEmbed,
+        } = response.data;
+        this.setState({
+          username: username,
+
+          email: email,
+          profileURL: profileURL,
+          description: description,
+          location: location,
+          genre: genre,
+
+          spotifyLink: spotifyLink,
+          spotifyEmbed: spotifyEmbed,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
     //更新state
   }
   handleFormSubmit = (event) => {
     event.preventDefault();
     const {
       username,
-      
+
       email,
       profileURL,
       description,
@@ -68,19 +95,29 @@ class EditProfile extends Component {
       spotifyLink,
       spotifyEmbed,
     } = this.state;
-    
-    const userId = this.props.user._id;
-    apiService.updateUser(
-      userId,
-      username,email, profileURL, description, location, genre, artistType, instrument, spotifyLink, spotifyEmbed
-    ).then((response)=>{
-      console.log("updateUser",response.data)
-      this.props.history.push(`/wusic/musicians/${this.props.user._id}`)
 
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
+    const userId = this.props.user._id;
+    apiService
+      .updateUser(
+        userId,
+        username,
+        email,
+        profileURL,
+        description,
+        location,
+        genre,
+        artistType,
+        instrument,
+        spotifyLink,
+        spotifyEmbed
+      )
+      .then((response) => {
+        console.log("updateUser", response.data);
+        this.props.history.push(`/wusic/musicians/${this.props.user._id}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   handleText = (event) => {
     const { name, value } = event.target;
@@ -127,12 +164,23 @@ class EditProfile extends Component {
         console.log("Error while uploading the file: ", err);
       });
   };
-  
+
+  handleTypeSelect = (artistType) => {
+    console.log(artistType);
+    // const arr=artistType.map()
+    this.setState({ artistType: artistType });
+  };
+
+  handleInstrumentSelect = (instrument) => {
+    console.log(instrument);
+    // const arr=artistType.map()
+    this.setState({ instrument });
+  };
 
   render() {
     const {
       username,
-      
+
       email,
       description,
       location,
@@ -140,6 +188,8 @@ class EditProfile extends Component {
       spotifyEmbed,
       spotifyLink,
     } = this.state;
+
+    const { artistType,instrument } = this.state;
     return (
       <div>
         <h1>EDIT PROFILE</h1>
@@ -155,7 +205,7 @@ class EditProfile extends Component {
             />
             <label htmlFor="floatingInput">NAME</label>
           </div>
-          
+
           <div className="form-floating mb-3">
             <input
               type="text"
@@ -167,8 +217,29 @@ class EditProfile extends Component {
             />
             <label htmlFor="floatingInput">EMAIL</label>
           </div>
-
           <div>
+            <p>ARTIST TYPE</p>
+            <Select
+            value={artistType}
+            onChange={this.handleTypeSelect}
+            options={this.state.artistTypeOptions}
+            isMulti
+          />
+          </div>
+          
+          
+          <div>
+            <p>INSTRUMENT</p>
+            <Select
+            value={instrument}
+            onChange={this.handleInstrumentSelect}
+            options={this.state.instrumentOptions}
+            isMulti
+          />
+          </div>
+          
+
+          {/* <div>
             <p>ARTIST TYPE</p>
             <div className="form-check">
               <input
@@ -371,10 +442,10 @@ class EditProfile extends Component {
               />
               Keyboard
             </div>
-          </div>
+          </div> */}
 
           <div className="">
-          <label>PROFILE PHOTO</label>
+            <label>PROFILE PHOTO</label>
             <input
               type="file"
               className="form-control"
@@ -382,14 +453,13 @@ class EditProfile extends Component {
               onChange={this.handleFileUpload}
               placeholder="PROFILE PHOTO"
             />
-            
+
             <img
               style={{ width: "100px" }}
               src={this.state.profileURL && this.state.profileURL}
               alt=""
             ></img>
           </div>
-          
 
           <div className="form-floating mb-3">
             <input

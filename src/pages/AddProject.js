@@ -1,8 +1,11 @@
+
+
 import React, { Component } from "react";
 // import {withAuth} from './../context/auth-context'
 import axios from "axios";
 import apiService from "./../lib/api-service";
 import { withAuth } from "./../context/auth-context";
+import Select from "react-select";
 
 class AddProject extends Component {
   state = {
@@ -13,6 +16,28 @@ class AddProject extends Component {
     fee: "",
     coverURL: "",
     description: "",
+
+    lookingForOptions: [
+      { value: "Singer", label: "Singer" },
+      { value: "Rapper", label: "Rapper" },
+      { value: "Composer", label: "Composer" },
+      { value: "Mixing engineer", label: "Mixing engineer" },
+      { value: "Producer", label: "Producer" },
+      { value: "Songwriter", label: "Songwriter" },
+      { value: "Sound designer", label: "Sound designer" },
+      { value: "Beatmaker", label: "Beatmaker" },
+      { value: "Guitar", label: "Guitar" },
+      { value: "Piano", label: "Piano" },
+      { value: "Sax", label: "Sax" },
+      { value: "Violin", label: "Violin" },
+      { value: "Horn", label: "Horn" },
+      { value: "Drum", label: "Drum" },
+      { value: "Trumpet", label: "Trumpet" },
+      { value: "Ukelele", label: "Ukelele" },
+      { value: "Accordion", label: "Accordion" },
+      { value: "Bass", label: "Bass" },
+      { value: "Keyboard", label: "Keyboard" }
+    ]
   };
 
   handleText = (event) => {
@@ -44,8 +69,8 @@ class AddProject extends Component {
         coverURL,
         description
       )
-      .then((createdProject) => {
-        console.log(createdProject);
+      .then((response) => {
+        console.log("createdProject",response.data);
         this.props.history.push(`/wusic/musicians/${this.props.user._id}`)
       })
       .catch((err)=>{
@@ -92,7 +117,14 @@ class AddProject extends Component {
         console.log("Error while uploading the file: ", err);
       });
   };
+
+  handleLookingForSelect = (lookingFor) => {
+    console.log(lookingFor);
+    // const arr=artistType.map()
+    this.setState({ lookingFor });
+  };
   render() {
+    const {lookingFor}=this.state
     return (
       <div>
         <h1>CREATE PROJECT</h1>
@@ -193,6 +225,17 @@ class AddProject extends Component {
           </div>
 
           <div>
+          <p>LOOKING FOR</p>
+          <Select
+            value={lookingFor}
+            onChange={this.handleLookingForSelect}
+            options={this.state.lookingForOptions}
+            isMulti
+          />
+          </div>
+
+
+          {/* <div>
             <p>LOOKING FOR</p>
             <div className="form-check">
               <input
@@ -392,7 +435,10 @@ class AddProject extends Component {
               Ukelele
             </div>
 
-            <div className="">
+            
+          </div> */}
+
+          <div className="">
               <label>COVER</label>
               <input
                 type="file"
@@ -422,8 +468,7 @@ class AddProject extends Component {
               <label htmlFor="floatingInput">DESCRIPTION</label>
 
               <input type="submit" value="CREATE" />
-            </div>
-          </div>
+            </div> 
         </form>
       </div>
     );

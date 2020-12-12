@@ -17,10 +17,13 @@ class ProjectList extends Component {
 
   getAllProjects = () => {
     apiService.getAllProjects().then((response) => {
-      console.log(response.data);
+      console.log("here",response.data);
+      const openProject = response.data.filter((project=>{
+        return project.status=="open" && project.owner._id!=this.props.user._id
+      }))
       this.setState({
-        allProjects: response.data,
-        filteredProjects: response.data,
+        allProjects: openProject,
+        filteredProjects: openProject,
       });
     });
   };

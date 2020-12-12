@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { withAuth } from "./../context/auth-context";
+import Select from "react-select";
 
 class Signup extends Component {
   state = {
@@ -10,6 +11,30 @@ class Signup extends Component {
     artistType: [],
     instrument: [],
     errorMessage: false,
+
+    artistTypeOptions: [
+      { value: "Singer", label: "Singer" },
+      { value: "Rapper", label: "Rapper" },
+      { value: "Composer", label: "Composer" },
+      { value: "Mixing engineer", label: "Mixing engineer" },
+      { value: "Producer", label: "Producer" },
+      { value: "Songwriter", label: "Songwriter" },
+      { value: "Sound designer", label: "Sound designer" },
+      { value: "Beatmaker", label: "Beatmaker" },
+    ],
+    instrumentOptions: [
+      { value: "Guitar", label: "Guitar" },
+      { value: "Piano", label: "Piano" },
+      { value: "Sax", label: "Sax" },
+      { value: "Violin", label: "Violin" },
+      { value: "Horn", label: "Horn" },
+      { value: "Drum", label: "Drum" },
+      { value: "Trumpet", label: "Trumpet" },
+      { value: "Ukelele", label: "Ukelele" },
+      { value: "Accordion", label: "Accordion" },
+      { value: "Bass", label: "Bass" },
+      { value: "Keyboard", label: "Keyboard" }
+    ]
   };
 
   handleFormSubmit = (event) => {
@@ -53,8 +78,21 @@ class Signup extends Component {
     console.log(name, this.state[name]);
   };
 
+  handleTypeSelect = (artistType) => {
+    console.log(artistType);
+    // const arr=artistType.map()
+    this.setState({ artistType: artistType });
+  };
+
+  handleInstrumentSelect = (instrument) => {
+    console.log(instrument);
+    // const arr=artistType.map()
+    this.setState({ instrument });
+  };
+
   render() {
     const { username, password, email } = this.state;
+    const { artistType,instrument } = this.state;
     return (
       <div>
         <h3>Sign Up</h3>
@@ -95,8 +133,30 @@ class Signup extends Component {
             />
             <label htmlFor="floatingInput">PASSWORD</label>
           </div>
-
           <div>
+            <p>ARTIST TYPE</p>
+            <Select
+            value={artistType}
+            onChange={this.handleTypeSelect}
+            options={this.state.artistTypeOptions}
+            isMulti
+          />
+          </div>
+          
+          <div>
+            <p>INSTRUMENT</p>
+            <Select
+            value={instrument}
+            onChange={this.handleInstrumentSelect}
+            options={this.state.instrumentOptions}
+            isMulti
+          />
+          </div>
+          
+
+
+
+          {/* <div>
             <p>ARTIST TYPE</p>
             <div className="form-check">
               <input
@@ -299,7 +359,7 @@ class Signup extends Component {
               />
               Keyboard
             </div>
-          </div>
+          </div> */}
 
           <div>
             {this.state.errorMessage ? "Must fill in all the forms" : null}

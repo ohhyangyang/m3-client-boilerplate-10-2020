@@ -54,7 +54,10 @@ class Profile extends Component {
       });
     });
   };
-  changeArrToString = (arr) => {
+  changeToString = (obj) => {
+    const arr=obj.map((obj)=>{
+      return obj.value
+    })
     const str = arr.join(", ");
     return str;
   };
@@ -77,14 +80,14 @@ class Profile extends Component {
     return (
       <div>
         <div>
-          {console.log("userData", this.state.userInfo)}
-          <p>MUSIC PLAYER</p>
+          {/* {console.log("userData", this.state.userInfo)} */}
+          {/* <p>MUSIC PLAYER</p>
           <SpotifyPlayer
             uri={this.state.userInfo.spotifyLink}
             // size={{ width: "100%", height: '300' }}
             view="list"
             theme="black"
-          />
+          /> */}
           {this.state.userId == this.state.visitorId ?
           null
           :(
@@ -107,7 +110,7 @@ class Profile extends Component {
           <div>
             <p>
               {this.state.userInfo.artistType
-                ? this.changeArrToString(this.state.userInfo.artistType)
+                ? this.changeToString(this.state.userInfo.artistType)
                 : null}
             </p>
             <p>{this.state.userInfo.location}</p>
@@ -135,7 +138,7 @@ class Profile extends Component {
             <p>INSTRUMENT</p>
             <p>
               {this.state.userInfo.instrument
-                ? this.changeArrToString(this.state.userInfo.instrument)
+                ? this.changeToString(this.state.userInfo.instrument)
                 : null}
             </p>
           </div>
