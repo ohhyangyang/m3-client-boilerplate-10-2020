@@ -11,7 +11,7 @@ class AuthService {
   signup( username, password, email, artistType, instrument ) {
     const pr = this.auth
       .post("/auth/signup", { username, password, email, artistType, instrument })
-      .then((response) => response.data);
+      .then((response) => response.data)
       // .then(({ data }) => data); // Shorter way of `.then((response) => response.data);`
 
     return pr;

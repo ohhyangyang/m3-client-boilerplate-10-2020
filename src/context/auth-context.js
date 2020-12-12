@@ -8,7 +8,8 @@ class AuthProvider extends React.Component {
   state = {
     isLoggedIn: false,
     isLoading: true,
-    user: null
+    user: null,
+    error:false
   }
 
   componentDidMount () {
@@ -20,9 +21,10 @@ class AuthProvider extends React.Component {
   signup = (username, password, email, artistType, instrument) => {
 
     authService.signup( username, password, email, artistType, instrument )
-      .then((user) => this.setState({ isLoggedIn: true, user }) )
+      .then((user) => this.setState({ isLoggedIn: true, user,error:false }) )
       .catch((err) => {
-        this.setState({ isLoggedIn: false, user: null });
+        console.log("err",err.response.data.message)
+        this.setState({ isLoggedIn: false, user: null, error:err.response.data.message});
       })
   }
 
@@ -31,7 +33,8 @@ class AuthProvider extends React.Component {
     authService.login( username, password )
       .then((user) => this.setState({ isLoggedIn: true, user }))
       .catch((err) => {
-        this.setState({ isLoggedIn: false, user: null });
+        console.log("err",err.response.data.message)
+        this.setState({ isLoggedIn: false, user: null, error:err.response.data.message });
       })
   }
 
@@ -43,13 +46,13 @@ class AuthProvider extends React.Component {
 
 
   render() {
-    const { isLoggedIn, isLoading, user } = this.state;
+    const { isLoggedIn, isLoading, user, error } = this.state;
     const { signup, login, logout } = this;
 
     if (isLoading) return <p>Loading</p>;
 
     return(
-      <Provider value={{ isLoggedIn, isLoading, user, signup, login, logout }}  >
+      <Provider value={{ isLoggedIn, isLoading, user, signup, login, logout,error }}  >
         {this.props.children}
       </Provider>
     )
@@ -66,7 +69,7 @@ const withAuth = (WrappedComponent) => {
       return(
         <Consumer>
           { (value) => {
-            const { isLoggedIn, isLoading, user, signup, login, logout } = value;
+            const { isLoggedIn, isLoading, user, signup, login, logout,error } = value;
 
             return (<WrappedComponent 
                       {...this.props}
@@ -76,6 +79,7 @@ const withAuth = (WrappedComponent) => {
                       signup={signup} 
                       login={login} 
                       logout={logout}
+                      error={error}
                     />)
 
           } }

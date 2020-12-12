@@ -14,6 +14,7 @@ class Landing extends Component {
     this.setState({
       showSignup: true,
       showLogin: false,
+      
     });
   };
   displayLogin = () => {

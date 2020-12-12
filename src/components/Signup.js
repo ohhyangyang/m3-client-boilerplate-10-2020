@@ -40,17 +40,17 @@ class Signup extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const { username, password, email, artistType, instrument } = this.state;
-    if (
-      username === "" ||
-      password === "" ||
-      email === "" ||
-      artistType === "" ||
-      instrument === ""
-    ) {
-      this.setState({
-        errorMessage: true,
-      });
-    }
+    // if (
+    //   username === "" ||
+    //   password === "" ||
+    //   email === "" ||
+    //   artistType === "" ||
+    //   instrument === ""
+    // ) {
+    //   this.setState({
+    //     errorMessage: true,
+    //   });
+    // }
     this.props.signup(username, password, email, artistType, instrument);
   };
 
@@ -93,7 +93,9 @@ class Signup extends Component {
   render() {
     const { username, password, email } = this.state;
     const { artistType,instrument } = this.state;
+    
     return (
+      
       <div>
         <h3>Sign Up</h3>
 
@@ -361,9 +363,14 @@ class Signup extends Component {
             </div>
           </div> */}
 
-          <div>
+          {/* <div>
             {this.state.errorMessage ? "Must fill in all the forms" : null}
-          </div>
+          </div> */}
+          
+          {/* <div>
+          
+            {this.props.error}
+          </div> */}
 
           <input type="submit" value="Submit" />
         </form>

@@ -49,7 +49,11 @@ class Login extends Component {
             />
             <label htmlFor="floatingInput">PASSWORD</label>
           </div>
-
+          
+          {/* <div>
+        
+            {this.props.error}
+          </div> */}
           <input type="submit" value="Submit" />
         </form>
       </div>
