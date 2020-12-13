@@ -16,9 +16,13 @@ class MusicianList extends Component {
   getAllMusicians = () => {
     apiService.getAllUsers().then((response) => {
       //   console.log(response.data)
+
+      const allMusicians=response.data.filter((musician)=>{
+        return musician._id!==this.props.user._id
+      })
       this.setState({
-        allMusicians: response.data,
-        filteredMusicians: response.data
+        allMusicians: allMusicians,
+        filteredMusicians: allMusicians
       });
     });
   };

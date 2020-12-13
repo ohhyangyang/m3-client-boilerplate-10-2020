@@ -82,12 +82,14 @@ class Profile extends Component {
         <div className="left">
           <div className="player-wrapper">
             <p>MUSIC PLAYER</p>
-            <SpotifyPlayer
+
+            {this.state.userInfo.spotifyLink?(<SpotifyPlayer
               uri={this.state.userInfo.spotifyLink}
               // size={{ width: "100%", height: '300' }}
               view="list"
               theme="black"
-            />
+            />):<p className="emptybox">The player box is still empty</p>}
+            
           </div>
 
           {/* {this.state.userId == this.state.visitorId ?
@@ -158,7 +160,7 @@ class Profile extends Component {
           </div>
 
           {this.state.userId == this.state.visitorId ? (
-            <div>
+            <div className="edit-create middle-width" >
               <Link to="/wusic/edit-profile">
                 <p>EDIT PROFILE</p>
                 <img src="/images/arrow-right.png" alt="" />

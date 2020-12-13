@@ -719,6 +719,7 @@ right: 0;
     top: 20vh;
     position: absolute;
     right: 40px;
+    height: 400px;
 
 }
 #profile .left .player-wrapper:hover{
@@ -729,6 +730,11 @@ right: 0;
     padding-left: 30px;
     font-size: 1.5rem;
     font-weight: 300;
+}
+#profile .left .player-wrapper .emptybox{
+    margin-top: 100px;
+    width: 80%;
+    font-size: 1rem;
 }
 #profile .left .player-wrapper iframe{
     margin-top: 10px;
@@ -778,6 +784,26 @@ right: 0;
 }
 #profile .middle .black-border:hover{
 background-color:  #E2CDBA;
+}
+#profile .middle .edit-create{
+    margin-top: 20px;
+}
+#profile .middle .edit-create a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    width: 60%;
+}
+#profile .middle .edit-create a:hover{
+    border-bottom: 1px solid black;
+}
+#profile .middle .edit-create img{
+    width: 50px;
+    margin-left: 20px;
 }
 #profile .right{
     padding-top: 15vh;
@@ -908,4 +934,27 @@ padding-left: 20px;
     width: 30px;
     padding-right: 10px;
     
+}
+
+/*----------------------ABOUT----------------*/
+#about{
+    height: 100vh;
+    padding: 300px 300px;
+}
+#about h1{
+    font-size: 4rem;
+    margin-bottom: 30px;
+    width: 55vw;
+}
+#about p{
+    width: 35vw;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+#about .wusic-logo{
+    width: 200px;
+    position: absolute;
+    right:400px;
+    bottom: 300px;
 }
