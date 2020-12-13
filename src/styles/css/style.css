@@ -257,9 +257,9 @@
    justify-content: center;
    align-items: center;
    z-index: 1000;
-   position: absolute;
+   position: fixed;
    margin-top: 50px;
-   margin-left: 100px;
+   margin-left: 50px;
    cursor: pointer;
 }
 
@@ -272,7 +272,8 @@
 }
 #menu .menu-wrapper{
     border-right: gray 1px solid;
-    position: absolute;
+    position: fixed;
+    
     top: 0;
     background-color: white;
     width: 100vw;
@@ -281,6 +282,7 @@
     transition-property: right;
     transition-duration:500ms;
     z-index: 999;
+
 
 }
 
@@ -347,19 +349,31 @@
 
 /* -------------------DASHBOARD------------------ */
 #dashboard{
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 50px;
     
 }
+/*-----------------ONGOING----------------*/
+#dashboard .ongoing-wrapper{
+    padding-top: 130px;
+    width: 80vw;
+}
+#dashboard h3{
+    font-size: 4rem;
+    text-align: right;
+    border-bottom: 1px solid black;
+    margin-bottom: 50px;
+}
 #dashboard .ongoingcards{
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-#dashboard .ongoing-wrapper{
-    
-}
+
 
 #card-wrapper{
     border: 1px solid black;
@@ -369,7 +383,8 @@
     align-items: center;
     width: 18rem;
     padding: 10px 0;
-    border-radius: 20px;
+    border-radius: 10px;
+    padding-bottom: 30px;
 }
 #card-wrapper:hover{
     background-color: #D7DADC;
@@ -378,6 +393,7 @@
     width: 13rem;
     margin-top: 10px;
     height: 3rem;
+    margin-bottom: 10px;
     
     
 }
@@ -385,30 +401,36 @@
     font-size: 1rem;
     text-align: center;
     margin-bottom: 10px;
-    font-family: "Hammersmith One";
+    /* font-family: "Hammersmith One"; */
+    font-weight: 300;
+   
     
 }
 
 #card-wrapper .cover{
     width: 14rem;
 
+
 }
 #card-wrapper .cover-wrapper{
     width: 14rem;
-    height: 17rem;
+    height: 15rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
     /* border: 1px solid black; */
 }
 #card-wrapper .black-border{
-    border: 1px solid black;
+    border: 0.5px solid gray;
 }
 #card-wrapper .request{
     height: 50px;
+    width: 50px;
+
 }
 #card-wrapper .confirm{
     width: 20px;
+    cursor: pointer;
 }
 #card-wrapper .cover-container{
     position: relative;
@@ -426,6 +448,7 @@
     margin-bottom: 5px;
     font-weight: 500;
     text-align: right;
+    cursor: pointer;
 }
 
 #card-wrapper .participants-wrapper{
@@ -434,6 +457,9 @@
     background-color: white;
     height: 70px;
     padding-top: 10px;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: row;
 }
 #card-wrapper .circle{
     width: 50px;
@@ -476,10 +502,410 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 #card-wrapper .requests-container{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+
+/*-----------------JOINED----------------*/
+#dashboard .joined-wrapper{
+    margin-top: 150px;
+    width: 80vw;
+}
+#dashboard .joinedcards-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#dashboard .joinedcards-wrapper img{
+    height:20rem;
+    margin: 10px;
+}
+#dashboard .joinedcard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#dashboard .joinedcard p{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/*-----------------LIKED ARTIST----------------*/
+
+#dashboard .like-wrapper{
+    margin-top: 150px;
+    width: 80vw;
+    margin-bottom: 300px;
+}
+#dashboard .likecards-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#dashboard .likecards-wrapper img{
+    height:20rem;
+    margin: 10px;
+}
+#dashboard .likecard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#dashboard .likecard p{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/*---------MUSICIAN LIST----------*/
+/* #musician-list{
+    display: flex;
+    flex-direction: row;
+} */
+#musician-list .left{
+    padding-top: 200px;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    background-color: #F4EADD;
+    height: 100vh;
+}
+#musician-list .right{
+width: 60vw;
+position: absolute;
+right: 0;
+}
+#musician-list .left select{
+    width: 400px;
+    border-radius: 0;
+}
+#musician-list .left select:hover{
+    background-color:  #E2CDBA;
+}
+#musician-list .left p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#musician-list button{
+    background-color: #F4EADD;
+    border: 1px solid black;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+#musician-list button:hover{
+    background-color: #E2CDBA;
+    color: white;
+
+}
+#musician-list h2{
+    font-size: 4rem;
+    /* border-bottom: 1px solid black; */
+    margin-bottom: 50px;
+    width: 400px;
+}
+
+
+#musician-list .right img{
+    height: 20vw;
+    width: 20vw;
+    filter: grayscale(80%)
+}
+#musician-list .right img:hover{
+    height: 20vw;
+    width: 20vw;
+    filter: grayscale(0%)
+}
+
+
+/*---------PROJECT LIST----------*/
+/* #musician-list{
+    display: flex;
+    flex-direction: row;
+} */
+#project-list .left{
+    padding-top: 200px;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    background-color: #F4EADD;
+    height: 100vh;
+}
+#project-list .right{
+width: 60vw;
+position: absolute;
+right: 0;
+}
+#project-list .left select{
+    width: 400px;
+    border-radius: 0;
+}
+#project-list .left select:hover{
+    background-color:  #E2CDBA;
+}
+#project-list .left p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#project-list button{
+    background-color: #F4EADD;
+    border: 1px solid black;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+#project-list button:hover{
+    background-color: #E2CDBA;
+    color: white;
+
+}
+#project-list h2{
+    font-size: 4rem;
+    /* border-bottom: 1px solid black; */
+    margin-bottom: 50px;
+    width: 450px;
+}
+
+
+#project-list .right img{
+    height: 20vw;
+    width: 20vw;
+    filter: grayscale(90%)
+}
+#project-list .right img:hover{
+    height: 20vw;
+    width: 20vw;
+    filter: grayscale(0%)
+}
+/*-----------------------PROFILE------------------------*/
+#profile{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+
+}
+#profile .left{
+    width: 30vw;
+    border-right:  white 2px solid;
+    position: relative;
+
+}
+
+#profile .middle{
+    width: 30vw;
+}
+#profile .right{
+    width: 40vw;
+    border-left: white 2px solid;
+}
+
+
+#profile .left .player-wrapper{
+    border:  white 2px solid;
+    width:20vw;
+    top: 20vh;
+    position: absolute;
+    right: 40px;
+
+}
+#profile .left .player-wrapper:hover{
+    background-color: #E2CDBA;
+}
+#profile .left .player-wrapper p{
+    padding-top: 30px;
+    padding-left: 30px;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+#profile .left .player-wrapper iframe{
+    margin-top: 10px;
+    padding-left: 30px;
+    float: right;
+    margin-bottom: -30px;
+    margin-right: -10px;
+    
+}
+
+#profile .middle{
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#profile .middle .middle-width{
+    width: 75%;
+}
+#profile .middle h2{
+    font-size: 4rem;
+    font-weight: 400;
+
+    
+    font-family: "Hammersmith One";
+}
+#profile .middle .type{
+    font-size: 1.2rem;
+}
+#profile .middle .text{
+    font-size: 1rem;
+    font-weight: 300;
+}
+#profile .little-logos{
+    margin-bottom: 2rem;
+}
+#profile .little-logos img{
+    margin: 0 5px;
+    width: 30px;
+    cursor: pointer;
+}
+
+#profile .middle .black-border{
+    border: solid 1px black;
+    margin: 10px 0;
+    padding: 10px 10px;
+}
+#profile .middle .black-border:hover{
+background-color:  #E2CDBA;
+}
+#profile .right{
+    padding-top: 15vh;
+}
+
+#profile .right .profilePic{
+    width: 90%;
+}
+#profile .right .wusic-logo{
+    margin-bottom: 30px;
+    position: absolute;
+    right:80px;
+    top: 50px;
+}
+#profile .right p{
+    margin-top: 40px;
+    width: 90%;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+
+/*----------------------PROJECT DETAIL----------------*/
+#project-detail{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+
+}
+
+#project-detail .left{
+    width: 40vw;
+    border-right:2px white solid ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#project-detail .left img{
+    margin-top: 150px;
+    width: 40vw;
+    height: 70vh;
+}
+#project-detail .left .request-btn{
+    border: 1px black solid;
+    padding: 10px 20px;
+    margin-top:30px ;
+    cursor: pointer;
+}
+
+#project-detail .left .request-btn:hover{
+    background-color: #E2CDBA;
+    color: white;
+}
+
+#project-detail .right{
+    width: 60vw;
+    padding-top: 100px;
+    /* padding-left: 20px; */
+    padding-right: 50px;
+}
+
+#project-detail .right h3{
+    font-size: 3rem;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+#project-detail .right .profilePic{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* margin-left: 100px; */
+}
+
+#project-detail .right .whiteLine{
+border-bottom: 2px white solid ;
+padding-bottom: 10px;
+padding-left: 20px;
+}
+
+#project-detail .right .detail{
+    margin-left: 150px;
+    width: 70%;
+}
+#project-detail .right .user{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+}
+
+#project-detail .right .name{
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+#project-detail .right .text{
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+#project-detail .right .wusic-logo{
+    margin-bottom: 30px;
+    position: absolute;
+    right:80px;
+    top: 50px;
+}
+#project-detail .right .back {
+    border: white 2px solid;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 200px;
+    cursor: pointer;
+}
+#project-detail .right .back:hover{
+    background-color: #E2CDBA;
+}
+#project-detail .right .back a{
+    text-decoration: none;
+    color: white;
+
+}
+#project-detail .right .back img{
+    width: 30px;
+    padding-right: 10px;
+    
 }

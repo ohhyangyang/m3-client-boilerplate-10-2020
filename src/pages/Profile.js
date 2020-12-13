@@ -55,9 +55,9 @@ class Profile extends Component {
     });
   };
   changeToString = (obj) => {
-    const arr=obj.map((obj)=>{
-      return obj.value
-    })
+    const arr = obj.map((obj) => {
+      return obj.value;
+    });
     const str = arr.join(", ");
     return str;
   };
@@ -78,17 +78,19 @@ class Profile extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          {/* {console.log("userData", this.state.userInfo)} */}
-          <p>MUSIC PLAYER</p>
-          <SpotifyPlayer
-            uri={this.state.userInfo.spotifyLink}
-            // size={{ width: "100%", height: '300' }}
-            view="list"
-            theme="black"
-          />
-          {this.state.userId == this.state.visitorId ?
+      <div id="profile">
+        <div className="left">
+          <div className="player-wrapper">
+            <p>MUSIC PLAYER</p>
+            <SpotifyPlayer
+              uri={this.state.userInfo.spotifyLink}
+              // size={{ width: "100%", height: '300' }}
+              view="list"
+              theme="black"
+            />
+          </div>
+
+          {/* {this.state.userId == this.state.visitorId ?
           null
           :(
             <div>
@@ -96,56 +98,63 @@ class Profile extends Component {
               <img src="/images/whitearrow-left.png" alt="" />
               <span>BACK</span>
             </Link>
-          </div>
+          </div> 
           )
 
-          }
-          
+          }*/}
         </div>
 
-        <div>
-          {console.log(this.state.userInfo)}
-          <h2>{this.state.userInfo.username}</h2>
+        <div className="middle">
+          <div className="middle-width">
+            <h2>{this.state.userInfo.username}</h2>
+            <div>
+              <p className="type">
+                {this.state.userInfo.artistType
+                  ? this.changeToString(this.state.userInfo.artistType)
+                  : null}
+              </p>
+              <p className="text">{this.state.userInfo.location}</p>
+            </div>
 
-          <div>
-            <p>
-              {this.state.userInfo.artistType
-                ? this.changeToString(this.state.userInfo.artistType)
-                : null}
-            </p>
-            <p>{this.state.userInfo.location}</p>
+            <div className="little-logos">
+              {this.state.userId == this.state.visitorId ? null : this.state
+                  .beingLiked ? (
+                <img
+                  onClick={this.handleDisLike}
+                  src="/images/like.png"
+                  alt=""
+                />
+              ) : (
+                <img
+                  onClick={this.handleLike}
+                  src="/images/unlike.png"
+                  alt=""
+                />
+              )}
+
+              <a target="_blank" href={this.state.userInfo.spotifyLink}>
+                <img src="/images/spotify.svg" alt="" />
+              </a>
+            </div>
           </div>
 
-          <div>
-            {this.state.userId == this.state.visitorId ? null : this.state
-                .beingLiked ? (
-              <img onClick={this.handleDisLike} src="/images/like.png" alt="" />
-            ) : (
-              <img onClick={this.handleLike} src="/images/unlike.png" alt="" />
-            )}
-
-            <a target="_blank" href={this.state.userInfo.spotifyLink}>
-              <img src="/images/spotify.svg" alt="" />
-            </a>
+          <div className="middle-width black-border">
+            <p className="text">GENRE :</p>
+            <p className="text">{this.state.userInfo.genre}</p>
           </div>
 
-          <div>
-            <p>GENRE</p>
-            <p>{this.state.userInfo.genre}</p>
-          </div>
-
-          <div>
-            <p>INSTRUMENT</p>
-            <p>
+          <div className="middle-width black-border">
+            <p className="text">INSTRUMENT :</p>
+            <p className="text">
               {this.state.userInfo.instrument
                 ? this.changeToString(this.state.userInfo.instrument)
                 : null}
             </p>
           </div>
 
-          <div>
-            <p>CONTACT</p>
-            <p>{this.state.userInfo.email}</p>
+          <div className="middle-width black-border">
+            <p className="text">CONTACT :</p>
+            <p className="text">{this.state.userInfo.email}</p>
           </div>
 
           {this.state.userId == this.state.visitorId ? (
@@ -162,8 +171,9 @@ class Profile extends Component {
           ) : null}
         </div>
 
-        <div>
-          <img src={this.state.userInfo.profileURL} alt="" />
+        <div className="right">
+        <img className="wusic-logo" src="/images/logo-wusic.svg" alt=""/>
+          <img className="profilePic" src={this.state.userInfo.profileURL} alt="" />
           <p>{this.state.userInfo.description}</p>
         </div>
       </div>

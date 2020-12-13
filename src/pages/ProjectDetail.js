@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import apiService from "../lib/api-service";
 import { withAuth } from "./../context/auth-context";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class ProjectDetail extends Component {
   state = {
     projectInfo: {},
-    requested:false
+    requested: false,
   };
   componentDidMount() {
     apiService
@@ -14,19 +14,17 @@ class ProjectDetail extends Component {
       .then((response) => {
         const projectInfo = response.data;
         // console.log(projectInfo);
-        const {requests}=projectInfo
-        
+        const { requests } = projectInfo;
+
         // console.log(requests)
         // console.log(requests.includes(this.props.user._id))
         this.setState({
           projectInfo: projectInfo,
-          requested:requests.includes(this.props.user._id)
+          requested: requests.includes(this.props.user._id),
         });
       });
   }
-  getRequestInfo(){
-      
-  }
+  getRequestInfo() {}
   formatter = new Intl.DateTimeFormat("en-GB", {
     year: "numeric",
     month: "long",
@@ -38,46 +36,48 @@ class ProjectDetail extends Component {
     return str;
   };
   changeObjToString = (obj) => {
-    const arr=obj.map((obj)=>{
-      return obj.value
-    })
+    const arr = obj.map((obj) => {
+      return obj.value;
+    });
     const str = arr.join(", ");
     return str;
   };
-  sendRequest=()=>{
-      apiService.sendRequest(this.props.match.params.projectId,this.props.user._id)
-        .then((response)=>{
-            const updatedProject=response.data
-            this.setState({
-                requested:true
-            })
-        })
-  }
-  cancelRequest=()=>{
-      apiService.cancelRequest(this.props.match.params.projectId,this.props.user._id)
-      .then((response)=>{
-        const updatedProject=response.data
+  sendRequest = () => {
+    apiService
+      .sendRequest(this.props.match.params.projectId, this.props.user._id)
+      .then((response) => {
+        const updatedProject = response.data;
         this.setState({
-            requested:false
-        })
-    })
-  }
+          requested: true,
+        });
+      });
+  };
+  cancelRequest = () => {
+    apiService
+      .cancelRequest(this.props.match.params.projectId, this.props.user._id)
+      .then((response) => {
+        const updatedProject = response.data;
+        this.setState({
+          requested: false,
+        });
+      });
+  };
   render() {
     return (
-      <div>
-        <div>
+      <div id="project-detail">
+        <div className="left">
           <img src={this.state.projectInfo.coverURL} alt="" />
-          {
-              this.state.requested?
-              (<div onClick={this.cancelRequest}>CANCEL YOUR REQUEST</div>)
-              :(<div onClick={this.sendRequest}>SEND REQUEST</div>)
-          }
-          
+          {this.state.requested ? (
+            <div className="request-btn" onClick={this.cancelRequest}>CANCEL YOUR REQUEST</div>
+          ) : (
+            <div className="request-btn" onClick={this.sendRequest}>SEND REQUEST</div>
+          )}
         </div>
 
-        <div>
+        <div className="right">
+        <img className="wusic-logo" src="/images/logo-wusic.svg" alt=""/>
           <h3>{this.state.projectInfo.title}</h3>
-          <p>
+          <p className="whiteLine">
             CREATED TIME:{" "}
             {this.state.projectInfo.created_at
               ? this.formatter.format(
@@ -86,40 +86,40 @@ class ProjectDetail extends Component {
               : null}
           </p>
 
-          <div>
-            <div>
-              <p>
+          <div className="detail">
+            <div className="user">
+              <p className="name">
                 {this.state.projectInfo.owner &&
                   this.state.projectInfo.owner.username}
               </p>
               {this.state.projectInfo.owner && (
-                <Link to={`/wusic/musicians/${this.state.projectInfo.owner._id}`}>
-                <img src={this.state.projectInfo.owner.profileURL} alt="" />
+                <Link
+                  to={`/wusic/musicians/${this.state.projectInfo.owner._id}`}
+                >
+                  <img  className="profilePic" src={this.state.projectInfo.owner.profileURL} alt="" />
                 </Link>
-                
-
               )}
             </div>
 
-            <p>TYPE: {this.state.projectInfo.type}</p>
-            <p>
+            <p className="text">TYPE: {this.state.projectInfo.type}</p>
+            <p className="text">
               LOOKING FOR:{" "}
               {this.state.projectInfo.lookingFor &&
                 this.changeObjToString(this.state.projectInfo.lookingFor)}
             </p>
-            <p>LOCATION: {this.state.projectInfo.location}</p>
-            <p>FEE: {this.state.projectInfo.fee}</p>
-            <p>DESCRIPTION:</p>
-            <p>{this.state.projectInfo.description}</p>
+            <p className="text">LOCATION: {this.state.projectInfo.location}</p>
+            <p className="text">FEE: {this.state.projectInfo.fee}</p>
+            <br/>
+            <p className="text">DESCRIPTION:</p>
+            <p className="text">{this.state.projectInfo.description}</p>
           </div>
-        </div>
 
-        <div>
-          <Link to="/wusic/projects">
-          <img src="/images/whitearrow-left.png" alt=""/>
-          <span>BACK</span>
-          </Link>
-          
+          <div className="back">
+            <Link to="/wusic/projects">
+              <img src="/images/whitearrow-left.png" alt="" />
+              <span>BACK</span>
+            </Link>
+          </div>
         </div>
       </div>
     );

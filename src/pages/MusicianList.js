@@ -26,15 +26,22 @@ class MusicianList extends Component {
   filterMusician = (event) => {
     event.preventDefault();
     // console.log(musician.artistType)
-
+     console.log(this.state.artistType,this.state.instrument)
+     console.log(this.state.allMusicians)
     const filtered = this.state.allMusicians.filter((musician) => {
       if (this.state.artistType == "All" && this.state.instrument != "All") {
-        return musician.instrument.includes(this.state.instrument);
+        const instrumentArr=musician.instrument.map((instrument)=>{
+          return instrument.value
+        })
+        return instrumentArr.includes(this.state.instrument);
       } else if (
         this.state.artistType != "All" &&
         this.state.instrument == "All"
       ) {
-        return musician.artistType.includes(this.state.artistType);
+        const typeArr=musician.artistType.map((type)=>{
+          return type.value
+        })
+        return typeArr.includes(this.state.artistType);
       } else if (
         this.state.artistType == "All" &&
         this.state.instrument == "All"
@@ -44,9 +51,15 @@ class MusicianList extends Component {
         this.state.artistType != "All" &&
         this.state.instrument != "All"
       ) {
+        const typeArr=musician.artistType.map((type)=>{
+          return type.value
+        })
+        const instrumentArr=musician.instrument.map((instrument)=>{
+          return instrument.value
+        })
         return (
-          musician.artistType.includes(this.state.artistType) &&
-          musician.instrument.includes(this.state.instrument)
+          typeArr.includes(this.state.artistType) &&
+          instrumentArr.includes(this.state.instrument)
         );
       }
     });
@@ -67,8 +80,8 @@ class MusicianList extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div id="musician-list">
+        <div className="left">
           <h2>HELP, I NEED SOMEBODY!</h2>
 
           <form onSubmit={this.filterMusician}>
@@ -118,7 +131,7 @@ class MusicianList extends Component {
           </form>
         </div>
 
-        <div>
+        <div className="right">
           {this.state.filteredMusicians.map((musician) => {
             
             return (

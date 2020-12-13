@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class OngoingProjectCard extends Component {
   state = {
     hideRequests: true,
-    image: "/images/whitearrow-down.png",
+    image: "/images/blackarrow-down.png",
   };
   changeToString = (obj) => {
     const arr = obj.map((obj) => {
@@ -40,12 +40,12 @@ export default class OngoingProjectCard extends Component {
     if (this.state.hideRequests) {
       this.setState({
         hideRequests: false,
-        image: "/images/whitearrow-up.png",
+        image: "/images/blackarrow-up.png",
       });
     } else {
       this.setState({
         hideRequests: true,
-        image: "/images/whitearrow-down.png",
+        image: "/images/blackarrow-down.png",
       });
     }
   };

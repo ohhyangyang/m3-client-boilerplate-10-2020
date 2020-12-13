@@ -44,13 +44,19 @@ class ProjectList extends Component {
     console.log()
     const filtered = this.state.allProjects.filter((project)=>{
       if(this.state.type=='All' && this.state.lookingFor!='All'){
-        return project.lookingFor.includes(this.state.lookingFor)
+        const lookingForArr=project.lookingFor.map((lookingFor)=>{
+          return lookingFor.value
+        })
+        return lookingForArr.includes(this.state.lookingFor)
       }else if(this.state.type!='All' && this.state.lookingFor=='All'){
         return project.type.includes(this.state.type)
       }else if(this.state.type=='All' && this.state.lookingFor=='All'){
         return true
       }else if(this.state.type!='All' && this.state.lookingFor!='All'){
-        return project.type.includes(this.state.type) && project.lookingFor.includes(this.state.lookingFor)
+        const lookingForArr=project.lookingFor.map((lookingFor)=>{
+          return lookingFor.value
+        })
+        return project.type.includes(this.state.type) && lookingForArr.includes(this.state.lookingFor)
       }
     })
     console.log(filtered)
@@ -61,8 +67,8 @@ class ProjectList extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div id="project-list">
+        <div className="left">
           <h2>ALL YOU NEED IS MAKING MUSIC</h2>
           <form onSubmit={this.filterProjects}>
             <div>
@@ -114,7 +120,7 @@ class ProjectList extends Component {
           </form>
         </div>
 
-        <div>
+        <div className="right">
           {this.state.filteredProjects.map((project) => {
             return (
               <Link key={project._id} to={`/wusic/projects/${project._id}`}>

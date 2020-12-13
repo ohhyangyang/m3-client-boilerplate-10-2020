@@ -37,7 +37,7 @@ class Menu extends Component {
     console.log(this.state.slideIn, this.state.menuStyle);
     return (
       <div id="menu">
-        <div onClick={this.handleMenu} className="menu-btn">
+        <div onClick={this.handleMenu} className="menu-btn" >
           {this.state.showMenu ? (
             <img src="/images/refuse black.png" alt="" />
           ) : (
