@@ -37,19 +37,23 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div id="dashboard">
+      
+        <div className="ongoing-wrapper">
           <h3>YOUR ONGOING PROJECTS</h3>
-          {this.state.ongoingProjects.map((project) => {
-            return (
-              <OngoingProjectCard
-                key={project._id}
-                project={project}
-                updateDashboardInfo={this.getAllOfAUser}
-              />
-            );
-          })}
+          <div className="ongoingcards">
+            {this.state.ongoingProjects.map((project) => {
+              return (
+                <OngoingProjectCard
+                  key={project._id}
+                  project={project}
+                  updateDashboardInfo={this.getAllOfAUser}
+                />
+              );
+            })}
+          </div>
         </div>
+
         <h3>YOUR JOINED PROJECTS</h3>
         <div>
           {this.state.joinedProjects.map((project) => {
@@ -69,10 +73,10 @@ class Dashboard extends Component {
           {this.state.likedUser.map((user) => {
             return (
               <div key={user._id}>
-              <Link to={`/wusic/musicians/${user._id}`}>
-              <img src={user.profileURL} alt="" />
-              </Link>
-                
+                <Link to={`/wusic/musicians/${user._id}`}>
+                  <img src={user.profileURL} alt="" />
+                </Link>
+
                 <p>{user.username}</p>
               </div>
             );

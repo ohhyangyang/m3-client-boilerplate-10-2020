@@ -21,7 +21,7 @@ import EditProject from './pages/EditProject'
 import AddProject from './pages/AddProject'
 import Menu from './components/Menu'
 import {withAuth} from './context/auth-context'
-import About from './pages/About'
+import About from './pages/About' 
 
 
 
@@ -30,10 +30,10 @@ import About from './pages/About'
 class App extends Component {
   render() {
     return (
-      <div className="container">
-      <Navbar/>
+      <div>
+  
         {
-          this.props.isLoggedIn?<Menu />:null
+          this.props.isLoggedIn?<Menu/>:null
         }
         
 
