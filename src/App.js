@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/css/style.css'
 import { Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-      
+      <Navbar/>
         {
           this.props.isLoggedIn?<Menu />:null
         }

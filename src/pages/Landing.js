@@ -4,40 +4,77 @@ import React, { Component } from "react";
 import Signup from "./../components/Signup";
 import Login from "./../components/Login";
 import { withAuth } from "../context/auth-context";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 
 class Landing extends Component {
   state = {
     showSignup: false,
     showLogin: false,
+    signupColor:{},
+    loginColor:{},
+    hideText:false
   };
+  hideText=()=>{
+    this.setState({
+      hideText:true
+    })
+  }
   displaySignup = () => {
+    this.hideText()
+    this.signupBtn.classList.remove("not-selected")
+    this.signupBtn.classList.add("selected")
+    this.loginBtn.classList.remove("selected")
+    this.loginBtn.classList.add("not-selected")
+
     this.setState({
       showSignup: true,
       showLogin: false,
-      
     });
   };
   displayLogin = () => {
+    this.hideText()
+    this.loginBtn.classList.remove("not-selected")
+    this.loginBtn.classList.add("selected")
+    this.signupBtn.classList.remove("selected")
+    this.signupBtn.classList.add("not-selected")
+
     this.setState({
       showSignup: false,
       showLogin: true,
     });
   };
   render() {
+    const {showSignup,showLogin} = this.state
     return (
-      <div className="landing-page">
-        <h1>Landing Page</h1>
+      <div id="landing-page">
+        <img src="/images/logo-wusic.svg" alt="" />
+        <h2  style={this.state.hideText?{display:"none"}:null} className="text-pop-up-top">
+        “ SEARCHING FOR MUSICMAN ”
+        </h2>
+  
 
-        {this.state.showSignup ? <Signup /> : null}
-        {this.state.showLogin ? <Login /> : null}
-
-        
         <div>
-          <div>
-            <img src="/images/signup.png" alt="" onClick={this.displaySignup} />
+          {/* {this.state.showSignup ? <Signup/> : null}
+          {this.state.showLogin ? <Login /> : null} */}
+          
+          
+          <CSSTransition in={showSignup} unmountOnExit appear={true} timeout={300} classNames="fade">
+            <Signup/>
+          </CSSTransition>
+          <CSSTransition in={showLogin} unmountOnExit appear={true} timeout={300} classNames="fade">
+            <Login/>
+          </CSSTransition>
+
+          
+        </div>
+
+        <div className="logos">
+          <div onClick={this.displayLogin} ref={(div)=>this.loginBtn=div} className="center not-selected">
+            <img src="/images/login.png" alt=""/>
           </div>
-          <div>
-            <img src="/images/login.png" alt="" onClick={this.displayLogin} />
+          <div onClick={this.displaySignup} ref={(div)=>this.signupBtn=div} className="center not-selected">
+            <img src="/images/signup.png" alt=""/>
           </div>
         </div>
       </div>

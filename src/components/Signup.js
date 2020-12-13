@@ -2,7 +2,24 @@ import React, { Component } from "react";
 
 import { withAuth } from "./../context/auth-context";
 import Select from "react-select";
+// const customStyles = {
+//   option: (provided, state) => ({
+//     ...provided,
+//     borderBottom: '1px dotted pink',
+//     color: state.isSelected ? 'red' : 'blue',
+//     padding: 20,
+//   }),
+//   control: () => ({
+//     // none of react-select's styles are passed to <Control />
+//     width: 200,
+//   }),
+//   singleValue: (provided, state) => {
+//     const opacity = state.isDisabled ? 0.5 : 1;
+//     const transition = 'opacity 300ms';
 
+//     return { ...provided, opacity, transition };
+//   }
+// }
 class Signup extends Component {
   state = {
     username: "",
@@ -94,14 +111,16 @@ class Signup extends Component {
     this.setState({ instrument });
   };
 
+  
+
   render() {
     const { username, password, email } = this.state;
     const { artistType,instrument } = this.state;
     
     return (
       
-      <div>
-        <h3>Sign Up</h3>
+      <div id="signup">
+        
         
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-floating mb-3">
@@ -140,22 +159,29 @@ class Signup extends Component {
             <label htmlFor="floatingInput">PASSWORD</label>
           </div>
           <div>
-            <p>ARTIST TYPE</p>
+            <p className="select-title">ARTIST TYPE</p>
             <Select
             value={artistType}
             onChange={this.handleTypeSelect}
             options={this.state.artistTypeOptions}
             isMulti
+            id="select"
+           
+  
+            // styles={customStyles}
+ 
+            
           />
           </div>
-          
+          <br/>
           <div>
-            <p>INSTRUMENT</p>
+            <p className="select-title">INSTRUMENT</p>
             <Select
             value={instrument}
             onChange={this.handleInstrumentSelect}
             options={this.state.instrumentOptions}
             isMulti
+            id="select"
           />
           </div>
           
@@ -367,7 +393,7 @@ class Signup extends Component {
             </div>
           </div> */}
 
-          <div>
+          <div className='errorMessage'>
             {this.state.errorMessage}
           </div>
 
@@ -376,7 +402,7 @@ class Signup extends Component {
             {this.props.error}
           </div> */}
 
-          <input type="submit" value="Submit" />
+          <button>SIGNUP</button>
         </form>
       </div>
     );

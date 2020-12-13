@@ -31,8 +31,8 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div>
-        <h3>Login</h3>
+      <div id="login">
+        
 
         <form onSubmit={this.handleFormSubmit}>
           
@@ -60,7 +60,7 @@ class Login extends Component {
             />
             <label htmlFor="floatingInput">PASSWORD</label>
           </div>
-          <div>
+          <div className='errorMessage'>
             {this.state.errorMessage}
           </div>
           
@@ -68,7 +68,7 @@ class Login extends Component {
         
             {this.props.error}
           </div> */}
-          <input type="submit" value="Submit" />
+          <button>LOGIN</button>
         </form>
       </div>
     );
