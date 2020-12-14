@@ -76,6 +76,7 @@ class Profile extends Component {
     });
   };
 
+  
   render() {
     return (
       <div id="profile">

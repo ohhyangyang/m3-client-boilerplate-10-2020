@@ -131,7 +131,16 @@ class ApiService {
     const pr = this.api.get(`/projects`)
     return pr
   }
+  
+  openOneProject=(projectId)=>{
+    const pr = this.api.get(`/projects/open/${projectId}`);
+    return pr
+  }
 
+  closeOneProject=(projectId)=>{
+    const pr = this.api.get(`/projects/close/${projectId}`);
+    return pr
+  }
   // create = (data) => {
   //   const pr = this.api.post(`/example/${id}`, data )
 

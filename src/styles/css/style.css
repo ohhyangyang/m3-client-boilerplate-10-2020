@@ -765,8 +765,8 @@
 }
 
 #profile .right .profilePic {
-  /* width: 90%; */
-  height: 60%;
+  max-width: 95%; 
+  max-height: 60%;
 }
 #profile .right .wusic-logo {
   margin-bottom: 30px;
@@ -1245,6 +1245,7 @@
   border-radius: 10px;
   margin-top: 50px;
   color: #ff0000;
+  font-weight: 300;
 }
 #edit-project button:hover {
   background-color: #e2cdba;
@@ -1283,7 +1284,7 @@
   bottom: 0;
   margin: auto;
   background-color: white;
-  width: 500px;
+  width: 600px;
   height: 300px;
   text-align: center;
   display: flex;

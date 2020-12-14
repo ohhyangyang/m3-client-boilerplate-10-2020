@@ -14,7 +14,6 @@ class EditProject extends Component {
     coverURL: "",
     description: "",
     status: "",
-    
 
     showConfirmation: false,
 
@@ -181,15 +180,41 @@ class EditProject extends Component {
     // const arr=artistType.map()
     this.setState({ lookingFor });
   };
+
+  closeProject=()=>{
+    apiService
+      .closeOneProject(this.props.match.params.projectId)
+      .then((response)=>{
+        console.log(response.data)
+        this.setState({
+          status:"close"
+        })
+      })
+  }
+  openProject=()=>{
+    apiService
+      .openOneProject(this.props.match.params.projectId)
+      .then((response)=>{
+        console.log(response.data)
+        this.setState({
+          status:"open"
+        })
+      })
+    
+  }
+  
   render() {
     const { lookingFor } = this.state;
     return (
       <div id="edit-project">
         <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
         <div className="left">
-          <img src="/images/edit-profile.svg" alt="" />
+          <img src="/images/edit-project.svg" alt="" />
           <h1>EDIT PROJECT</h1>
-          <button className="delete-btn" onClick={this.handleDeleteConfirmation}>
+          <button
+            className="delete-btn"
+            onClick={this.handleDeleteConfirmation}
+          >
             DELETE PROJECT
           </button>
         </div>
@@ -320,18 +345,21 @@ class EditProject extends Component {
               />
               <label htmlFor="floatingInput">MORE INFO</label>
 
-              <div className="open-confirmation">
+              {/* <div className="open-confirmation">
                 <p>OPEN FOR SEARCING?</p>
                 <div onClick={this.handleStatus}>
                   {this.state.status == "open" ? "OPEN" : "CLOSE"}
                 </div>
-              </div>
+              </div> */}
 
               <div className="open-confirmation">
                 <p>OPEN FOR SEARCING?</p>
-                <div onClick={this.handleStatus}>
-                  {this.state.status == "open" ? "OPEN" : "CLOSE"}
-                </div>
+
+                {this.state.status == "open" ? (
+                  <div onClick={this.closeProject}>OPEN</div>
+                ) : (
+                  <div onClick={this.openProject}>CLOSE</div>
+                )}
               </div>
 
               <button className="update-btn">UPDATE</button>
