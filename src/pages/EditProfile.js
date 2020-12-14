@@ -40,8 +40,8 @@ class EditProfile extends Component {
       { value: "Ukelele", label: "Ukelele" },
       { value: "Accordion", label: "Accordion" },
       { value: "Bass", label: "Bass" },
-      { value: "Keyboard", label: "Keyboard" }
-    ]
+      { value: "Keyboard", label: "Keyboard" },
+    ],
   };
   componentDidMount() {
     // 获取数据库中该用户数据
@@ -189,312 +189,114 @@ class EditProfile extends Component {
       spotifyLink,
     } = this.state;
 
-    const { artistType,instrument } = this.state;
+    const { artistType, instrument } = this.state;
     return (
-      <div>
-        <h1>EDIT PROFILE</h1>
+      <div id="edit-profile">
+        <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
+        <div className="left">
+          <img src="/images/edit-profile.svg" alt="" />
+          <h1>EDIT PROFILE</h1>
+        </div>
+
         <form onSubmit={this.handleFormSubmit}>
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="username"
-              value={username}
-              onChange={this.handleText}
-              placeholder="NAME"
-            />
-            <label htmlFor="floatingInput">NAME</label>
-          </div>
-
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="email"
-              value={email}
-              onChange={this.handleText}
-              placeholder="EMAIL"
-            />
-            <label htmlFor="floatingInput">EMAIL</label>
-          </div>
-          <div>
-            <p>ARTIST TYPE</p>
-            <Select
-            value={artistType}
-            onChange={this.handleTypeSelect}
-            options={this.state.artistTypeOptions}
-            isMulti
-          />
-          </div>
-          
-          
-          <div>
-            <p>INSTRUMENT</p>
-            <Select
-            value={instrument}
-            onChange={this.handleInstrumentSelect}
-            options={this.state.instrumentOptions}
-            isMulti
-          />
-          </div>
-          
-
-          {/* <div>
-            <p>ARTIST TYPE</p>
-            <div className="form-check">
+          <div className="middle">
+            <div className="form-floating mb-3">
               <input
-                className="form-check-input"
-                type="checkbox"
-                value="Singer"
-                name="artistType"
-                onChange={this.handleCheckbox}
+                type="text"
+                className="form-control"
+                name="username"
+                value={username}
+                onChange={this.handleText}
+                placeholder="NAME"
               />
-              Singer
+              <label htmlFor="floatingInput">NAME</label>
             </div>
 
-            <div className="form-check">
+            <div className="form-floating mb-3">
               <input
-                className="form-check-input"
-                type="checkbox"
-                value="Rapper"
-                name="artistType"
-                onChange={this.handleCheckbox}
+                type="text"
+                className="form-control"
+                name="email"
+                value={email}
+                onChange={this.handleText}
+                placeholder="EMAIL"
               />
-              Rapper
+              <label htmlFor="floatingInput">EMAIL</label>
+            </div>
+            <div>
+              <p className="label">ARTIST TYPE</p>
+              <Select
+                value={artistType}
+                onChange={this.handleTypeSelect}
+                options={this.state.artistTypeOptions}
+                isMulti
+              />
             </div>
 
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Composer"
-                name="artistType"
-                onChange={this.handleCheckbox}
+            <div>
+              <p className="label">INSTRUMENT</p>
+              <Select
+                value={instrument}
+                onChange={this.handleInstrumentSelect}
+                options={this.state.instrumentOptions}
+                isMulti
               />
-              Composer
             </div>
 
-            <div className="form-check">
+            <div className="form-floating mb-3">
               <input
-                className="form-check-input"
-                type="checkbox"
-                value="Mixing engineer"
-                name="artistType"
-                onChange={this.handleCheckbox}
+                type="text"
+                className="form-control space"
+                name="location"
+                value={location}
+                onChange={this.handleText}
+                placeholder="LOCATION"
               />
-              Mixing engineer
+              <label htmlFor="floatingInput">LOCATION</label>
             </div>
-
-            <div className="form-check">
+            <div className="form-floating mb-3">
               <input
-                className="form-check-input"
-                type="checkbox"
-                value="Producer"
-                name="artistType"
-                onChange={this.handleCheckbox}
+                type="text"
+                className="form-control"
+                name="genre"
+                value={genre}
+                onChange={this.handleText}
+                placeholder="GENRE"
               />
-              Producer
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Songwriter"
-                name="artistType"
-                onChange={this.handleCheckbox}
-              />
-              Songwriter
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Sound designer"
-                name="artistType"
-                onChange={this.handleCheckbox}
-              />
-              Sound designer
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Beatmaker"
-                name="artistType"
-                onChange={this.handleCheckbox}
-              />
-              Beatmaker
+              <label htmlFor="floatingInput">GENRE</label>
             </div>
           </div>
 
-          <div>
-            <p>INSTRUMENT</p>
-            <div className="form-check">
+          <div className="right">
+            <div>
+              <label className="label">PROFILE PHOTO</label>
               <input
-                className="form-check-input"
-                type="checkbox"
-                value="Guitar"
-                name="instrument"
-                onChange={this.handleCheckbox}
+                type="file"
+                className="form-control"
+                name="profileURL"
+                onChange={this.handleFileUpload}
+                placeholder="PROFILE PHOTO"
               />
-              Guitar
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Piano"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Piano
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Sax"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Sax
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Violin"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Violin
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Horn"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Horn
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Drum"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Drum
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Trumpet"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Trumpet
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Ukelele"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Ukelele
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Accordion"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Accordion
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Bass"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Bass
-            </div>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Keyboard"
-                name="instrument"
-                onChange={this.handleCheckbox}
-              />
-              Keyboard
-            </div>
-          </div> */}
 
-          <div className="">
-            <label>PROFILE PHOTO</label>
-            <input
-              type="file"
-              className="form-control"
-              name="profileURL"
-              onChange={this.handleFileUpload}
-              placeholder="PROFILE PHOTO"
-            />
-
-            <img
-              style={{ width: "100px" }}
-              src={this.state.profileURL && this.state.profileURL}
-              alt=""
-            ></img>
-          </div>
-
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="location"
-              value={location}
-              onChange={this.handleText}
-              placeholder="LOCATION"
-            />
-            <label htmlFor="floatingInput">LOCATION</label>
-          </div>
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="genre"
-              value={genre}
-              onChange={this.handleText}
-              placeholder="GENRE"
-            />
-            <label htmlFor="floatingInput">GENRE</label>
-          </div>
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="spotifyLink"
-              value={spotifyLink}
-              onChange={this.handleText}
-              placeholder="SPOTIFY LINK"
-            />
-            <label htmlFor="floatingInput">SPOTIFY LINK</label>
-          </div>
-          {/* <div className="form-floating mb-3">
+              <img
+                style={{ width: "100px" }}
+                src={this.state.profileURL && this.state.profileURL}
+                alt=""
+                className="profile-img"
+              ></img>
+            </div>
+            <div className="form-floating mb-3">
+              <input
+                type="text"
+                className="form-control"
+                name="spotifyLink"
+                value={spotifyLink}
+                onChange={this.handleText}
+                placeholder="SPOTIFY LINK"
+              />
+              <label htmlFor="floatingInput">SPOTIFY LINK</label>
+            </div>
+            {/* <div className="form-floating mb-3">
             <input
               type="text"
               className="form-control"
@@ -505,20 +307,20 @@ class EditProfile extends Component {
             />
             <label htmlFor="floatingInput">SPOTIFY EMBED</label>
           </div> */}
-          <div className="form-floating mb-3">
-            <textarea
-              type="text"
-              className="form-control"
-              name="description"
-              style={{ height: "100px" }}
-              value={description}
-              onChange={this.handleText}
-              placeholder="DESCRIPTION"
-            />
-            <label htmlFor="floatingInput">DESCRIPTION</label>
-          </div>
+            <div className="form-floating mb-3">
+              <textarea
+                type="text"
+                className="form-control"
+                name="description"
+                value={description}
+                onChange={this.handleText}
+                placeholder="DESCRIPTION"
+              />
+              <label htmlFor="floatingInput">DESCRIPTION</label>
+            </div>
 
-          <button>UPDATE</button>
+            <button>UPDATE</button>
+          </div>
         </form>
       </div>
     );

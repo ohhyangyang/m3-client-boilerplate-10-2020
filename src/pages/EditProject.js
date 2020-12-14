@@ -14,6 +14,7 @@ class EditProject extends Component {
     coverURL: "",
     description: "",
     status: "",
+    
 
     showConfirmation: false,
 
@@ -36,8 +37,8 @@ class EditProject extends Component {
       { value: "Ukelele", label: "Ukelele" },
       { value: "Accordion", label: "Accordion" },
       { value: "Bass", label: "Bass" },
-      { value: "Keyboard", label: "Keyboard" }
-    ]
+      { value: "Keyboard", label: "Keyboard" },
+    ],
   };
 
   componentDidMount() {
@@ -46,10 +47,8 @@ class EditProject extends Component {
     apiService
       .getOneProject(projectId)
       .then((response) => {
-        console.log("response.data", response.data);
         const {
           title,
-
           location,
           fee,
           coverURL,
@@ -58,9 +57,7 @@ class EditProject extends Component {
         } = response.data;
         this.setState({
           title: title,
-
           location: location,
-
           fee: fee,
           coverURL: coverURL,
           description: description,
@@ -185,317 +182,119 @@ class EditProject extends Component {
     this.setState({ lookingFor });
   };
   render() {
-    const {lookingFor}=this.state
+    const { lookingFor } = this.state;
     return (
-      <div>
-        <h1>EDIT PROJECT</h1>
-        <button onClick={this.handleDeleteConfirmation}>DELETE PROJECT</button>
+      <div id="edit-project">
+        <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
+        <div className="left">
+          <img src="/images/edit-profile.svg" alt="" />
+          <h1>EDIT PROJECT</h1>
+          <button className="delete-btn" onClick={this.handleDeleteConfirmation}>
+            DELETE PROJECT
+          </button>
+        </div>
+
         <form onSubmit={this.handleFormSubmit}>
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="title"
-              value={this.state.title}
-              onChange={this.handleText}
-              placeholder="TITLE"
-            />
-            <label htmlFor="floatingInput">TITLE</label>
-          </div>
-
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="location"
-              value={this.state.location}
-              onChange={this.handleText}
-              placeholder="LOCATION"
-            />
-            <label htmlFor="floatingInput">LOCATION</label>
-          </div>
-
-          <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="fee"
-              value={this.state.fee}
-              onChange={this.handleText}
-              placeholder="FEE"
-            />
-            <label htmlFor="floatingInput">FEE</label>
-          </div>
-
-          <div>
-          <p>LOOKING FOR</p>
-          <Select
-            value={lookingFor}
-            onChange={this.handleLookingForSelect}
-            options={this.state.lookingForOptions}
-            isMulti
-          />
-          </div>
-
-          
-          <div>
-            <p>TYPE</p>
-            <div className="form-check">
+          <div className="middle">
+            <div className="form-floating mb-3">
               <input
-                className="form-check-input"
-                type="radio"
-                value="Live"
-                name="type"
+                type="text"
+                className="form-control bar"
+                name="title"
+                value={this.state.title}
                 onChange={this.handleText}
+                placeholder="TITLE"
               />
-              Live
+              <label htmlFor="floatingInput">TITLE</label>
             </div>
 
-            <div className="form-check">
+            <div className="form-floating mb-3">
               <input
-                className="form-check-input"
-                type="radio"
-                value="Song production"
-                name="type"
+                type="text"
+                className="form-control bar"
+                name="location"
+                value={this.state.location}
                 onChange={this.handleText}
+                placeholder="LOCATION"
               />
-              Song production
+              <label htmlFor="floatingInput">LOCATION</label>
             </div>
 
-            <div className="form-check">
+            <div className="form-floating mb-3">
               <input
-                className="form-check-input"
-                type="radio"
-                value="Recording"
-                name="type"
+                type="text"
+                className="form-control bar"
+                name="fee"
+                value={this.state.fee}
                 onChange={this.handleText}
+                placeholder="FEE"
               />
-              Recording
+              <label htmlFor="floatingInput">FEE</label>
             </div>
 
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="radio"
-                value="Movies&TV"
-                name="type"
-                onChange={this.handleText}
+            <div>
+              <p className="label">LOOKING FOR</p>
+              <Select
+                value={lookingFor}
+                onChange={this.handleLookingForSelect}
+                options={this.state.lookingForOptions}
+                isMulti
               />
-              Movies&TV
+            </div>
+
+            <div>
+              <p className="label">TYPE</p>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  value="Live"
+                  name="type"
+                  onChange={this.handleText}
+                />
+                Live
+              </div>
+
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  value="Song production"
+                  name="type"
+                  onChange={this.handleText}
+                />
+                Song production
+              </div>
+
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  value="Recording"
+                  name="type"
+                  onChange={this.handleText}
+                />
+                Recording
+              </div>
+
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  value="Movies&TV"
+                  name="type"
+                  onChange={this.handleText}
+                />
+                Movies&TV
+              </div>
             </div>
           </div>
-          
-          
-          
-          
-          {/* <div>
-            <p>LOOKING FOR</p>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Singer"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Singer
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Rapper"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Rapper
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Composer"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Composer
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Mixing engineers"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Mixing engineers
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Producer"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Producer
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Songwriter"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Songwriter
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Sound designer"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Sound designer
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Beatmaker"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Beatmaker
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Guitar"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Guitar
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Piano"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Piano
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Accordion"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Accordion
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Sax"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Sax
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Violin"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Violin
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Horn"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Horn
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Bass"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Bass
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Drum"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Drum
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Trumpet"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Trumpet
-            </div>
-
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value="Ukelele"
-                name="lookingFor"
-                onChange={this.handleCheckbox}
-              />
-              Ukelele
-            </div>
-
-            
-            </div>
-          </div> */}
-          <div className="">
-              <label>COVER</label>
+          <div className="right">
+            <div className="">
+              <label className="label">COVER</label>
               <input
                 type="file"
-                className="form-control"
+                className="form-control bar"
                 name="coverURL"
                 onChange={this.handleFileUpload}
                 placeholder="COVER"
@@ -505,6 +304,7 @@ class EditProject extends Component {
                 style={{ width: "100px" }}
                 src={this.state.coverURL && this.state.coverURL}
                 alt=""
+                className="profile-img"
               ></img>
             </div>
 
@@ -520,19 +320,27 @@ class EditProject extends Component {
               />
               <label htmlFor="floatingInput">MORE INFO</label>
 
-              <div>
+              <div className="open-confirmation">
                 <p>OPEN FOR SEARCING?</p>
                 <div onClick={this.handleStatus}>
                   {this.state.status == "open" ? "OPEN" : "CLOSE"}
                 </div>
               </div>
 
-              <input type="submit" value="UPDATE" />
+              <div className="open-confirmation">
+                <p>OPEN FOR SEARCING?</p>
+                <div onClick={this.handleStatus}>
+                  {this.state.status == "open" ? "OPEN" : "CLOSE"}
+                </div>
               </div>
+
+              <button className="update-btn">UPDATE</button>
+            </div>
+          </div>
         </form>
 
         {this.state.showConfirmation ? (
-          <div>
+          <div className="delete-wrapper">
             <div>
               <p>ARE YOU SURE YOU WANT TO DELETE THIS PROJECT?</p>
               <button onClick={this.handleDelete}>YES</button>

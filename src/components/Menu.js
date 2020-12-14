@@ -18,7 +18,7 @@ class Menu extends Component {
       this.pTag3.classList.add("animate__slideInLeft");
       this.pTag4.classList.add("animate__slideInLeft");
       this.pTag5.classList.add("animate__slideInLeft");
-    }else{
+    } else {
       this.pTag1.classList.remove("animate__slideInLeft");
       this.pTag2.classList.remove("animate__slideInLeft");
       this.pTag3.classList.remove("animate__slideInLeft");
@@ -28,6 +28,11 @@ class Menu extends Component {
   };
 
   closeMenu = () => {
+    this.pTag1.classList.remove("animate__slideInLeft");
+    this.pTag2.classList.remove("animate__slideInLeft");
+    this.pTag3.classList.remove("animate__slideInLeft");
+    this.pTag4.classList.remove("animate__slideInLeft");
+    this.pTag5.classList.remove("animate__slideInLeft");
     this.setState({
       showMenu: false,
       menuStyle: { right: "100vw" },
@@ -37,7 +42,7 @@ class Menu extends Component {
     console.log(this.state.slideIn, this.state.menuStyle);
     return (
       <div id="menu">
-        <div onClick={this.handleMenu} className="menu-btn" >
+        <div onClick={this.handleMenu} className="menu-btn">
           {this.state.showMenu ? (
             <img src="/images/refuse black.png" alt="" />
           ) : (
@@ -48,26 +53,17 @@ class Menu extends Component {
         <div style={this.state.menuStyle} className="menu-wrapper">
           <div className="links-wrapper">
             <Link to="/wusic/musicians" onClick={this.closeMenu}>
-              <p
-                className="animate__animated"
-                ref={(p) => (this.pTag1 = p)}
-              >
+              <p className="animate__animated" ref={(p) => (this.pTag1 = p)}>
                 " HELP, I NEED SOMEBODY! "
               </p>
             </Link>
             <Link to="/wusic/projects" onClick={this.closeMenu}>
-              <p
-                className="animate__animated p2"
-                ref={(p) => (this.pTag2 = p)}
-              >
+              <p className="animate__animated p2" ref={(p) => (this.pTag2 = p)}>
                 " ALL YOU NEED IS MAKING MUSIC "
               </p>
             </Link>
             <Link to="/wusic/dashboard" onClick={this.closeMenu}>
-              <p
-                className="animate__animated p3"
-                ref={(p) => (this.pTag3 = p)}
-              >
+              <p className="animate__animated p3" ref={(p) => (this.pTag3 = p)}>
                 DASHBOARD
               </p>
             </Link>
@@ -75,18 +71,12 @@ class Menu extends Component {
               to={`/wusic/musicians/${this.props.user._id}`}
               onClick={this.closeMenu}
             >
-              <p
-                className="animate__animated p4"
-                ref={(p) => (this.pTag4 = p)}
-              >
+              <p className="animate__animated p4" ref={(p) => (this.pTag4 = p)}>
                 PROFILE
               </p>
             </Link>
             <Link to="/wusic/about" onClick={this.closeMenu}>
-              <p
-                className="animate__animated p5"
-                ref={(p) => (this.pTag5 = p)}
-              >
+              <p className="animate__animated p5" ref={(p) => (this.pTag5 = p)}>
                 ABOUT
               </p>
             </Link>
