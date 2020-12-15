@@ -152,7 +152,7 @@ class EditProfile extends Component {
     uploadData.append("profileURL", file);
 
     axios
-      .post("http://localhost:5000/api/userupload", uploadData, {
+      .post(`${process.env.REACT_APP_API_URL}/api/userupload`, uploadData, {
         withCredentials: true,
       })
       .then((response) => {

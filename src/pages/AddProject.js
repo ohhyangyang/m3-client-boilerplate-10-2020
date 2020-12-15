@@ -101,7 +101,7 @@ class AddProject extends Component {
     uploadData.append("coverURL", file);
 
     axios
-      .post("http://localhost:5000/api/projectupload", uploadData, {
+      .post(`${process.env.REACT_APP_API_URL}/api/projectupload`, uploadData, {
         withCredentials: true,
       })
       .then((response) => {
