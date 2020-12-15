@@ -168,7 +168,7 @@ class EditProject extends Component {
     apiService
       .deleteProject(projectId)
       .then(() => {
-        this.props.history.push(`/wusic/musicians`);
+        this.props.history.push(`/wusic/dashboard`);
       })
       .catch((err) => {
         console.log(err);
