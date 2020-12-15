@@ -39,7 +39,7 @@ class App extends Component {
 
         <Switch>
 
-          <AnonRoute exact path="/wusic" component={Landing} />
+          <AnonRoute exact path="/" component={Landing} />
           {/* Landing page中有signup和login */}
 
           <PrivateRoute exact path="/wusic/dashboard" component={Dashboard} />
