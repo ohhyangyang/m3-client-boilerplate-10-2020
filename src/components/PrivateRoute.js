@@ -21,7 +21,7 @@ function PrivateRoute (routeProps) {
       path={path}
       render={
         function(props) {
-          if (! isLoggedIn) return <Redirect to="/wusic" />;
+          if (! isLoggedIn) return <Redirect to="/" />;
           else if (isLoggedIn) return <ComponentToShow {...props} />;
         }
       }
