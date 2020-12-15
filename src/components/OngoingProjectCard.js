@@ -49,16 +49,16 @@ export default class OngoingProjectCard extends Component {
       });
     }
   };
-  deleteProject = (projectId) => {
-    apiService
-      .deleteProject(projectId)
-      .then(() => {
-        this.props.updateDashboardInfo();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // deleteProject = (projectId) => {
+  //   apiService
+  //     .deleteProject(projectId)
+  //     .then(() => {
+  //       this.props.updateDashboardInfo();
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   render() {
     console.log(this.props.project);
     return (
@@ -78,9 +78,9 @@ export default class OngoingProjectCard extends Component {
               <Link to={`/wusic/edit-project/${this.props.project._id}`}>
                 <p>EDIT</p>
               </Link>
-              <p onClick={() => this.deleteProject(this.props.project._id)}>
+              {/* <p onClick={() => this.deleteProject(this.props.project._id)}>
                 DELETE
-              </p>
+              </p> */}
             </div>
           </div>
 

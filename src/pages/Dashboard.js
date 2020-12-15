@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { withAuth } from "./../context/auth-context";
 import apiService from "./../lib/api-service";
 import OngoingProjectCard from "./../components/OngoingProjectCard";
-import JoinedProjectCard from "./../components/JoinedProjectCard";
-import LikedMusicianCard from "./../components/LikedMusicianCard";
 import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
@@ -38,7 +36,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div id="dashboard">
-        <img classname="wusic-logo" src="/images/logo-wusic.svg" alt="" />
+        <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
         <div className="ongoing-wrapper">
           <h3>YOUR ONGOING PROJECTS</h3>
           <div className="ongoingcards">

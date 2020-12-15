@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import Signup from "./../components/Signup";
 import Login from "./../components/Login";
 import { withAuth } from "../context/auth-context";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition} from 'react-transition-group';
 
 
 class Landing extends Component {

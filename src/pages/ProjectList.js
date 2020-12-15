@@ -19,7 +19,7 @@ class ProjectList extends Component {
     apiService.getAllProjects().then((response) => {
       console.log("here",response.data);
       const openProject = response.data.filter((project=>{
-        return project.status=="open" && project.owner._id!=this.props.user._id
+        return project.status==="open" && project.owner._id!==this.props.user._id
       }))
       this.setState({
         allProjects: openProject,
@@ -43,16 +43,16 @@ class ProjectList extends Component {
     console.log(this.state.lookingFor)
     console.log()
     const filtered = this.state.allProjects.filter((project)=>{
-      if(this.state.type=='All' && this.state.lookingFor!='All'){
+      if(this.state.type==='All' && this.state.lookingFor!=='All'){
         const lookingForArr=project.lookingFor.map((lookingFor)=>{
           return lookingFor.value
         })
         return lookingForArr.includes(this.state.lookingFor)
-      }else if(this.state.type!='All' && this.state.lookingFor=='All'){
+      }else if(this.state.type!=='All' && this.state.lookingFor==='All'){
         return project.type.includes(this.state.type)
-      }else if(this.state.type=='All' && this.state.lookingFor=='All'){
+      }else if(this.state.type==='All' && this.state.lookingFor==='All'){
         return true
-      }else if(this.state.type!='All' && this.state.lookingFor!='All'){
+      }else if(this.state.type!=='All' && this.state.lookingFor!=='All'){
         const lookingForArr=project.lookingFor.map((lookingFor)=>{
           return lookingFor.value
         })

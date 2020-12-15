@@ -46,7 +46,7 @@ class ProjectDetail extends Component {
     apiService
       .sendRequest(this.props.match.params.projectId, this.props.user._id)
       .then((response) => {
-        const updatedProject = response.data;
+        // const updatedProject = response.data;
         this.setState({
           requested: true,
         });
@@ -56,7 +56,7 @@ class ProjectDetail extends Component {
     apiService
       .cancelRequest(this.props.match.params.projectId, this.props.user._id)
       .then((response) => {
-        const updatedProject = response.data;
+        // const updatedProject = response.data;
         this.setState({
           requested: false,
         });

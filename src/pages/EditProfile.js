@@ -185,7 +185,7 @@ class EditProfile extends Component {
       description,
       location,
       genre,
-      spotifyEmbed,
+  
       spotifyLink,
     } = this.state;
 

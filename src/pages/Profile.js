@@ -120,7 +120,7 @@ class Profile extends Component {
             </div>
 
             <div className="little-logos">
-              {this.state.userId == this.state.visitorId ? null : this.state
+              {this.state.userId === this.state.visitorId ? null : this.state
                   .beingLiked ? (
                 <img
                   onClick={this.handleDisLike}
@@ -135,7 +135,7 @@ class Profile extends Component {
                 />
               )}
 
-              <a target="_blank" href={this.state.userInfo.spotifyLink}>
+              <a target="_blank" rel="noreferrer" href={this.state.userInfo.spotifyLink}>
                 <img src="/images/spotify.svg" alt="" />
               </a>
             </div>
@@ -160,7 +160,7 @@ class Profile extends Component {
             <p className="text">{this.state.userInfo.email}</p>
           </div>
 
-          {this.state.userId == this.state.visitorId ? (
+          {this.state.userId === this.state.visitorId ? (
             <div className="edit-create middle-width" >
               <Link to="/wusic/edit-profile">
                 <p>EDIT PROFILE</p>

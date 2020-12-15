@@ -33,27 +33,27 @@ class MusicianList extends Component {
      console.log(this.state.artistType,this.state.instrument)
      console.log(this.state.allMusicians)
     const filtered = this.state.allMusicians.filter((musician) => {
-      if (this.state.artistType == "All" && this.state.instrument != "All") {
+      if (this.state.artistType === "All" && this.state.instrument !== "All") {
         const instrumentArr=musician.instrument.map((instrument)=>{
           return instrument.value
         })
         return instrumentArr.includes(this.state.instrument);
       } else if (
-        this.state.artistType != "All" &&
-        this.state.instrument == "All"
+        this.state.artistType !== "All" &&
+        this.state.instrument === "All"
       ) {
         const typeArr=musician.artistType.map((type)=>{
           return type.value
         })
         return typeArr.includes(this.state.artistType);
       } else if (
-        this.state.artistType == "All" &&
-        this.state.instrument == "All"
+        this.state.artistType === "All" &&
+        this.state.instrument === "All"
       ) {
         return true;
       } else if (
-        this.state.artistType != "All" &&
-        this.state.instrument != "All"
+        this.state.artistType !== "All" &&
+        this.state.instrument !== "All"
       ) {
         const typeArr=musician.artistType.map((type)=>{
           return type.value

@@ -81,7 +81,7 @@ class EditProject extends Component {
       });
     } else if (!checked) {
       const updatedList = this.state[name].filter((type) => {
-        return type != value;
+        return type !== value;
       });
       this.setState({
         [name]: updatedList,
@@ -355,7 +355,7 @@ class EditProject extends Component {
               <div className="open-confirmation">
                 <p>OPEN FOR SEARCING?</p>
 
-                {this.state.status == "open" ? (
+                {this.state.status === "open" ? (
                   <div onClick={this.closeProject}>OPEN</div>
                 ) : (
                   <div onClick={this.openProject}>CLOSE</div>
