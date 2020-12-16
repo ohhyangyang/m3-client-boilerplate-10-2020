@@ -14,7 +14,7 @@ class AddProject extends Component {
     fee: "",
     coverURL: "",
     description: "",
-
+    errorMessage:false,
     lookingForOptions: [
       { value: "Singer", label: "Singer" },
       { value: "Rapper", label: "Rapper" },
@@ -54,7 +54,14 @@ class AddProject extends Component {
       coverURL,
       description,
     } = this.state;
-
+    if(
+      title===""||
+      lookingFor===""
+    ){
+      this.setState({
+        errorMessage:"Must at least fill in the Title and LookingFor fields"
+      })
+    }
     apiService
       .createProject(
         title,
@@ -256,7 +263,9 @@ class AddProject extends Component {
                 placeholder="DESCRIPTION"
               />
               <label htmlFor="floatingInput">DESCRIPTION</label>
-
+              <div className='errorMessage'>
+                {this.state.errorMessage}
+              </div>
               <button>CREATE</button>
             </div>
           </div>

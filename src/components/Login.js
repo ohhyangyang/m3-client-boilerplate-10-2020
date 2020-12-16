@@ -1,28 +1,37 @@
 import React, { Component } from "react";
-import { withAuth } from './../context/auth-context';
+import { withAuth } from "./../context/auth-context";
 
 class Login extends Component {
-  state = { username: "", password: "", errorMessage:false };
+  state = {
+    username: "",
+    password: "",
+    errorMessage: false
+  };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
+    this.setState({
+      notFoundMessage: false,
+    });
     const { username, password } = this.state;
 
-    if (
-      username === "" ||
-      password === "" 
-     
-    ) {
+    if (username === "" || password === "") {
       this.setState({
         errorMessage: "Must fill in all the forms",
       });
-      return
+      return;
     }
     // Call funciton coming from AuthProvider ( via withAuth )
     this.props.login(username, password);
+    if (this.props.error) {
+      this.setState({
+        errorMessage:"User not found",
+      });
+      return;
+    }
   };
 
-  handleText = event => {
+  handleText = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
@@ -32,11 +41,8 @@ class Login extends Component {
 
     return (
       <div id="login">
-        
-
         <form onSubmit={this.handleFormSubmit}>
-          
-        <div className="form-floating mb-3">
+          <div className="form-floating mb-3">
             <input
               type="text"
               className="form-control"
@@ -47,7 +53,6 @@ class Login extends Component {
             />
             <label htmlFor="floatingInput">NAME</label>
           </div>
-
 
           <div className="form-floating mb-3">
             <input
@@ -60,14 +65,9 @@ class Login extends Component {
             />
             <label htmlFor="floatingInput">PASSWORD</label>
           </div>
-          <div className='errorMessage'>
-            {this.state.errorMessage}
-          </div>
+          <div className="errorMessage">{this.state.errorMessage}</div>
+
           
-          {/* <div>
-        
-            {this.props.error}
-          </div> */}
           <button>LOGIN</button>
         </form>
       </div>

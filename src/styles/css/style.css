@@ -1137,6 +1137,11 @@
   right: 80px;
   top: 50px;
 }
+#add-project .errorMessage {
+  height: 2rem;
+  color: #e91c2f;
+  margin-top: 20px;
+}
 
 /*----------------------------EDIT PROJECT-------------------------*/
 #edit-project {
