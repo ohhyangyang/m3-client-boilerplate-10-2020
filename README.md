@@ -4,7 +4,9 @@
 
 ## Description
 
-Wusic: a platform that helps musicians to look for projects and music partners. 
+**Wusic** is a platform helping users to find a suitable musician for a project, or reverse.
+
+There are lots of musicians available worldwide. But, there is limited access to these people to contact and invite them to become a member of a project or a band. Wusic will help musicians to find their place and make music with others.
 
 ## User Stories
 
@@ -38,7 +40,8 @@ Wusic: a platform that helps musicians to look for projects and music partners.
 
 ## Backlog ##
 
-
+* CSS refactoring with styled component and responsive
+* Message box
 
 ## Client / Frontend
 
@@ -219,13 +222,12 @@ Wusic: a platform that helps musicians to look for projects and music partners.
 
 ### Git ###
 
-[Client repo Link]( https://github.com/ohhyangyang/m2-project-library)
+[Client repo Link](https://github.com/ohhyangyang/m3-wusic-client)
 
-[Server repo Link]( https://x-book.herokuapp.com/)
+[Server repo Link]( https://github.com/ohhyangyang/m3-wusic-server)
 
-[Deployed App]( https://x-book.herokuapp.com/)
+[Deployed App]( https://wusic-app.herokuapp.com/)
 
 ### Slides ###
 
-[Presentation]( https://docs.google.com/presentation/d/185aydu5xmMaryGu4VVv83Mhnf-X5iDGsjmLf5X9Jjps/edit#slide=id.gad4c381f73_0_7)
-
+[Presentation](https://docs.google.com/presentation/d/1MMGZ1kV6NKJFPZhA1pVXr_UndR0AGNPkk2WFp7G9uRI/edit?usp=sharing)
