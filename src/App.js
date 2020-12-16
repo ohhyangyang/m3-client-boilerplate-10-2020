@@ -4,8 +4,7 @@ import { Switch } from 'react-router-dom';
 
 
 import Landing from './pages/Landing';
-// import Signup from './pages/Signup';
-// import Login from './pages/Login';
+
 import Private from './pages/Private';
 
 import AnonRoute from './components/AnonRoute';
@@ -54,8 +53,7 @@ class App extends Component {
           <PrivateRoute exact path="/wusic/about" component={About} />
 
 
-          {/* <AnonRoute exact path="/signup" component={Signup} />
-          <AnonRoute exact path="/login" component={Login} /> */}
+      
 
           <PrivateRoute exact path="/private" component={Private} />
         </Switch>
