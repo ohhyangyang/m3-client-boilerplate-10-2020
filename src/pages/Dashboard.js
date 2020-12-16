@@ -16,7 +16,7 @@ class Dashboard extends Component {
     apiService
       .getAllOfOneUser(this.props.user._id)
       .then((response) => {
-        console.log("getAll", response.data);
+        // console.log("getAll", response.data);
         const allInfo = response.data;
         this.setState({
           ongoingProjects: allInfo.projectsOwned,

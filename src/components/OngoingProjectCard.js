@@ -87,9 +87,9 @@ export default class OngoingProjectCard extends Component {
           <div className="participants-wrapper">
             {/* {console.log(this.props.project.participants)} */}
             {this.props.project.participants.map((participant) => {
-              {/* console.log("participant", participant); */}
+              
               return (
-                <div className="circle">
+                <div key={participant._id} className="circle">
                   <img
                     className="request"
                     key={participant._id}
