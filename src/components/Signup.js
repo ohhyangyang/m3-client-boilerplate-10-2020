@@ -57,13 +57,19 @@ class Signup extends Component {
     }
     
     
-    this.props.signup(username, password, email, artistType, instrument)
-    if(this.props.error){
-      this.setState({
-        errorMessage: "Username already exists",
-      });
-      return
-    }
+    this.props.signup(username, password, email, artistType, instrument,()=>{
+      console.log(this.props.error==="Username already exists")
+      if(this.props.error==="Username already exists"){
+        console.log("updated error");
+        this.setState({
+          errorMessage: "Username already exists",
+        },()=>{
+          console.log(this.state.errorMessage)
+        });
+       
+      }
+    })
+    
     
   };
 
