@@ -12,7 +12,7 @@ class Dashboard extends Component {
     likedUser: [],
   };
   getAllOfAUser = () => {
-    console.log("update dashboard");
+    // console.log("update dashboard");
     apiService
       .getAllOfOneUser(this.props.user._id)
       .then((response) => {

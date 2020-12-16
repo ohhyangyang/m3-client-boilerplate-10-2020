@@ -112,7 +112,7 @@ class EditProfile extends Component {
         spotifyEmbed
       )
       .then((response) => {
-        console.log("updateUser", response.data);
+        // console.log("updateUser", response.data);
         this.props.history.push(`/wusic/musicians/${this.props.user._id}`);
       })
       .catch((err) => {
@@ -125,7 +125,7 @@ class EditProfile extends Component {
   };
   handleCheckbox = (event) => {
     const { name, checked, value } = event.target;
-    console.log(checked);
+    // console.log(checked);
     if (checked) {
       this.setState({
         [name]: [...this.state[name], value],
@@ -139,11 +139,11 @@ class EditProfile extends Component {
       });
     }
 
-    console.log(name, this.state[name]);
+    // console.log(name, this.state[name]);
   };
 
   handleFileUpload = (e) => {
-    console.log("The file to be uploaded is: ", e.target.files);
+    // console.log("The file to be uploaded is: ", e.target.files);
     const file = e.target.files[0];
 
     const uploadData = new FormData();
@@ -156,7 +156,7 @@ class EditProfile extends Component {
         withCredentials: true,
       })
       .then((response) => {
-        console.log("response is: ", response);
+        // console.log("response is: ", response);
         // after the console.log we can see that response carries 'secure_url' which we can use to update the state
         this.setState({ profileURL: response.data.secure_url });
       })
@@ -166,13 +166,13 @@ class EditProfile extends Component {
   };
 
   handleTypeSelect = (artistType) => {
-    console.log(artistType);
+    // console.log(artistType);
     // const arr=artistType.map()
     this.setState({ artistType: artistType });
   };
 
   handleInstrumentSelect = (instrument) => {
-    console.log(instrument);
+    // console.log(instrument);
     // const arr=artistType.map()
     this.setState({ instrument });
   };

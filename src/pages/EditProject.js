@@ -42,7 +42,7 @@ class EditProject extends Component {
 
   componentDidMount() {
     const { projectId } = this.props.match.params;
-    console.log("projectId", projectId);
+    // console.log("projectId", projectId);
     apiService
       .getOneProject(projectId)
       .then((response) => {
@@ -74,7 +74,7 @@ class EditProject extends Component {
   };
   handleCheckbox = (event) => {
     const { name, checked, value } = event.target;
-    console.log(checked);
+    // console.log(checked);
     if (checked) {
       this.setState({
         [name]: [...this.state[name], value],
@@ -88,11 +88,11 @@ class EditProject extends Component {
       });
     }
 
-    console.log(name, this.state[name]);
+    // console.log(name, this.state[name]);
   };
 
   handleFileUpload = (e) => {
-    console.log("The file to be uploaded is: ", e.target.files);
+    // console.log("The file to be uploaded is: ", e.target.files);
     const file = e.target.files[0];
 
     const uploadData = new FormData();
@@ -105,7 +105,7 @@ class EditProject extends Component {
         withCredentials: true,
       })
       .then((response) => {
-        console.log("response is: ", response);
+        // console.log("response is: ", response);
         // after the console.log we can see that response carries 'secure_url' which we can use to update the state
         this.setState({ coverURL: response.data.secure_url });
       })
@@ -140,7 +140,7 @@ class EditProject extends Component {
         status
       )
       .then((response) => {
-        console.log("updatedProject", response.data);
+        // console.log("updatedProject", response.data);
         this.props.history.push(`/wusic/dashboard`);
       })
       .catch((err) => {
@@ -176,7 +176,7 @@ class EditProject extends Component {
   };
 
   handleLookingForSelect = (lookingFor) => {
-    console.log(lookingFor);
+    // console.log(lookingFor);
     // const arr=artistType.map()
     this.setState({ lookingFor });
   };
@@ -185,7 +185,7 @@ class EditProject extends Component {
     apiService
       .closeOneProject(this.props.match.params.projectId)
       .then((response)=>{
-        console.log(response.data)
+        // console.log(response.data)
         this.setState({
           status:"close"
         })
@@ -195,7 +195,7 @@ class EditProject extends Component {
     apiService
       .openOneProject(this.props.match.params.projectId)
       .then((response)=>{
-        console.log(response.data)
+        // console.log(response.data)
         this.setState({
           status:"open"
         })

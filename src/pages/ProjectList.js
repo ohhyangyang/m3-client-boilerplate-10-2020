@@ -17,7 +17,7 @@ class ProjectList extends Component {
 
   getAllProjects = () => {
     apiService.getAllProjects().then((response) => {
-      console.log("here",response.data);
+      // console.log("here",response.data);
       const openProject = response.data.filter((project=>{
         return project.status==="open" && project.owner._id!==this.props.user._id
       }))
@@ -30,7 +30,7 @@ class ProjectList extends Component {
 
   handleFilter = (event) => {
     const { name, value } = event.target;
-    console.log(name, value);
+    // console.log(name, value);
 
     this.setState({
       [name]: value,
@@ -40,8 +40,8 @@ class ProjectList extends Component {
   filterProjects=(event)=>{
     event.preventDefault();
     
-    console.log(this.state.lookingFor)
-    console.log()
+    // console.log(this.state.lookingFor)
+    
     const filtered = this.state.allProjects.filter((project)=>{
       if(this.state.type==='All' && this.state.lookingFor!=='All'){
         const lookingForArr=project.lookingFor.map((lookingFor)=>{
@@ -59,7 +59,7 @@ class ProjectList extends Component {
         return project.type.includes(this.state.type) && lookingForArr.includes(this.state.lookingFor)
       }
     })
-    console.log(filtered)
+    // console.log(filtered)
     this.setState({
       filteredProjects:filtered
     })

@@ -82,7 +82,7 @@ class Signup extends Component {
 
   handleCheckbox = (event) => {
     const { name, checked, value } = event.target;
-    console.log(checked);
+    // console.log(checked);
     if (checked) {
       this.setState({
         [name]: [...this.state[name], value],
@@ -96,17 +96,17 @@ class Signup extends Component {
       });
     }
 
-    console.log(name, this.state[name]);
+    // console.log(name, this.state[name]);
   };
 
   handleTypeSelect = (artistType) => {
-    console.log(artistType);
+    // console.log(artistType);
     // const arr=artistType.map()
     this.setState({ artistType: artistType });
   };
 
   handleInstrumentSelect = (instrument) => {
-    console.log(instrument);
+    // console.log(instrument);
     // const arr=artistType.map()
     this.setState({ instrument });
   };

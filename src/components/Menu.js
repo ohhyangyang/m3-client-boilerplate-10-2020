@@ -39,7 +39,7 @@ class Menu extends Component {
     });
   };
   render() {
-    console.log(this.state.slideIn, this.state.menuStyle);
+    // console.log(this.state.slideIn, this.state.menuStyle);
     return (
       <div id="menu">
         <div onClick={this.handleMenu} className="menu-btn">

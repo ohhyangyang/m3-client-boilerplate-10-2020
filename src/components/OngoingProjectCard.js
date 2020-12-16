@@ -25,8 +25,8 @@ export default class OngoingProjectCard extends Component {
       });
   };
   handleRejection = (projectId, userId) => {
-    console.log(projectId);
-    console.log(userId);
+    // console.log(projectId);
+    // console.log(userId);
     apiService
       .rejectRequest(projectId, userId)
       .then((response) => {
@@ -60,7 +60,7 @@ export default class OngoingProjectCard extends Component {
   //     });
   // };
   render() {
-    console.log(this.props.project);
+    // console.log(this.props.project);
     return (
       <div id="card-wrapper">
       <div className="cover-title">
@@ -85,9 +85,9 @@ export default class OngoingProjectCard extends Component {
           </div>
 
           <div className="participants-wrapper">
-            {console.log(this.props.project.participants)}
+            {/* {console.log(this.props.project.participants)} */}
             {this.props.project.participants.map((participant) => {
-              console.log("participant", participant);
+              {/* console.log("participant", participant); */}
               return (
                 <div className="circle">
                   <img
