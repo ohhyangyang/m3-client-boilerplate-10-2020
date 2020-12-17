@@ -917,6 +917,7 @@
   flex-direction: row;
   height: 100vh;
 }
+
 #edit-profile form {
   padding-top: 200px;
   display: flex;
@@ -930,6 +931,19 @@
 }
 #edit-profile .left img {
   height: 10vh;
+}
+#edit-profile .delete {
+  background-color: #f4eadd;
+  padding: 10px 0;
+  width: 150px;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 50px;
+  color: #ff0000;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
 }
 #edit-profile .middle {
   padding-left: 50px;

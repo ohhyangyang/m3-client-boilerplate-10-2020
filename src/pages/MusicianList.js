@@ -29,9 +29,7 @@ class MusicianList extends Component {
 
   filterMusician = (event) => {
     event.preventDefault();
-    // console.log(musician.artistType)
-    //  console.log(this.state.artistType,this.state.instrument)
-    //  console.log(this.state.allMusicians)
+  
     const filtered = this.state.allMusicians.filter((musician) => {
       if (this.state.artistType === "All" && this.state.instrument !== "All") {
         const instrumentArr=musician.instrument.map((instrument)=>{

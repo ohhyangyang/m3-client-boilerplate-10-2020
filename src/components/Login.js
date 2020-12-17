@@ -23,9 +23,9 @@ class Login extends Component {
     }
     // Call funciton coming from AuthProvider ( via withAuth )
     this.props.login(username, password, () => {
-      console.log(this.props.error);
+   
       if (this.props.error === "User not found") {
-        console.log("updated error");
+
         this.setState(
           {
             errorMessage: "User not found",

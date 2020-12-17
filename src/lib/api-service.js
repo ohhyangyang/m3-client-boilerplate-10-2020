@@ -141,6 +141,11 @@ class ApiService {
     const pr = this.api.get(`/api/projects/close/${projectId}`);
     return pr
   }
+
+  deleteProfile=(userId)=>{
+    const pr=this.api.delete(`/api/users/${userId}`);
+    return pr
+  }
   // create = (data) => {
   //   const pr = this.api.post(`/example/${id}`, data )
 

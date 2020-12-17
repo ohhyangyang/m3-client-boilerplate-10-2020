@@ -59,7 +59,7 @@ class AddProject extends Component {
       lookingFor===""
     ){
       this.setState({
-        errorMessage:"Must at least fill in the Title and LookingFor fields"
+        errorMessage:"Must at least fill in the Title, Type and LookingFor fields"
       })
     }
     apiService

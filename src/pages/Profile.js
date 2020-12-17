@@ -76,7 +76,6 @@ class Profile extends Component {
     });
   };
 
-  
   render() {
     return (
       <div id="profile">
@@ -84,27 +83,17 @@ class Profile extends Component {
           <div className="player-wrapper">
             <p>MUSIC PLAYER</p>
 
-            {this.state.userInfo.spotifyLink?(<SpotifyPlayer
-              uri={this.state.userInfo.spotifyLink}
-              // size={{ width: "100%", height: '300' }}
-              view="list"
-              theme="black"
-            />):<p className="emptybox">The player box is still empty</p>}
-            
+            {this.state.userInfo.spotifyLink ? (
+              <SpotifyPlayer
+                uri={this.state.userInfo.spotifyLink}
+                // size={{ width: "100%", height: '300' }}
+                view="list"
+                theme="black"
+              />
+            ) : (
+              <p className="emptybox">The player box is still empty</p>
+            )}
           </div>
-
-          {/* {this.state.userId == this.state.visitorId ?
-          null
-          :(
-            <div>
-            <Link to="/wusic/musicians">
-              <img src="/images/whitearrow-left.png" alt="" />
-              <span>BACK</span>
-            </Link>
-          </div> 
-          )
-
-          }*/}
         </div>
 
         <div className="middle">
@@ -134,10 +123,16 @@ class Profile extends Component {
                   alt=""
                 />
               )}
-
-              <a target="_blank" rel="noreferrer" href={this.state.userInfo.spotifyLink}>
-                <img src="/images/spotify.svg" alt="" />
-              </a>
+              {this.state.userInfo.spotifyLink ? (
+                
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={this.state.userInfo.spotifyLink}
+                >
+                  <img src="/images/spotify.svg" alt="" />
+                </a>
+              ) : null}
             </div>
           </div>
 
@@ -161,7 +156,7 @@ class Profile extends Component {
           </div>
 
           {this.state.userId === this.state.visitorId ? (
-            <div className="edit-create middle-width" >
+            <div className="edit-create middle-width">
               <Link to="/wusic/edit-profile">
                 <p>EDIT PROFILE</p>
                 <img src="/images/arrow-right.png" alt="" />
@@ -175,8 +170,12 @@ class Profile extends Component {
         </div>
 
         <div className="right">
-        <img className="wusic-logo" src="/images/logo-wusic.svg" alt=""/>
-          <img className="profilePic" src={this.state.userInfo.profileURL} alt="" />
+          <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
+          <img
+            className="profilePic"
+            src={this.state.userInfo.profileURL}
+            alt=""
+          />
           <p>{this.state.userInfo.description}</p>
         </div>
       </div>

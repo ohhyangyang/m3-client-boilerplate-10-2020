@@ -176,7 +176,16 @@ class EditProfile extends Component {
     // const arr=artistType.map()
     this.setState({ instrument });
   };
-
+  handleDeleteProfile = () => {
+    apiService
+      .deleteProfile(this.props.user._id)
+      .then((response) => {
+        this.props.logout();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   render() {
     const {
       username,
@@ -185,7 +194,7 @@ class EditProfile extends Component {
       description,
       location,
       genre,
-  
+
       spotifyLink,
     } = this.state;
 
@@ -196,6 +205,9 @@ class EditProfile extends Component {
         <div className="left">
           <img src="/images/edit-profile.svg" alt="" />
           <h1>EDIT PROFILE</h1>
+          <div className="delete" onClick={this.handleDeleteProfile}>
+            DELETE PROFILE
+          </div>
         </div>
 
         <form onSubmit={this.handleFormSubmit}>
@@ -296,17 +308,7 @@ class EditProfile extends Component {
               />
               <label htmlFor="floatingInput">SPOTIFY LINK</label>
             </div>
-            {/* <div className="form-floating mb-3">
-            <input
-              type="text"
-              className="form-control"
-              name="spotifyEmbed"
-              value={spotifyEmbed}
-              onChange={this.handleText}
-              placeholder="SPOTIFY EMBED"
-            />
-            <label htmlFor="floatingInput">SPOTIFY EMBED</label>
-          </div> */}
+
             <div className="form-floating mb-3">
               <textarea
                 type="text"
