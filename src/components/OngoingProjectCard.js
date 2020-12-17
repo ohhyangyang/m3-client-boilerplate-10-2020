@@ -68,10 +68,11 @@ export default class OngoingProjectCard extends Component {
           </div>
         <div className="black-border">
           
-
+      
           <div className="cover-container">
+            
             <div className="cover-wrapper">
-              <img className="cover" src={this.props.project.coverURL} alt="" />
+              {this.props.project.coverURL?<img className="cover" src={this.props.project.coverURL} alt="" />:<img className="cover" src="https://res.cloudinary.com/domkvddv0/image/upload/v1608194313/m3-wusic/default_user_image_iqfeza.jpg" alt="" />}
             </div>
 
             <div className="edit-delete-wrapper">
