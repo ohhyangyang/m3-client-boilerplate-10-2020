@@ -18,6 +18,7 @@ class EditProfile extends Component {
     instrument: [],
     spotifyLink: "",
     spotifyEmbed: "",
+    showConfirmation:false,
 
     artistTypeOptions: [
       { value: "Singer", label: "Singer" },
@@ -176,6 +177,11 @@ class EditProfile extends Component {
     // const arr=artistType.map()
     this.setState({ instrument });
   };
+  handleDeleteConfirmation=()=>{
+    this.setState({
+      showConfirmation:!this.state.showConfirmation
+    })
+  }
   handleDeleteProfile = () => {
     apiService
       .deleteProfile(this.props.user._id)
@@ -205,7 +211,7 @@ class EditProfile extends Component {
         <div className="left">
           <img src="/images/edit-profile.svg" alt="" />
           <h1>EDIT PROFILE</h1>
-          <div className="delete" onClick={this.handleDeleteProfile}>
+          <div className="delete" onClick={this.handleDeleteConfirmation}>
             DELETE PROFILE
           </div>
         </div>
@@ -324,6 +330,16 @@ class EditProfile extends Component {
             <button>UPDATE</button>
           </div>
         </form>
+
+        {this.state.showConfirmation ? (
+          <div className="delete-wrapper">
+            <div>
+              <p>ARE YOU SURE YOU WANT TO DELETE YOUR PROFILE?</p>
+              <div onClick={this.handleDeleteProfile}>YES</div>
+              <div onClick={this.handleDeleteConfirmation}>NO</div>
+            </div>
+          </div>
+        ) : null}
       </div>
     );
   }

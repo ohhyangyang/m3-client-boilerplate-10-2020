@@ -345,12 +345,7 @@ class EditProject extends Component {
               />
               <label htmlFor="floatingInput">MORE INFO</label>
 
-              {/* <div className="open-confirmation">
-                <p>OPEN FOR SEARCING?</p>
-                <div onClick={this.handleStatus}>
-                  {this.state.status == "open" ? "OPEN" : "CLOSE"}
-                </div>
-              </div> */}
+             
 
               <div className="open-confirmation">
                 <p>OPEN FOR SEARCING?</p>

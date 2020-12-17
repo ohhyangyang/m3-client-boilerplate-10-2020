@@ -1317,14 +1317,15 @@
 .delete-wrapper > div p{
     font-size: 1.2rem;
 }
-.delete-wrapper button{
+.delete-wrapper>div > div{
     background-color: white;
     width: 50px;
     margin-bottom: 10px;
     margin-top: 10px;
     border: 1px solid black;
+    cursor: pointer;
 }
-.delete-wrapper button:hover{
+.delete-wrapper>div > div:hover{
     background-color: #e2cdba;
 }
 .open-confirmation {
