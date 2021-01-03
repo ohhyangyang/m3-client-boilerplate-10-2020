@@ -33,8 +33,8 @@ class Signup extends Component {
       { value: "Ukelele", label: "Ukelele" },
       { value: "Accordion", label: "Accordion" },
       { value: "Bass", label: "Bass" },
-      { value: "Keyboard", label: "Keyboard" }
-    ]
+      { value: "Keyboard", label: "Keyboard" },
+    ],
   };
 
   handleFormSubmit = (event) => {
@@ -53,24 +53,21 @@ class Signup extends Component {
       this.setState({
         errorMessage: "Must fill in all the forms",
       });
-      return
+      return;
     }
-    
-    
-    this.props.signup(username, password, email, artistType, instrument,()=>{
-     
-      if(this.props.error==="Username already exists"){
-  
-        this.setState({
-          errorMessage: "Username already exists",
-        },()=>{
-          console.log(this.state.errorMessage)
-        });
-       
+
+    this.props.signup(username, password, email, artistType, instrument, () => {
+      if (this.props.error === "Username already exists") {
+        this.setState(
+          {
+            errorMessage: "Username already exists",
+          },
+          () => {
+            console.log(this.state.errorMessage);
+          }
+        );
       }
-    })
-    
-    
+    });
   };
 
   handleText = (event) => {
@@ -109,17 +106,12 @@ class Signup extends Component {
     this.setState({ instrument });
   };
 
-  
-
   render() {
     const { username, password, email } = this.state;
-    const { artistType,instrument } = this.state;
-    
+    const { artistType, instrument } = this.state;
+
     return (
-      
-      <div id="signup">
-        
-        
+      <div className="signup">
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-floating mb-3">
             <input
@@ -156,38 +148,29 @@ class Signup extends Component {
             />
             <label htmlFor="floatingInput">PASSWORD</label>
           </div>
-          <div>
-            <p className="select-title">ARTIST TYPE</p>
+          <div className="select">
+            <p className="select-label">ARTIST TYPE</p>
             <Select
-            value={artistType}
-            onChange={this.handleTypeSelect}
-            options={this.state.artistTypeOptions}
-            isMulti
-            id="select"            
-          />
+              value={artistType}
+              onChange={this.handleTypeSelect}
+              options={this.state.artistTypeOptions}
+              isMulti
+              id="select"
+            />
           </div>
-          <br/>
-          <div>
-            <p className="select-title">INSTRUMENT</p>
+          <br />
+          <div className="select">
+            <p className="select-label">INSTRUMENT</p>
             <Select
-            value={instrument}
-            onChange={this.handleInstrumentSelect}
-            options={this.state.instrumentOptions}
-            isMulti
-            id="select"
-          />
-          </div>
-          
-
-
-
-          
-
-          <div className='errorMessage'>
-            {this.state.errorMessage}
+              value={instrument}
+              onChange={this.handleInstrumentSelect}
+              options={this.state.instrumentOptions}
+              isMulti
+              id="select"
+            />
           </div>
 
-         
+          <div className="errorMessage">{this.state.errorMessage}</div>
 
           <button>SIGNUP</button>
         </form>

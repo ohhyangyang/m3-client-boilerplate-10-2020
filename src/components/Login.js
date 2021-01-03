@@ -23,9 +23,7 @@ class Login extends Component {
     }
     // Call funciton coming from AuthProvider ( via withAuth )
     this.props.login(username, password, () => {
-   
       if (this.props.error === "User not found") {
-
         this.setState(
           {
             errorMessage: "User not found",
@@ -47,7 +45,7 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div id="login">
+      <div className="login">
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-floating mb-3">
             <input

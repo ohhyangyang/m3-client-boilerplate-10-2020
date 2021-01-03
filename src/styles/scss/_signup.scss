@@ -1,0 +1,222 @@
+.signup {
+  position: absolute;
+  form {
+    padding-top: 5vh;
+    padding-left: 8vw;
+
+    input {
+      width: 40vw;
+      height: 3rem;
+      border-radius: 0;
+      background-color: $background-color;
+      border: gray 0.5px solid;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+
+      &:focus {
+        background-color: $secondary-color;
+      }
+    }
+    .select {
+      .css-yk16xz-control {
+        border-radius: 0;
+        background-color: $background-color;
+        border: gray 0.5px solid;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+      .css-1pahdxg-control {
+        border-radius: 0;
+        background-color: $background-color;
+        border: gray 0.5px solid;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+    }
+
+    .errorMessage {
+      height: 2rem;
+      color: $highlight-color;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: $background-color;
+      border: gray 0.5px solid;
+      padding: 20px 40px;
+      font-size: 2rem;
+      font-weight: 700;
+      border-radius: 20px;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+
+      &:active {
+        background-color: $highlight-color;
+      }
+    }
+  }
+}
+@include media-lgl {
+ 
+
+  .signup {
+    form {
+      padding-left: 5vw;
+
+      .select {
+        input {
+          height: 2rem;
+        }
+        p {
+          margin-bottom: 5px;
+        }
+      }
+
+      .form-floating > .form-control {
+        height: 2.8rem;
+      }
+
+      button {
+        padding: 15px 30px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+@include media-lgp {
+
+
+  .signup {
+    form {
+      //   background-color: red;
+      padding: 10vh 8vw 0 8vw;
+      width: 70vw;
+
+      input {
+        width: 54vw;
+      }
+      .form-floating > .form-control {
+        height: 4rem;
+        margin-bottom: 30px;
+      }
+      .select {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+@include media-md {
+  
+
+  .signup {
+    form {
+      padding-top: 7vh;
+
+      input {
+        height: 2.5rem;
+      }
+      .form-floating > .form-control {
+        height: 3.5rem;
+        margin-bottom: 30px;
+      }
+      .select {
+        margin-bottom: 10px;
+      }
+
+      button {
+        margin-top: 10px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+@include media-sm {
+    .signup {
+        form {
+          //   background-color: red;
+          padding: 5vh 0 0 0;
+          width: 70vw;
+    
+          input {
+            width: 70vw;
+            height: 1.5rem;
+          }
+          .form-floating{
+              &>.form-control {
+                height: 2.5rem;
+                margin-bottom: 10px;
+              }
+              &>label{
+                  padding-top: 0.7rem;
+              }
+          } 
+          
+          .select {
+            margin-bottom: 0px;
+          }
+          .errorMessage{
+              margin-top: 5px;
+              height: 1rem;
+              
+          }
+          button {
+            padding: 8px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 1rem;
+          }
+          
+        }
+      }
+  
+}
+@include media-xs {
+    .signup {
+        form {
+          
+    
+          input {
+            width: 70vw;
+            height: 0.8rem;
+          }
+          .form-floating{
+              &>.form-control {
+                height: 1.5rem;
+                margin-bottom: 10px;
+              }
+              &>label{
+                  padding-top: 0.5rem;
+              }
+          } 
+          
+          .select {
+            margin-bottom: 0px;
+            
+            p{
+                font-size: 0.8rem;
+                margin-bottom: 2px;
+            }
+          }
+          .errorMessage{
+              margin-top: 5px;
+              height: 1rem;
+              font-size: 0.6rem;
+              
+          }
+          button {
+            padding: 8px 15px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-size: 0.8rem;
+          }
+          
+        }
+      }
+}

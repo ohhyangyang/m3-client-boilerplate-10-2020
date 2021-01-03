@@ -1,0 +1,164 @@
+.login {
+  position: absolute;
+  form {
+    padding-top: 20vh;
+    padding-left: 8vw;
+
+    input {
+      width: 40vw;
+      height: 3rem;
+      border-radius: 0;
+      background-color: $background-color;
+      border: gray 0.5px solid;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+
+      &:focus {
+        background-color: $secondary-color;
+      }
+    }
+
+    .errorMessage {
+      height: 2rem;
+      color: $highlight-color;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: $background-color;
+      border: gray 0.5px solid;
+      padding: 20px 40px;
+      font-size: 2rem;
+      font-weight: 700;
+      border-radius: 20px;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+
+      &:active {
+        background-color: $highlight-color;
+      }
+    }
+  }
+}
+
+@include media-lgl {
+  .login {
+    form {
+      padding-left: 5vw;
+
+      .form-floating > .form-control {
+        height: 2.8rem;
+      }
+
+      button {
+        padding: 15px 30px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+@include media-lgp {
+  .login {
+    form {
+      //   background-color: red;
+      padding: 20vh 8vw 0 8vw;
+      width: 70vw;
+
+      input {
+        width: 54vw;
+      }
+      .form-floating > .form-control {
+        height: 4rem;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+@include media-md {
+  .login {
+    form {
+      padding-top: 20vh;
+
+      input {
+        height: 2.5rem;
+      }
+      .form-floating > .form-control {
+        height: 3.5rem;
+        margin-bottom: 30px;
+      }
+
+      button {
+        margin-top: 10px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+@include media-sm {
+  .login {
+    form {
+      //   background-color: red;
+      padding: 20vh 0 0 0;
+      width: 70vw;
+
+      input {
+        width: 70vw;
+        height: 1.5rem;
+      }
+      .form-floating {
+        & > .form-control {
+          height: 2.5rem;
+          margin-bottom: 10px;
+        }
+        & > label {
+          padding-top: 0.7rem;
+        }
+      }
+
+      .errorMessage {
+        margin-top: 5px;
+        height: 1rem;
+      }
+      button {
+        padding: 8px 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+@include media-xs {
+  .login {
+    form {
+      input {
+        width: 70vw;
+        height: 0.8rem;
+      }
+      .form-floating {
+        & > .form-control {
+          height: 1.5rem;
+          margin-bottom: 10px;
+        }
+        & > label {
+          padding-top: 0.5rem;
+        }
+      }
+      .errorMessage {
+        margin-top: 5px;
+        height: 1rem;
+        font-size: 0.6rem;
+      }
+      button {
+        padding: 8px 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

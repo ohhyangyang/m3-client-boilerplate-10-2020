@@ -1,0 +1,159 @@
+@include media-lgl {
+  .landing {
+    h2 {
+      font-size: 4.5rem;
+    }
+    &__logos {
+      right: 8rem;
+      bottom: 5rem;
+
+      &--btn {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  .signup {
+    form {
+      padding-left: 5vw;
+
+      .select {
+        input {
+          height: 2rem;
+        }
+        p {
+          margin-bottom: 5px;
+        }
+      }
+
+      .form-floating > .form-control {
+        height: 2.8rem;
+      }
+
+      button{
+        padding: 15px 30px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+@include media-lgp {
+  .landing {
+    h2 {
+      font-size: 4.5rem;
+    }
+    &__logos {
+      right: 10rem;
+    }
+  }
+
+  .signup{
+      form{
+        //   background-color: red;
+          padding: 10vh 8vw 0 8vw;
+          width: 70vw;
+
+          input{
+              width: 54vw;
+          }
+          .form-floating > .form-control {
+            height: 4rem;
+            margin-bottom: 30px;
+          }
+          .select{
+            margin-bottom: 10px;
+          }
+      }
+  }
+}
+@include media-md {
+  .landing {
+    h2 {
+      font-size: 3.5rem;
+      padding-left: 3rem;
+    }
+    &__logos {
+      right: 5rem;
+      bottom: 7rem;
+
+      &--btn {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  .signup{
+      form{
+        padding-top: 7vh;
+        
+        input{
+            height: 2.5rem;
+        }
+        .form-floating > .form-control {
+          height: 3.5rem;
+          margin-bottom: 30px;
+        }
+        .select{
+          margin-bottom: 10px;
+        }
+
+        button{
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+      }
+
+  }
+}
+@include media-sm {
+  .landing {
+    & > img {
+      margin-top: 3rem;
+    }
+    h2 {
+      font-size: 2.3rem;
+      padding-left: 0;
+    }
+    &__logos {
+      right: 2rem;
+      bottom: 5rem;
+
+      &--btn {
+        width: 70px;
+        height: 70px;
+
+        img {
+          width: 40px;
+        }
+      }
+    }
+  }
+}
+@include media-xs {
+  .landing {
+    & > img {
+      margin-top: 2rem;
+      width: 100px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      padding-left: 0;
+    }
+    &__logos {
+      right: 2rem;
+      bottom: 4rem;
+
+      &--btn {
+        width: 60px;
+        height: 60px;
+        margin-left: 20px;
+
+        img {
+          width: 30px;
+        }
+      }
+    }
+  }
+}

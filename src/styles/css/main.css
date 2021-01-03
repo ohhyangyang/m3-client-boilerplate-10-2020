@@ -1,5 +1,483 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Hammersmith+One&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 600ms linear;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0ms linear;
+}
+
+.fade-exit-done {
+  opacity: 0;
+}
+
+.landing {
+  height: 100vh;
+  padding: 10vh 15vw;
+  position: relative;
+}
+.landing h2 {
+  font-size: 6rem;
+  font-weight: 400;
+  margin: 20vh auto;
+  padding-left: 5rem;
+  font-family: "Hammersmith One";
+  -webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.landing__logos {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 15%;
+  bottom: 10rem;
+  transition: 0.8s;
+}
+.landing__logos--btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-left: 50px;
+  transition: 0.3s;
+  border: black 1px solid;
+  cursor: pointer;
+}
+.landing__logos--btn:hover {
+  background-color: #e91c2f;
+  border: red 1px solid;
+}
+.landing__logos--btn img {
+  width: 60px;
+}
+.landing__logos--btn.selected {
+  border: #e91c2f 1px solid;
+  background-color: #e91c2f;
+}
+@-webkit-keyframes text-pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+@keyframes text-pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .landing h2 {
+    font-size: 4.5rem;
+  }
+  .landing__logos {
+    right: 8rem;
+    bottom: 5rem;
+  }
+  .landing__logos--btn {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .landing h2 {
+    font-size: 4.5rem;
+  }
+  .landing__logos {
+    right: 10rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .landing h2 {
+    font-size: 3.5rem;
+    padding-left: 3rem;
+  }
+  .landing__logos {
+    right: 5rem;
+    bottom: 7rem;
+  }
+  .landing__logos--btn {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .landing h2 {
+    font-size: 2.1rem;
+    padding-left: 0px;
+  }
+  .landing__logos {
+    right: 2rem;
+    bottom: 4rem;
+  }
+  .landing__logos--btn {
+    width: 70px;
+    height: 70px;
+    margin-left: 20px;
+  }
+  .landing__logos--btn img {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .landing > img {
+    width: 80px;
+  }
+  .landing h2 {
+    font-size: 1.8rem;
+    padding-left: 0;
+  }
+  .landing__logos {
+    right: 2rem;
+    bottom: 3rem;
+  }
+  .landing__logos--btn {
+    width: 50px;
+    height: 50px;
+  }
+  .landing__logos--btn img {
+    width: 30px;
+  }
+}
+.login {
+  position: absolute;
+}
+.login form {
+  padding-top: 20vh;
+  padding-left: 8vw;
+}
+.login form input {
+  width: 40vw;
+  height: 3rem;
+  border-radius: 0;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+}
+.login form input:hover {
+  background-color: #e2cdba;
+}
+.login form input:focus {
+  background-color: #e2cdba;
+}
+.login form .errorMessage {
+  height: 2rem;
+  color: #e91c2f;
+  margin-top: 10px;
+}
+.login form button {
+  margin-top: 20px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  padding: 20px 40px;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 20px;
+}
+.login form button:hover {
+  background-color: #e2cdba;
+}
+.login form button:active {
+  background-color: #e91c2f;
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .login form {
+    padding-left: 5vw;
+  }
+  .login form .form-floating > .form-control {
+    height: 2.8rem;
+  }
+  .login form button {
+    padding: 15px 30px;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .login form {
+    padding: 20vh 8vw 0 8vw;
+    width: 70vw;
+  }
+  .login form input {
+    width: 54vw;
+  }
+  .login form .form-floating > .form-control {
+    height: 4rem;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .login form {
+    padding-top: 20vh;
+  }
+  .login form input {
+    height: 2.5rem;
+  }
+  .login form .form-floating > .form-control {
+    height: 3.5rem;
+    margin-bottom: 30px;
+  }
+  .login form button {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .login form {
+    padding: 20vh 0 0 0;
+    width: 70vw;
+  }
+  .login form input {
+    width: 70vw;
+    height: 1.5rem;
+  }
+  .login form .form-floating > .form-control {
+    height: 2.5rem;
+    margin-bottom: 10px;
+  }
+  .login form .form-floating > label {
+    padding-top: 0.7rem;
+  }
+  .login form .errorMessage {
+    margin-top: 5px;
+    height: 1rem;
+  }
+  .login form button {
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .login form input {
+    width: 70vw;
+    height: 0.8rem;
+  }
+  .login form .form-floating > .form-control {
+    height: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .login form .form-floating > label {
+    padding-top: 0.5rem;
+  }
+  .login form .errorMessage {
+    margin-top: 5px;
+    height: 1rem;
+    font-size: 0.6rem;
+  }
+  .login form button {
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+}
+.signup {
+  position: absolute;
+}
+.signup form {
+  padding-top: 5vh;
+  padding-left: 8vw;
+}
+.signup form input {
+  width: 40vw;
+  height: 3rem;
+  border-radius: 0;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+}
+.signup form input:hover {
+  background-color: #e2cdba;
+}
+.signup form input:focus {
+  background-color: #e2cdba;
+}
+.signup form .select .css-yk16xz-control {
+  border-radius: 0;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+}
+.signup form .select .css-yk16xz-control:hover {
+  background-color: #e2cdba;
+}
+.signup form .select .css-1pahdxg-control {
+  border-radius: 0;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+}
+.signup form .select p {
+  margin-bottom: 10px;
+}
+.signup form .errorMessage {
+  height: 2rem;
+  color: #e91c2f;
+  margin-top: 10px;
+}
+.signup form button {
+  margin-top: 20px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  padding: 20px 40px;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 20px;
+}
+.signup form button:hover {
+  background-color: #e2cdba;
+}
+.signup form button:active {
+  background-color: #e91c2f;
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .signup form {
+    padding-left: 5vw;
+  }
+  .signup form .select input {
+    height: 2rem;
+  }
+  .signup form .select p {
+    margin-bottom: 5px;
+  }
+  .signup form .form-floating > .form-control {
+    height: 2.8rem;
+  }
+  .signup form button {
+    padding: 15px 30px;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .signup form {
+    padding: 10vh 8vw 0 8vw;
+    width: 70vw;
+  }
+  .signup form input {
+    width: 54vw;
+  }
+  .signup form .form-floating > .form-control {
+    height: 4rem;
+    margin-bottom: 30px;
+  }
+  .signup form .select {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .signup form {
+    padding-top: 7vh;
+  }
+  .signup form input {
+    height: 2.5rem;
+  }
+  .signup form .form-floating > .form-control {
+    height: 3.5rem;
+    margin-bottom: 30px;
+  }
+  .signup form .select {
+    margin-bottom: 10px;
+  }
+  .signup form button {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .signup form {
+    padding: 5vh 0 0 0;
+    width: 70vw;
+  }
+  .signup form input {
+    width: 70vw;
+    height: 1.5rem;
+  }
+  .signup form .form-floating > .form-control {
+    height: 2.5rem;
+    margin-bottom: 10px;
+  }
+  .signup form .form-floating > label {
+    padding-top: 0.7rem;
+  }
+  .signup form .select {
+    margin-bottom: 0px;
+  }
+  .signup form .errorMessage {
+    margin-top: 5px;
+    height: 1rem;
+  }
+  .signup form button {
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .signup form input {
+    width: 70vw;
+    height: 0.8rem;
+  }
+  .signup form .form-floating > .form-control {
+    height: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .signup form .form-floating > label {
+    padding-top: 0.5rem;
+  }
+  .signup form .select {
+    margin-bottom: 0px;
+  }
+  .signup form .select p {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
+  }
+  .signup form .errorMessage {
+    margin-top: 5px;
+    height: 1rem;
+    font-size: 0.6rem;
+  }
+  .signup form button {
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+}
 #root {
   background-color: #f4eadd;
   font: 14px "Ubuntu";

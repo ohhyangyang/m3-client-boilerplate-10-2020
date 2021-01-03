@@ -1,0 +1,60 @@
+$dark-text-color: black;
+$highlight-color: #e91c2f;
+$secondary-color: #e2cdba;
+$background-color: #f4eadd;
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 600ms linear;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0ms linear;
+}
+.fade-exit-done {
+  opacity: 0;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin media-xs {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+@mixin media-sm {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin media-lgp {
+  @media screen and (max-width: 1024px) and (orientation: portrait) {
+    @content;
+  }
+}
+@mixin media-lgl {
+  @media screen and (max-width: 1024px) and (orientation: landscape) {
+    @content;
+  }
+}
