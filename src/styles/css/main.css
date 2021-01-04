@@ -40,7 +40,7 @@
   display: flex;
   flex-direction: row;
   position: absolute;
-  right: 15%;
+  right: 10vw;
   bottom: 10rem;
   transition: 0.8s;
 }
@@ -49,8 +49,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   margin-left: 50px;
   transition: 0.3s;
@@ -174,6 +174,10 @@
     width: 30px;
   }
 }
+.dashboard img {
+  width: 100px;
+}
+
 .login {
   position: absolute;
 }
@@ -271,6 +275,7 @@
   }
   .login form .form-floating > label {
     padding-top: 0.7rem;
+    font-weight: 300;
   }
   .login form .errorMessage {
     margin-top: 5px;
@@ -305,6 +310,285 @@
     border-radius: 10px;
     margin-top: 10px;
     font-size: 0.8rem;
+  }
+}
+.menu-btn {
+  width: 100px;
+  height: 100px;
+  border: black 1px solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  position: fixed;
+  margin-top: 50px;
+  margin-left: 50px;
+  cursor: pointer;
+}
+.menu-btn p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.menu-btn img {
+  width: 40px;
+}
+.menu-wrapper {
+  border-right: gray 1px solid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  visibility: hidden;
+  transform: translateX(-100vw);
+  transition-duration: 500ms;
+}
+.menu-wrapper.open {
+  visibility: visible;
+  transform: translateX(0);
+}
+.menu-wrapper .links-wrapper {
+  padding-left: 17.5%;
+  margin-top: 15vh;
+  width: 80%;
+}
+.menu-wrapper .links-wrapper a {
+  text-decoration: none;
+  color: black;
+  font-size: 3.4rem;
+  font-weight: 500;
+}
+.menu-wrapper .links-wrapper a:hover {
+  color: #e91c2f;
+}
+.menu-wrapper .links-wrapper a p {
+  margin-bottom: 2rem;
+  transform: translateX(-100vw);
+  transition-duration: 500ms;
+}
+.menu-wrapper .links-wrapper a p.open {
+  transform: translateX(0);
+}
+.menu-wrapper .links-wrapper a:nth-child(1) > p {
+  transition-property: transform;
+  transition-delay: 120ms;
+}
+.menu-wrapper .links-wrapper a:nth-child(2) > p {
+  transition-property: transform;
+  transition-delay: 240ms;
+}
+.menu-wrapper .links-wrapper a:nth-child(3) > p {
+  transition-property: transform;
+  transition-delay: 360ms;
+}
+.menu-wrapper .links-wrapper a:nth-child(4) > p {
+  transition-property: transform;
+  transition-delay: 480ms;
+}
+.menu-wrapper .links-wrapper a:nth-child(5) > p {
+  transition-property: transform;
+  transition-delay: 600ms;
+}
+.menu-wrapper .logout-wrapper {
+  margin-left: 10rem;
+}
+.menu-wrapper .logout-wrapper p {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.menu-wrapper .logout-wrapper button {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.menu-wrapper .logout-wrapper button:hover {
+  background-color: #e91c2f;
+  color: white;
+  border: #e91c2f;
+}
+.menu-wrapper .contacts-wrapper {
+  position: absolute;
+  right: 20rem;
+  bottom: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.menu-wrapper .contacts-wrapper > img {
+  margin-bottom: 40px;
+}
+.menu-wrapper .contacts-wrapper > p {
+  margin-bottom: 1rem;
+}
+.menu-wrapper .contacts-wrapper .icons img {
+  width: 30px;
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .menu-btn {
+    width: 70px;
+    height: 70px;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  .menu-btn p {
+    font-size: 0.9rem;
+  }
+  .menu-btn img {
+    width: 30px;
+  }
+  .menu-wrapper .links-wrapper {
+    padding-left: 12vw;
+    margin-top: 20vh;
+    width: 100vw;
+  }
+  .menu-wrapper .links-wrapper a {
+    font-size: 3rem;
+  }
+  .menu-wrapper .links-wrapper a p {
+    margin-bottom: 1rem;
+  }
+  .menu-wrapper .logout-wrapper {
+    margin-left: 12vw;
+  }
+  .menu-wrapper .logout-wrapper p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .menu-wrapper .logout-wrapper button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  .menu-wrapper .contacts-wrapper {
+    right: 12vw;
+    bottom: 10rem;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .menu-wrapper .links-wrapper {
+    margin-top: 20vh;
+    width: 90%;
+  }
+  .menu-wrapper .logout-wrapper {
+    margin-left: 17.5%;
+  }
+  .menu-wrapper .logout-wrapper p {
+    font-size: 1.5rem;
+  }
+  .menu-wrapper .logout-wrapper button {
+    font-size: 1.5rem;
+  }
+  .menu-wrapper .contacts-wrapper {
+    right: 15vw;
+    bottom: 18vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu-wrapper .links-wrapper a {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu-btn {
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  .menu-btn p {
+    font-size: 0.5rem;
+  }
+  .menu-btn img {
+    width: 20px;
+  }
+  .menu-wrapper .links-wrapper {
+    padding-left: 12vw;
+    margin-top: 20vh;
+    width: 100vw;
+  }
+  .menu-wrapper .links-wrapper a {
+    font-size: 2rem;
+  }
+  .menu-wrapper .links-wrapper a p {
+    margin-bottom: 1rem;
+  }
+  .menu-wrapper .logout-wrapper {
+    margin-left: 12vw;
+  }
+  .menu-wrapper .logout-wrapper p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .menu-wrapper .logout-wrapper button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  .menu-wrapper .contacts-wrapper {
+    right: 5vw;
+    bottom: 10vh;
+  }
+  .menu-wrapper .contacts-wrapper > img {
+    margin-bottom: 20px;
+    width: 80px;
+  }
+  .menu-wrapper .contacts-wrapper > p {
+    margin-bottom: 1rem;
+  }
+  .menu-wrapper .contacts-wrapper .icons img {
+    width: 25px;
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .menu-btn {
+    width: 40px;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  .menu-btn img {
+    width: 20px;
+  }
+  .menu-wrapper .links-wrapper {
+    padding-left: 14vw;
+    margin-top: 15vh;
+    width: 100vw;
+  }
+  .menu-wrapper .links-wrapper a {
+    font-size: 1.6rem;
+  }
+  .menu-wrapper .logout-wrapper {
+    margin-left: 14vw;
+  }
+  .menu-wrapper .logout-wrapper p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .menu-wrapper .logout-wrapper button {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  .menu-wrapper .contacts-wrapper {
+    right: 5vw;
+    bottom: 8vh;
+  }
+  .menu-wrapper .contacts-wrapper > img {
+    margin-bottom: 20px;
+    width: 60px;
+  }
+  .menu-wrapper .contacts-wrapper > p {
+    margin-bottom: 1rem;
+  }
+  .menu-wrapper .contacts-wrapper .icons img {
+    width: 25px;
+    margin-left: 30px;
   }
 }
 .signup {
@@ -432,9 +716,13 @@
   }
   .signup form .form-floating > label {
     padding-top: 0.7rem;
+    font-weight: 300;
   }
   .signup form .select {
     margin-bottom: 0px;
+  }
+  .signup form .select p {
+    font-weight: 300;
   }
   .signup form .errorMessage {
     margin-top: 5px;
@@ -481,6 +769,10 @@
 #root {
   background-color: #f4eadd;
   font: 14px "Ubuntu";
+}
+
+p {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

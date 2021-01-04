@@ -155,11 +155,16 @@
               }
               &>label{
                   padding-top: 0.7rem;
+                  font-weight: 300;
               }
           } 
           
           .select {
             margin-bottom: 0px;
+
+            p{
+                font-weight: 300;
+            }
           }
           .errorMessage{
               margin-top: 5px;

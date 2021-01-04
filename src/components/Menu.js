@@ -4,44 +4,37 @@ import { withAuth } from "./../context/auth-context";
 
 class Menu extends Component {
   state = {
-    menuStyle: { right: "100vw" },
     showMenu: false,
   };
   handleMenu = () => {
     this.setState({
       showMenu: !this.state.showMenu,
-      menuStyle: this.state.showMenu ? { right: "100vw" } : { right: "0vw" },
     });
     if (!this.state.showMenu) {
-      this.pTag1.classList.add("animate__slideInLeft");
-      this.pTag2.classList.add("animate__slideInLeft");
-      this.pTag3.classList.add("animate__slideInLeft");
-      this.pTag4.classList.add("animate__slideInLeft");
-      this.pTag5.classList.add("animate__slideInLeft");
+      this.links.classList.add("open");
+      this.pTag1.classList.add("open");
+      this.pTag2.classList.add("open");
+      this.pTag3.classList.add("open");
+      this.pTag4.classList.add("open");
+      this.pTag5.classList.add("open");
     } else {
-      this.pTag1.classList.remove("animate__slideInLeft");
-      this.pTag2.classList.remove("animate__slideInLeft");
-      this.pTag3.classList.remove("animate__slideInLeft");
-      this.pTag4.classList.remove("animate__slideInLeft");
-      this.pTag5.classList.remove("animate__slideInLeft");
+      this.links.classList.remove("open");
+      this.pTag1.classList.remove("open");
+      this.pTag2.classList.remove("open");
+      this.pTag3.classList.remove("open");
+      this.pTag4.classList.remove("open");
+      this.pTag5.classList.remove("open");
     }
   };
 
   closeMenu = () => {
-    this.pTag1.classList.remove("animate__slideInLeft");
-    this.pTag2.classList.remove("animate__slideInLeft");
-    this.pTag3.classList.remove("animate__slideInLeft");
-    this.pTag4.classList.remove("animate__slideInLeft");
-    this.pTag5.classList.remove("animate__slideInLeft");
     this.setState({
       showMenu: false,
-      menuStyle: { right: "100vw" },
     });
   };
   render() {
-    // console.log(this.state.slideIn, this.state.menuStyle);
     return (
-      <div id="menu">
+      <div className="menu">
         <div onClick={this.handleMenu} className="menu-btn">
           {this.state.showMenu ? (
             <img src="/images/refuse black.png" alt="" />
@@ -50,20 +43,20 @@ class Menu extends Component {
           )}
         </div>
 
-        <div style={this.state.menuStyle} className="menu-wrapper">
+        <div className="menu-wrapper" ref={(div) => (this.links = div)}>
           <div className="links-wrapper">
             <Link to="/wusic/musicians" onClick={this.closeMenu}>
-              <p className="animate__animated" ref={(p) => (this.pTag1 = p)}>
-                " HELP, I NEED SOMEBODY! "
+              <p ref={(p) => (this.pTag1 = p)}>
+                "HELP, I NEED SOMEBODY!"
               </p>
             </Link>
             <Link to="/wusic/projects" onClick={this.closeMenu}>
-              <p className="animate__animated p2" ref={(p) => (this.pTag2 = p)}>
-                " ALL YOU NEED IS MAKING MUSIC "
+              <p ref={(p) => (this.pTag2 = p)}>
+                "ALL YOU NEED IS MAKING MUSIC"
               </p>
             </Link>
             <Link to="/wusic/dashboard" onClick={this.closeMenu}>
-              <p className="animate__animated p3" ref={(p) => (this.pTag3 = p)}>
+              <p ref={(p) => (this.pTag3 = p)}>
                 DASHBOARD
               </p>
             </Link>
@@ -71,12 +64,12 @@ class Menu extends Component {
               to={`/wusic/musicians/${this.props.user._id}`}
               onClick={this.closeMenu}
             >
-              <p className="animate__animated p4" ref={(p) => (this.pTag4 = p)}>
+              <p ref={(p) => (this.pTag4 = p)}>
                 PROFILE
               </p>
             </Link>
             <Link to="/wusic/about" onClick={this.closeMenu}>
-              <p className="animate__animated p5" ref={(p) => (this.pTag5 = p)}>
+              <p ref={(p) => (this.pTag5 = p)}>
                 ABOUT
               </p>
             </Link>
@@ -90,8 +83,8 @@ class Menu extends Component {
 
           <div className="contacts-wrapper">
             <img src="/images/logo-wusic.svg" alt="" />
-            <p>EMAIL: hello@wusic.com</p>
-            <div className="contact-logos">
+            <p>hello@wusic.com</p>
+            <div className="icons">
               <img src="/images/facebook.png" alt="" onClick={this.closeMenu} />
               <img
                 src="/images/instagram.png"

@@ -35,7 +35,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div id="dashboard">
+      <div className="dashboard">
         <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
         <div className="ongoing-wrapper">
           <h3>YOUR ONGOING PROJECTS</h3>
