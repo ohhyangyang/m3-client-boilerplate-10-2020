@@ -1,0 +1,321 @@
+.ongoing-projects {
+  padding-top: 130px;
+  width: 80vw;
+ 
+  .project-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    
+    flex-wrap: wrap;
+   
+
+
+    &__item {
+      border: 1px solid black;
+      margin: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 18rem;
+      padding: 10px 0;
+      border-radius: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 4rem;
+
+      &:hover {
+        background-color: #d7dadc;
+      }
+      .title {
+        width: 13rem;
+        margin-top: 10px;
+        height: 3rem;
+        margin-bottom: 10px;
+
+        p {
+          font-size: 1rem;
+          text-align: center;
+          margin-bottom: 10px;
+          font-weight: 300;
+        }
+      }
+
+      .black-border {
+        border: 0.5px solid gray;
+        position: relative;
+
+        .img-container {
+          width: 14rem;
+          height: 15rem;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+
+          img {
+            width: 14rem;
+            height: 15rem;
+          }
+        }
+
+        .edit-btn {
+          position: absolute;
+          right: 12px;
+          top: 10px;
+
+          a {
+            text-decoration: none;
+
+            p {
+              color: white;
+              margin-bottom: 5px;
+              font-weight: 500;
+              text-align: right;
+              cursor: pointer;
+            }
+          }
+        }
+
+        .participants-container {
+          width: 14rem;
+          background-color: white;
+          height: 70px;
+          padding-top: 10px;
+          padding-left: 5px;
+          display: flex;
+          flex-direction: row;
+          .round-img {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+
+            img {
+              height: 50px;
+              width: 50px;
+            }
+          }
+        }
+      }
+
+      .requests-container {
+        width: 14rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+
+        .request-shown,
+        .request-hidden {
+          width: 14rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 0;
+          .round-img {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+
+            img {
+              height: 50px;
+              width: 50px;
+            }
+          }
+
+          .info {
+            .name {
+              font-size: 12px;
+              margin-bottom: 5px;
+            }
+            .type {
+              font-size: 12px;
+              font-weight: 300;
+              margin-bottom: 0;
+            }
+          }
+
+          .confirm {
+            width: 20px;
+            cursor: pointer;
+            margin-left: 5px;
+          }
+        }
+
+        .expand-logo {
+          border: 1px black solid;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 10px;
+          cursor: pointer;
+
+          img {
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-lgl {
+  .ongoing-projects {
+    padding-top: 80px;
+    width: 100vw;
+    
+
+    h3 {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    .project-cards{
+        padding-left: 20px;
+    
+    }
+  }
+}
+@include media-lgp {
+  .ongoing-projects {
+    // padding-top: 80px;
+    width: 100vw;
+
+    h3 {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+  }
+}
+
+@include media-md{
+    .ongoing-projects{
+        .project-cards {
+            margin-left: 50px;
+        }
+    }
+}
+
+@include media-sm {
+  .ongoing-projects {
+    padding-top: 60px;
+
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      margin-right: 0px;
+      margin-left: 0px;
+      padding-right: 20px;
+    }
+
+    .project-cards {
+        
+
+      display: block;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      width: auto;
+
+      &__for-scroll {
+        display: inline-block;
+
+        .project-cards__item {
+          padding-bottom: 10px;
+
+          .title {
+            margin-top: 5px;
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+@include media-xs {
+  .ongoing-projects {
+    h3 {
+      font-size: 1.8rem;
+      padding-right: 20px;
+      margin-bottom: 10px;
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+
+    .project-cards {
+      &__for-scroll {
+        .project-cards__item {
+          width: 14rem;
+          padding-bottom: 0;
+          margin-bottom: 2rem;
+
+          .title {
+            height: 2.5rem;
+            p {
+              font-size: 0.9rem;
+            }
+          }
+
+          .black-border {
+            .img-container {
+              width: 11rem;
+              height: 12rem;
+              img {
+                width: 11rem;
+                height: 12rem;
+              }
+            }
+          }
+
+          .participants-container {
+            width: 11rem;
+            height: 55px;
+            .round-img {
+              width: 40px;
+              height: 40px;
+
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+
+          .requests-container {
+            width: 11rem;
+
+            .request-shown,
+            .request-hidden {
+              width: 11rem;
+
+              .round-img {
+                width: 40px;
+                height: 40px;
+
+                img {
+                  width: 40px;
+                  height: 40px;
+                }
+              }
+            }
+            .info {
+              display: none;
+            }
+            .confirm {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

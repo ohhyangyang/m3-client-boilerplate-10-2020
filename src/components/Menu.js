@@ -6,11 +6,12 @@ class Menu extends Component {
   state = {
     showMenu: false,
   };
-  handleMenu = () => {
+  toggleMenu = () => {
     this.setState({
       showMenu: !this.state.showMenu,
     });
     if (!this.state.showMenu) {
+      this.menuBtn.classList.add("open");
       this.links.classList.add("open");
       this.pTag1.classList.add("open");
       this.pTag2.classList.add("open");
@@ -18,6 +19,7 @@ class Menu extends Component {
       this.pTag4.classList.add("open");
       this.pTag5.classList.add("open");
     } else {
+      this.menuBtn.classList.remove("open");
       this.links.classList.remove("open");
       this.pTag1.classList.remove("open");
       this.pTag2.classList.remove("open");
@@ -31,11 +33,18 @@ class Menu extends Component {
     this.setState({
       showMenu: false,
     });
+    this.menuBtn.classList.remove("open");
+    this.links.classList.remove("open");
+    this.pTag1.classList.remove("open");
+    this.pTag2.classList.remove("open");
+    this.pTag3.classList.remove("open");
+    this.pTag4.classList.remove("open");
+    this.pTag5.classList.remove("open");
   };
   render() {
     return (
       <div className="menu">
-        <div onClick={this.handleMenu} className="menu-btn">
+        <div onClick={this.toggleMenu} className="menu-btn" ref={(btn) => (this.menuBtn = btn)}>
           {this.state.showMenu ? (
             <img src="/images/refuse black.png" alt="" />
           ) : (
@@ -46,9 +55,7 @@ class Menu extends Component {
         <div className="menu-wrapper" ref={(div) => (this.links = div)}>
           <div className="links-wrapper">
             <Link to="/wusic/musicians" onClick={this.closeMenu}>
-              <p ref={(p) => (this.pTag1 = p)}>
-                "HELP, I NEED SOMEBODY!"
-              </p>
+              <p ref={(p) => (this.pTag1 = p)}>"HELP, I NEED SOMEBODY!"</p>
             </Link>
             <Link to="/wusic/projects" onClick={this.closeMenu}>
               <p ref={(p) => (this.pTag2 = p)}>
@@ -56,22 +63,16 @@ class Menu extends Component {
               </p>
             </Link>
             <Link to="/wusic/dashboard" onClick={this.closeMenu}>
-              <p ref={(p) => (this.pTag3 = p)}>
-                DASHBOARD
-              </p>
+              <p ref={(p) => (this.pTag3 = p)}>DASHBOARD</p>
             </Link>
             <Link
               to={`/wusic/musicians/${this.props.user._id}`}
               onClick={this.closeMenu}
             >
-              <p ref={(p) => (this.pTag4 = p)}>
-                PROFILE
-              </p>
+              <p ref={(p) => (this.pTag4 = p)}>PROFILE</p>
             </Link>
             <Link to="/wusic/about" onClick={this.closeMenu}>
-              <p ref={(p) => (this.pTag5 = p)}>
-                ABOUT
-              </p>
+              <p ref={(p) => (this.pTag5 = p)}>ABOUT</p>
             </Link>
           </div>
 

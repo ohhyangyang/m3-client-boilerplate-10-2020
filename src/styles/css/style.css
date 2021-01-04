@@ -286,7 +286,7 @@
   animation-delay: 50ms;
 }
 #menu .menu-wrapper .p3 {
-  animation-delay: 10ms;
+  animation-delay: 100ms;
 }
 #menu .menu-wrapper .p4 {
   animation-delay: 150ms;
@@ -380,6 +380,7 @@
 
 #card-wrapper .cover {
   width: 14rem;
+  
 }
 #card-wrapper .cover-wrapper {
   width: 14rem;

@@ -1,5 +1,199 @@
-.dashboard{
-    img{
-        width: 100px;
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+  .wusic-logo {
+  }
+
+  h3 {
+    font-size: 4rem;
+    text-align: right;
+    border-bottom: 1px solid black;
+    margin-bottom: 50px;
+  }
+
+  @import "ongoingProjects";
+
+  .joined-projects {
+    margin-top: 150px;
+    width: 80vw;
+
+    .project-cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+
+        img {
+          height: 20rem;
+          margin: 10px;
+        }
+
+        p {
+          font-size: 1rem;
+          font-weight: 300;
+        }
+      }
     }
+  }
+
+  .liked-artists {
+    margin-top: 150px;
+    width: 80vw;
+    margin-bottom: 100px;
+
+    .artist-cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      
+
+      .artist {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+
+        img {
+          height: 20rem;
+          margin: 10px;
+        }
+
+        p {
+          font-size: 1rem;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+@include media-lgl {
+  .dashboard {
+    .joined-projects {
+      width: 100vw;
+      margin-top: 50px;
+
+      h3 {
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+    }
+
+    .liked-artists {
+      width: 100vw;
+      margin-top: 50px;
+
+      h3 {
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+@include media-lgp {
+  .dashboard {
+    .joined-projects {
+      width: 100vw;
+      margin-top: 50px;
+
+      h3 {
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+    }
+
+    .liked-artists {
+      width: 100vw;
+      margin-top: 50px;
+
+      h3 {
+        margin-right: 20px;
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+@include media-sm {
+  .dashboard {
+    padding-top: 30px;
+    .wusic-logo {
+      width: 100px;
+    }
+
+    .joined-projects {
+      margin-top: 0px;
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        margin-right: 0px;
+        margin-left: 0px;
+        padding-right: 20px;
+      }
+      .project-cards {
+        display: block;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        width: auto;
+
+        .for-scroll {
+          display: inline-block;
+
+          img{
+              height: 15rem;
+          }
+
+          
+        }
+      }
+    }
+
+    .liked-artists{
+        margin-top: 80px;
+        margin-bottom: 80px;
+      h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        margin-right: 0px;
+        margin-left: 0px;
+        padding-right: 20px;
+      }
+      .artist-cards {
+        display: block;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+        width: auto;
+
+        .for-scroll {
+          display: inline-block;
+
+          img{
+            height: 15rem;
+        }
+
+          
+        }
+      }
+    }
+  }
+}
+@include media-xs {
+  .dashboard {
+    padding-top: 20px;
+    .wusic-logo {
+      width: 80px;
+    }
+  }
 }

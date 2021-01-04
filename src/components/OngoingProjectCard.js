@@ -49,50 +49,43 @@ export default class OngoingProjectCard extends Component {
       });
     }
   };
-  // deleteProject = (projectId) => {
-  //   apiService
-  //     .deleteProject(projectId)
-  //     .then(() => {
-  //       this.props.updateDashboardInfo();
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+
   render() {
     // console.log(this.props.project);
     return (
-      <div id="card-wrapper">
-      <div className="cover-title">
-            <p>{this.props.project.title}</p>
-          </div>
+      <div className="project-cards__for-scroll">
+      <div className="project-cards__item">
+        <div className="title">
+          <p>{this.props.project.title}</p>
+        </div>
         <div className="black-border">
-          
-      
-          <div className="cover-container">
-            
-            <div className="cover-wrapper">
-              {this.props.project.coverURL?<img className="cover" src={this.props.project.coverURL} alt="" />:<img className="cover" src="https://res.cloudinary.com/domkvddv0/image/upload/v1608194313/m3-wusic/default_user_image_iqfeza.jpg" alt="" />}
-            </div>
+          <div className="img-container">
+            {this.props.project.coverURL ? (
+              <img className="img" src={this.props.project.coverURL} alt="" />
+            ) : (
+              <img
+                className="img"
+                src="https://res.cloudinary.com/domkvddv0/image/upload/v1608194313/m3-wusic/default_user_image_iqfeza.jpg"
+                alt=""
+              />
+            )}
+          </div>
 
-            <div className="edit-delete-wrapper">
-              <Link to={`/wusic/edit-project/${this.props.project._id}`}>
-                <p>EDIT</p>
-              </Link>
-              {/* <p onClick={() => this.deleteProject(this.props.project._id)}>
+          <div className="edit-btn">
+            <Link to={`/wusic/edit-project/${this.props.project._id}`}>
+              <p>EDIT</p>
+            </Link>
+            {/* <p onClick={() => this.deleteProject(this.props.project._id)}>
                 DELETE
               </p> */}
-            </div>
           </div>
 
-          <div className="participants-wrapper">
+          <div className="participants-container">
             {/* {console.log(this.props.project.participants)} */}
             {this.props.project.participants.map((participant) => {
-              
               return (
-                <div key={participant._id} className="circle">
+                <div key={participant._id} className="round-img">
                   <img
-                    className="request"
                     key={participant._id}
                     src={participant.profileURL}
                     alt=""
@@ -106,17 +99,18 @@ export default class OngoingProjectCard extends Component {
         <div className="requests-container">
           {this.props.project.requests.slice(0, 2).map((request) => {
             return (
-              <div className="requests-wrapper" key={request._id}>
-                <div className="circle">
-                  <img className="request" src={request.profileURL} alt="" />
+              <div className="request-shown" key={request._id}>
+                <div className="round-img">
+                  <img src={request.profileURL} alt="" />
                 </div>
 
-                <div>
+                <div className="info">
                   <p className="name">{request.username}</p>
                   <p className="type">
                     {this.changeToString(request.artistType)}
                   </p>
                 </div>
+                <div>
                 <img
                   className="confirm"
                   src="/images/accept white.png"
@@ -133,6 +127,7 @@ export default class OngoingProjectCard extends Component {
                     this.handleRejection(this.props.project._id, request._id)
                   }
                 />
+                </div>
               </div>
             );
           })}
@@ -141,21 +136,24 @@ export default class OngoingProjectCard extends Component {
             ? null
             : this.props.project.requests.slice(2).map((request) => {
                 return (
-                  <div className="requests-wrapper" key={request._id}>
-                    <div className="circle">
+                  <div className="request-hidden" key={request._id}>
+                    <div className="round-img">
                       <img
-                        className="request"
+                        
                         src={request.profileURL}
                         alt=""
                       />
                     </div>
 
-                    <div>
+                    <div className="info">
                       <p className="name">{request.username}</p>
                       <p className="type">
                         {this.changeToString(request.artistType)}
                       </p>
                     </div>
+
+                    <div>
+                      
                     <img
                       className="confirm"
                       src="/images/accept white.png"
@@ -178,15 +176,17 @@ export default class OngoingProjectCard extends Component {
                         )
                       }
                     />
+                    </div>
                   </div>
                 );
               })}
 
           {this.props.project.requests.length > 2 ? (
-            <div className="expand-logo-wrapper" onClick={this.handleExpand}>
-              <img className="expand-logo" src={this.state.image} alt="" />
+            <div className="expand-logo" onClick={this.handleExpand}>
+              <img src={this.state.image} alt="" />
             </div>
           ) : null}
+        </div>
         </div>
       </div>
     );

@@ -8,10 +8,13 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    position: fixed;
+    position: absolute;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: 50px;   
     cursor: pointer;
+    &.open{
+        position: fixed;
+    }
 
     p {
       font-size: 1rem;
@@ -24,6 +27,7 @@
   }
 
   &-wrapper {
+
     border-right: gray 1px solid;
     position: fixed;
     top: 0;
@@ -31,6 +35,7 @@
     background-color: white;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     z-index: 999;
     visibility: hidden;
     transform: translateX(-100vw);
@@ -187,15 +192,12 @@
       .logout-wrapper {
         margin-left: 17.5%;
         p {
-            font-size: 1.5rem;
-           
-          }
-    
-          button {
-   
-            font-size: 1.5rem;
-       
-          }
+          font-size: 1.5rem;
+        }
+
+        button {
+          font-size: 1.5rem;
+        }
       }
 
       .contacts-wrapper {
@@ -217,134 +219,128 @@
   }
 }
 @include media-sm {
-    .menu {
-        &-btn {
-          width: 50px;
-          height: 50px;
-          margin-top: 30px;
-          margin-left: 30px;
-    
+  .menu {
+    &-btn {
+      width: 50px;
+      height: 50px;
+      margin-top: 20px;
+      margin-left: 20px;
+
+      p {
+        font-size: 0.5rem;
+      }
+      img {
+        width: 20px;
+      }
+    }
+
+    &-wrapper {
+      .links-wrapper {
+        padding-left: 12vw;
+        margin-top: 20vh;
+        width: 100vw;
+        // background-color: rosybrown;
+
+        a {
+          font-size: 2rem;
+
           p {
-            font-size: 0.5rem;
-          }
-          img {
-            width: 20px;
-          }
-        }
-    
-        &-wrapper {
-          .links-wrapper {
-            padding-left: 12vw;
-            margin-top: 20vh;
-            width: 100vw;
-            // background-color: rosybrown;
-    
-            a {
-              font-size: 2rem;
-    
-              p {
-                margin-bottom: 1rem;
-              }
-            }
-          }
-    
-          .logout-wrapper {
-            margin-left: 12vw;
-    
-            p {
-              font-size: 1.2rem;
-              margin-bottom: 0.5rem;
-            }
-    
-            button {
-              padding: 8px 12px;
-              font-size: 0.8rem;
-            }
-          }
-    
-          .contacts-wrapper {
-      
-            right: 5vw;
-            bottom: 10vh;
-            & > img {
-              margin-bottom: 20px;
-              width: 80px;
-            }
-            & > p {
-              margin-bottom: 1rem;
-            }
-            .icons {
-              img {
-                width: 25px;
-                margin-left: 30px;
-              }
-            }
+            margin-bottom: 1rem;
           }
         }
       }
+
+      .logout-wrapper {
+        margin-left: 12vw;
+
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        button {
+          padding: 8px 12px;
+          font-size: 0.8rem;
+        }
+      }
+
+      .contacts-wrapper {
+        right: 5vw;
+        bottom: 10vh;
+        & > img {
+          margin-bottom: 20px;
+          width: 80px;
+        }
+        & > p {
+          margin-bottom: 1rem;
+        }
+        .icons {
+          img {
+            width: 25px;
+            margin-left: 30px;
+          }
+        }
+      }
+    }
+  }
 }
 @include media-xs {
-    .menu {
-        &-btn {
-          width: 40px;
-          height: 40px;
-          margin-top: 30px;
-          margin-left: 30px;
-    
-          
-          img {
-            width: 20px;
-          }
-        }
-    
-        &-wrapper {
-          .links-wrapper {
-            padding-left: 14vw;
-            margin-top: 15vh;
+  .menu {
+    &-btn {
+      width: 45px;
+      height: 45px;
+      margin-top: 20px;
+      margin-left: 20px;
 
-            width: 100vw;
-            // background-color: rosybrown;
-    
-            a {
-              font-size: 1.6rem;
-    
-             
-            }
-          }
-    
-          .logout-wrapper {
-            margin-left: 14vw;
-    
-            p {
-              font-size: 1.2rem;
-              margin-bottom: 0.5rem;
-            }
-    
-            button {
-              padding: 8px 12px;
-              font-size: 0.8rem;
-            }
-          }
-    
-          .contacts-wrapper {
-      
-            right: 5vw;
-            bottom: 8vh;
-            & > img {
-              margin-bottom: 20px;
-              width: 60px;
-              
-            }
-            & > p {
-              margin-bottom: 1rem;
-            }
-            .icons {
-              img {
-                width: 25px;
-                margin-left: 30px;
-              }
-            }
+      img {
+        width: 20px;
+      }
+    }
+
+    &-wrapper {
+      .links-wrapper {
+        padding-left: 14vw;
+        margin-top: 15vh;
+
+        width: 100vw;
+        // background-color: rosybrown;
+
+        a {
+          font-size: 1.6rem;
+        }
+      }
+
+      .logout-wrapper {
+        margin-left: 14vw;
+
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        button {
+          padding: 8px 12px;
+          font-size: 0.8rem;
+        }
+      }
+
+      .contacts-wrapper {
+        right: 5vw;
+        bottom: 8vh;
+        & > img {
+          margin-bottom: 20px;
+          width: 60px;
+        }
+        & > p {
+          margin-bottom: 1rem;
+        }
+        .icons {
+          img {
+            width: 25px;
+            margin-left: 30px;
           }
         }
       }
+    }
+  }
 }
