@@ -17,32 +17,32 @@ class MusicianList extends Component {
     apiService.getAllUsers().then((response) => {
       //   console.log(response.data)
 
-      const allMusicians=response.data.filter((musician)=>{
-        return musician._id!==this.props.user._id
-      })
+      const allMusicians = response.data.filter((musician) => {
+        return musician._id !== this.props.user._id;
+      });
       this.setState({
         allMusicians: allMusicians,
-        filteredMusicians: allMusicians
+        filteredMusicians: allMusicians,
       });
     });
   };
 
   filterMusician = (event) => {
     event.preventDefault();
-  
+
     const filtered = this.state.allMusicians.filter((musician) => {
       if (this.state.artistType === "All" && this.state.instrument !== "All") {
-        const instrumentArr=musician.instrument.map((instrument)=>{
-          return instrument.value
-        })
+        const instrumentArr = musician.instrument.map((instrument) => {
+          return instrument.value;
+        });
         return instrumentArr.includes(this.state.instrument);
       } else if (
         this.state.artistType !== "All" &&
         this.state.instrument === "All"
       ) {
-        const typeArr=musician.artistType.map((type)=>{
-          return type.value
-        })
+        const typeArr = musician.artistType.map((type) => {
+          return type.value;
+        });
         return typeArr.includes(this.state.artistType);
       } else if (
         this.state.artistType === "All" &&
@@ -53,12 +53,12 @@ class MusicianList extends Component {
         this.state.artistType !== "All" &&
         this.state.instrument !== "All"
       ) {
-        const typeArr=musician.artistType.map((type)=>{
-          return type.value
-        })
-        const instrumentArr=musician.instrument.map((instrument)=>{
-          return instrument.value
-        })
+        const typeArr = musician.artistType.map((type) => {
+          return type.value;
+        });
+        const instrumentArr = musician.instrument.map((instrument) => {
+          return instrument.value;
+        });
         return (
           typeArr.includes(this.state.artistType) &&
           instrumentArr.includes(this.state.instrument)
@@ -67,7 +67,7 @@ class MusicianList extends Component {
     });
     console.log(filtered);
     this.setState({
-      filteredMusicians: filtered
+      filteredMusicians: filtered,
     });
   };
 
@@ -80,18 +80,32 @@ class MusicianList extends Component {
     });
   };
 
+  toggleFilters = () => {
+    this.form.classList.toggle("open");
+    this.toggleBtn.classList.toggle("open");
+  };
+
   render() {
     return (
-      <div id="musician-list">
-        <div className="left">
+      <div className="musician-list">
+        <div className="nav">
           <h2>HELP, I NEED SOMEBODY!</h2>
 
-          <form onSubmit={this.filterMusician}>
+          <div className="toggle-filters">
+            <p>FILTERS</p>
+            <div ref={(btn) => (this.toggleBtn = btn)} onClick={this.toggleFilters}>
+              <img src="/images/plus.svg" alt="" />
+            </div>
+          </div>
+          <form
+            onSubmit={this.filterMusician}
+            ref={(form) => (this.form = form)}
+          >
             <div>
-              {/* {console.log(this.state.instrument)} */}
+ 
               <p>ARTIST TYPE</p>
               <select
-                className="form-select"
+                className=""
                 name="artistType"
                 onChange={this.handleFilter}
               >
@@ -110,7 +124,7 @@ class MusicianList extends Component {
             <div>
               <p>INSTRUMENT</p>
               <select
-                className="form-select"
+                className=""
                 name="instrument"
                 onChange={this.handleFilter}
               >
@@ -133,15 +147,19 @@ class MusicianList extends Component {
           </form>
         </div>
 
-        <div className="right">
-          {this.state.filteredMusicians.map((musician) => {
-            
-            return (
-              <Link key={musician._id} to={`/wusic/musicians/${musician._id}`}>
-                <img  src={musician.profileURL} alt="" />
-              </Link>
-            );
-          })}
+        <div className="main-container">
+          <div className="main">
+            {this.state.filteredMusicians.map((musician) => {
+              return (
+                <Link
+                  key={musician._id}
+                  to={`/wusic/musicians/${musician._id}`}
+                >
+                  <img src={musician.profileURL} alt="" />
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     );

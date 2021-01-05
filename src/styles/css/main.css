@@ -197,7 +197,7 @@
   flex-wrap: wrap;
 }
 .dashboard .ongoing-projects .project-cards__item {
-  border: 1px solid black;
+  border: 1px solid gray;
   margin: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -210,12 +210,14 @@
 }
 .dashboard .ongoing-projects .project-cards__item:hover {
   background-color: #d7dadc;
+  border: 1px solid black;
 }
 .dashboard .ongoing-projects .project-cards__item .title {
   width: 13rem;
   margin-top: 10px;
   height: 3rem;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 .dashboard .ongoing-projects .project-cards__item .title p {
   font-size: 1rem;
@@ -375,6 +377,7 @@
     padding-right: 20px;
   }
   .dashboard .ongoing-projects .project-cards {
+    margin-left: 20px;
     display: block;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -741,7 +744,7 @@
 .menu-btn {
   width: 100px;
   height: 100px;
-  border: black 1px solid;
+  border: gray 1px solid;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -751,6 +754,9 @@
   margin-top: 50px;
   margin-left: 50px;
   cursor: pointer;
+}
+.menu-btn:hover {
+  border: black 1px solid;
 }
 .menu-btn.open {
   position: fixed;
@@ -1019,6 +1025,464 @@
   .menu-wrapper .contacts-wrapper .icons img {
     width: 25px;
     margin-left: 30px;
+  }
+}
+.musician-list .nav {
+  padding-top: 200px;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  background-color: #f4eadd;
+  height: 100vh;
+}
+.musician-list .nav h2 {
+  font-size: 4rem;
+  /* border-bottom: 1px solid black; */
+  margin-bottom: 50px;
+  width: 28vw;
+}
+.musician-list .nav .toggle-filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 26vw;
+  margin-bottom: 20px;
+}
+.musician-list .nav .toggle-filters p {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+.musician-list .nav .toggle-filters div {
+  width: 40px;
+  height: 40px;
+  border: 1px lightgray solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+.musician-list .nav .toggle-filters div.open {
+  border: 1px black solid;
+}
+.musician-list .nav .toggle-filters div:hover {
+  border: 1px black solid;
+  transition: 0.5s;
+}
+.musician-list .nav .toggle-filters div img {
+  width: 10px;
+}
+.musician-list .nav form {
+  height: 2px;
+  background-color: #efe0ce;
+  overflow: hidden;
+  width: 28vw;
+  padding: 0 20px;
+  transition: height 500ms;
+  border-radius: 10px;
+}
+.musician-list .nav form.open {
+  height: 250px;
+}
+.musician-list .nav form select {
+  width: 100%;
+  height: 2rem;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: #efe0ce;
+  appearance: none;
+  font-weight: 300;
+  padding-left: 10px;
+}
+.musician-list .nav form select:hover {
+  background-color: #e8d2b6;
+}
+.musician-list .nav form select:focus {
+  background-color: #e8d2b6;
+}
+.musician-list .nav form p {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.musician-list .nav form button {
+  background-color: #f4eadd;
+  border: 1px solid gray;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 2rem;
+  font-weight: 500;
+}
+.musician-list .nav form button:hover {
+  background-color: #e2cdba;
+  color: white;
+}
+.musician-list .main-container {
+  width: 60vw;
+  float: right;
+  height: 100vh;
+  overflow: auto;
+}
+.musician-list .main-container .main {
+  background-color: #f4eadd;
+}
+.musician-list .main-container .main img {
+  height: 20vw;
+  width: 20vw;
+  filter: grayscale(80%);
+}
+.musician-list .main-container .main img:hover {
+  height: 20vw;
+  width: 20vw;
+  filter: grayscale(0%);
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .musician-list .nav {
+    padding-top: 150px;
+  }
+  .musician-list .nav h2 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .musician-list .nav {
+    padding-top: 90px;
+    width: 100vw;
+    height: auto;
+  }
+  .musician-list .nav h2 {
+    font-size: 2.3rem;
+    width: 50vw;
+    margin-bottom: 30px;
+  }
+  .musician-list .nav .toggle-filters {
+    width: 50vw;
+  }
+  .musician-list .nav form {
+    width: 60vw;
+    margin-bottom: 20px;
+  }
+  .musician-list .main-container {
+    width: 100vw;
+    float: left;
+  }
+  .musician-list .main-container .main img {
+    width: 33.33333vw;
+    height: 33.33333vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .musician-list .nav h2 {
+    font-size: 1.8rem;
+  }
+  .musician-list .nav .toggle-filters {
+    margin-bottom: 10px;
+  }
+  .musician-list .nav .toggle-filters p {
+    font-size: 0.8rem;
+  }
+  .musician-list .nav .toggle-filters div {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .musician-list .nav .toggle-filters div img {
+    width: 8px;
+  }
+  .musician-list .nav form.open {
+    height: 180px;
+  }
+  .musician-list .nav form select {
+    font-size: 0.8rem;
+  }
+  .musician-list .nav form p {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .musician-list .nav form button {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .musician-list .nav h2 {
+    width: 80vw;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .musician-list .nav .toggle-filters {
+    width: 80vw;
+  }
+  .musician-list .nav form {
+    width: 80vw;
+  }
+  .musician-list .main {
+    width: 100vw;
+  }
+  .musician-list .main img {
+    width: 95vw !important;
+    height: 95vw !important;
+    margin: 2.5vw 2.5vw 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .musician-list .nav h2 {
+    width: 95vw;
+    font-size: 1.2rem;
+  }
+  .musician-list .nav .toggle-filters {
+    width: 95vw;
+  }
+  .musician-list .nav .toggle-filters p {
+    font-size: 0.6rem;
+  }
+  .musician-list .nav form {
+    width: 95vw;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 0.6rem;
+  }
+  .musician-list .nav form button {
+    padding: 5px 15px;
+    border-radius: 5px;
+  }
+}
+.project-list .nav {
+  padding-top: 200px;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  background-color: #f4eadd;
+  height: 100vh;
+}
+.project-list .nav h2 {
+  font-size: 4rem;
+  /* border-bottom: 1px solid black; */
+  margin-bottom: 50px;
+  width: 28vw;
+}
+.project-list .nav .toggle-filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 26vw;
+  margin-bottom: 20px;
+}
+.project-list .nav .toggle-filters p {
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+.project-list .nav .toggle-filters div {
+  width: 40px;
+  height: 40px;
+  border: 1px lightgray solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+.project-list .nav .toggle-filters div.open {
+  border: 1px black solid;
+}
+.project-list .nav .toggle-filters div:hover {
+  border: 1px black solid;
+  transition: 0.5s;
+}
+.project-list .nav .toggle-filters div img {
+  width: 10px;
+}
+.project-list .nav form {
+  height: 2px;
+  background-color: #efe0ce;
+  overflow: hidden;
+  width: 28vw;
+  padding: 0 20px;
+  transition: height 500ms;
+  border-radius: 10px;
+}
+.project-list .nav form.open {
+  height: 250px;
+}
+.project-list .nav form select {
+  width: 100%;
+  height: 2rem;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid gray;
+  background-color: #efe0ce;
+  appearance: none;
+  font-weight: 300;
+  padding-left: 10px;
+}
+.project-list .nav form select:hover {
+  background-color: #e8d2b6;
+}
+.project-list .nav form select:focus {
+  background-color: #e8d2b6;
+}
+.project-list .nav form p {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.project-list .nav form button {
+  background-color: #f4eadd;
+  border: 1px solid gray;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 2rem;
+  font-weight: 500;
+}
+.project-list .nav form button:hover {
+  background-color: #e2cdba;
+  color: white;
+}
+.project-list .main-container {
+  width: 60vw;
+  float: right;
+  height: 100vh;
+  overflow: auto;
+}
+.project-list .main-container .main {
+  background-color: #f4eadd;
+}
+.project-list .main-container .main img {
+  height: 20vw;
+  width: 20vw;
+  filter: grayscale(80%);
+}
+.project-list .main-container .main img:hover {
+  height: 20vw;
+  width: 20vw;
+  filter: grayscale(0%);
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .project-list .nav {
+    padding-top: 150px;
+  }
+  .project-list .nav h2 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .project-list .nav {
+    padding-top: 90px;
+    width: 100vw;
+    height: auto;
+  }
+  .project-list .nav h2 {
+    font-size: 2.3rem;
+    width: 50vw;
+    margin-bottom: 30px;
+  }
+  .project-list .nav .toggle-filters {
+    width: 50vw;
+  }
+  .project-list .nav form {
+    width: 60vw;
+    margin-bottom: 20px;
+  }
+  .project-list .main-container {
+    width: 100vw;
+    float: left;
+  }
+  .project-list .main-container .main img {
+    width: 33.33333vw;
+    height: 33.33333vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .project-list .nav h2 {
+    font-size: 1.8rem;
+  }
+  .project-list .nav .toggle-filters {
+    margin-bottom: 10px;
+  }
+  .project-list .nav .toggle-filters p {
+    font-size: 0.8rem;
+  }
+  .project-list .nav .toggle-filters div {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .project-list .nav .toggle-filters div img {
+    width: 8px;
+  }
+  .project-list .nav form.open {
+    height: 180px;
+  }
+  .project-list .nav form select {
+    font-size: 0.8rem;
+  }
+  .project-list .nav form p {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  .project-list .nav form button {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .project-list .nav h2 {
+    width: 80vw;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .project-list .nav .toggle-filters {
+    width: 80vw;
+  }
+  .project-list .nav form {
+    width: 80vw;
+  }
+  .project-list .main {
+    width: 100vw;
+  }
+  .project-list .main img {
+    width: 95vw !important;
+    height: 95vw !important;
+    margin: 2.5vw 2.5vw 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .project-list .nav h2 {
+    width: 95vw;
+    font-size: 1.2rem;
+  }
+  .project-list .nav .toggle-filters {
+    width: 95vw;
+  }
+  .project-list .nav .toggle-filters p {
+    font-size: 0.6rem;
+  }
+  .project-list .nav form {
+    width: 95vw;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 0.6rem;
+  }
+  .project-list .nav form button {
+    padding: 5px 15px;
+    border-radius: 5px;
   }
 }
 .signup {

@@ -65,12 +65,25 @@ class ProjectList extends Component {
     })
   }
 
+  toggleFilters = () => {
+    this.form.classList.toggle("open");
+    this.toggleBtn.classList.toggle("open");
+  };
+
   render() {
     return (
-      <div id="project-list">
-        <div className="left">
+      <div className="project-list">
+        <div className="nav">
           <h2>ALL YOU NEED IS MAKING MUSIC</h2>
-          <form onSubmit={this.filterProjects}>
+          <div className="toggle-filters">
+            <p>FILTERS</p>
+            <div ref={(btn) => (this.toggleBtn = btn)} onClick={this.toggleFilters}>
+              <img src="/images/plus.svg" alt="" />
+            </div>
+          </div>
+
+
+          <form onSubmit={this.filterProjects} ref={(form) => (this.form = form)}>
             <div>
               <p>PROJECT TYPE</p>
               <select
@@ -120,14 +133,24 @@ class ProjectList extends Component {
           </form>
         </div>
 
-        <div className="right">
+        <div className="main-container">
+        <div className="main">
           {this.state.filteredProjects.map((project) => {
             return (
               <Link key={project._id} to={`/wusic/projects/${project._id}`}>
-                <img src={project.coverURL} alt="" />
+                {project.coverURL
+                 ? (<img src={project.coverURL} alt="" />)
+                 :(<img
+                className="img"
+                src="https://res.cloudinary.com/domkvddv0/image/upload/v1608194313/m3-wusic/default_user_image_iqfeza.jpg"
+                alt=""
+              />)
+                 }
+                
               </Link>
             );
           })}
+        </div>
         </div>
       </div>
     );

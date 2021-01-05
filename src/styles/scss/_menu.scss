@@ -2,7 +2,7 @@
   &-btn {
     width: 100px;
     height: 100px;
-    border: black 1px solid;
+    border: gray 1px solid;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -12,6 +12,10 @@
     margin-top: 50px;
     margin-left: 50px;   
     cursor: pointer;
+
+    &:hover{
+      border: black 1px solid;
+    }
     &.open{
         position: fixed;
     }

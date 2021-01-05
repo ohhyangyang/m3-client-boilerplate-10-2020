@@ -12,7 +12,7 @@
 
 
     &__item {
-      border: 1px solid black;
+      border: 1px solid gray;
       margin: 10px 20px;
       display: flex;
       flex-direction: column;
@@ -25,12 +25,14 @@
 
       &:hover {
         background-color: #d7dadc;
+        border: 1px solid black;
       }
       .title {
         width: 13rem;
         margin-top: 10px;
         height: 3rem;
         margin-bottom: 10px;
+        text-transform: uppercase;
 
         p {
           font-size: 1rem;
@@ -219,7 +221,7 @@
 
     .project-cards {
         
-
+      margin-left: 20px;
       display: block;
       overflow-x: scroll;
       overflow-y: hidden;
@@ -260,6 +262,7 @@
 
           .title {
             height: 2.5rem;
+            
             p {
               font-size: 0.9rem;
             }
