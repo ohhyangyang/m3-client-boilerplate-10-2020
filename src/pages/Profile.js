@@ -78,9 +78,9 @@ class Profile extends Component {
 
   render() {
     return (
-      <div id="profile">
+      <div className="profile">
         <div className="left">
-          <div className="player-wrapper">
+          <div id="music-player" className="player-container">
             <p>MUSIC PLAYER</p>
 
             {this.state.userInfo.spotifyLink ? (
@@ -91,13 +91,13 @@ class Profile extends Component {
                 theme="black"
               />
             ) : (
-              <p className="emptybox">The player box is still empty</p>
+              <p className="empty">The player box is still empty</p>
             )}
           </div>
         </div>
 
         <div className="middle">
-          <div className="middle-width">
+          <div className="middle-info1">
             <h2>{this.state.userInfo.username}</h2>
             <div>
               <p className="type">
@@ -108,16 +108,18 @@ class Profile extends Component {
               <p className="text">{this.state.userInfo.location}</p>
             </div>
 
-            <div className="little-logos">
+            <div className="logos">
               {this.state.userId === this.state.visitorId ? null : this.state
                   .beingLiked ? (
                 <img
+                  
                   onClick={this.handleDisLike}
                   src="/images/like.png"
                   alt=""
                 />
               ) : (
                 <img
+                className="unlike"
                   onClick={this.handleLike}
                   src="/images/unlike.png"
                   alt=""
@@ -136,12 +138,12 @@ class Profile extends Component {
             </div>
           </div>
 
-          <div className="middle-width black-border">
+          <div className="middle-info2">
             <p className="text">GENRE :</p>
             <p className="text">{this.state.userInfo.genre}</p>
           </div>
 
-          <div className="middle-width black-border">
+          <div className="middle-info2">
             <p className="text">INSTRUMENT :</p>
             <p className="text">
               {this.state.userInfo.instrument
@@ -150,20 +152,20 @@ class Profile extends Component {
             </p>
           </div>
 
-          <div className="middle-width black-border">
+          <div className="middle-info2">
             <p className="text">CONTACT :</p>
             <p className="text">{this.state.userInfo.email}</p>
           </div>
 
           {this.state.userId === this.state.visitorId ? (
-            <div className="edit-create middle-width">
+            <div className="edit-create">
               <Link to="/wusic/edit-profile">
                 <p>EDIT PROFILE</p>
-                <img src="/images/arrow-right.png" alt="" />
+                <img src="/images/edit-profile.svg" alt="" />
               </Link>
               <Link to="/wusic/add-project">
                 <p>CREATE PROJECT</p>
-                <img src="/images/arrow-right.png" alt="" />
+                <img src="/images/add-project.svg" alt="" />
               </Link>
             </div>
           ) : null}
@@ -172,11 +174,18 @@ class Profile extends Component {
         <div className="right">
           <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
           <img
-            className="profilePic"
+            className="profile-pic"
             src={this.state.userInfo.profileURL}
             alt=""
           />
-          <p>{this.state.userInfo.description}</p>
+
+          <div className="nav">
+            <a href="#about">ABOUT</a>
+            <a href="#music-player">MUSIC PLAYER</a>
+          </div>
+
+
+          <p id="about">{this.state.userInfo.description}</p>
         </div>
       </div>
     );

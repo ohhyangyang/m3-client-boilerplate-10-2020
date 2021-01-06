@@ -1256,6 +1256,319 @@
     border-radius: 5px;
   }
 }
+.profile {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.profile .left {
+  width: 30vw;
+  border-right: white 2px solid;
+}
+.profile .left .player-container {
+  margin-top: 25vh;
+  margin-left: 20%;
+}
+.profile .left .player-container p {
+  padding-bottom: 40px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  z-index: 100;
+}
+.profile .left .player-container iframe:hover {
+  box-shadow: -30px -30px #e2cdba;
+}
+.profile .left .player-container .empty {
+  width: 80%;
+  font-size: 1rem;
+  padding-top: 100px;
+  padding-left: 5px;
+  border: white 2px solid;
+  height: 40vh;
+  width: 28vh;
+}
+.profile .middle {
+  width: 30vw;
+  padding-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile .middle .middle-info1 {
+  width: 75%;
+}
+.profile .middle .middle-info1 h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: "Hammersmith One";
+}
+.profile .middle .middle-info1 .type {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.profile .middle .middle-info1 .text {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.profile .middle .middle-info1 .logos {
+  margin-bottom: 2rem;
+}
+.profile .middle .middle-info1 .logos img {
+  margin: 0 5px;
+  width: 30px;
+  cursor: pointer;
+}
+.profile .middle .middle-info2 {
+  width: 75%;
+  border: solid 1px black;
+  margin: 10px 0;
+  padding: 10px 10px;
+}
+.profile .middle .middle-info2:hover {
+  background-color: #e2cdba;
+}
+.profile .middle .middle-info2 p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+.profile .middle .edit-create {
+  margin-top: 20px;
+  width: 75%;
+}
+.profile .middle .edit-create a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  width: 60%;
+}
+.profile .middle .edit-create a:hover {
+  border-bottom: 1px solid black;
+}
+.profile .middle .edit-create a img {
+  width: 50px;
+  margin-left: 20px;
+}
+.profile .right {
+  width: 40vw;
+  border-left: white 2px solid;
+  padding-top: 15vh;
+}
+.profile .right .wusic-logo {
+  margin-bottom: 30px;
+  position: absolute;
+  right: 80px;
+  top: 50px;
+}
+.profile .right .profile-pic {
+  max-width: 95%;
+  max-height: 60%;
+}
+.profile .right .nav {
+  visibility: hidden;
+  height: 0;
+}
+.profile .right p {
+  margin-top: 40px;
+  width: 90%;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .profile .left .player-container {
+    width: 90%;
+    margin-left: 12%;
+  }
+  .profile .left .player-container p {
+    font-size: 1rem;
+  }
+  .profile .left .player-container iframe {
+    width: 90%;
+  }
+  .profile .middle .middle-info1 {
+    width: 90%;
+  }
+  .profile .middle .middle-info1 h2 {
+    font-size: 2.5rem;
+  }
+  .profile .middle .middle-info1 .type {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .profile .middle .middle-info1 .text {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .profile .middle .middle-info1 .logos {
+    margin-bottom: 1rem;
+  }
+  .profile .middle .middle-info2 {
+    width: 90%;
+  }
+  .profile .middle .middle-info2 p {
+    font-size: 0.8rem;
+  }
+  .profile .middle .edit-create {
+    width: 90%;
+  }
+  .profile .middle .edit-create a {
+    font-size: 1rem;
+  }
+  .profile .middle .edit-create a img {
+    width: 30px;
+  }
+  .profile .right .profile-pic {
+    max-width: 80%;
+    max-height: 40%;
+  }
+  .profile .right p {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+}
+@media screen and (orientation: portrait) {
+  .profile {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .profile .right {
+    width: 100vw;
+    border-left: none;
+    padding-top: 15vh;
+  }
+  .profile .right .profile-pic {
+    max-width: 100%;
+    max-height: 70%;
+    width: 100vw;
+    height: 75vh;
+    filter: brightness(80%);
+  }
+  .profile .right .nav {
+    visibility: visible;
+    width: 100vw;
+    padding: 20px 50px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px #e2cdba solid;
+  }
+  .profile .right .nav a {
+    text-decoration: none;
+    color: gray;
+    font-size: 1.5rem;
+  }
+  .profile .right > p {
+    color: gray;
+    width: 100vw;
+    margin-top: 0;
+    padding: 80px 10vw;
+    background: linear-gradient(to top, #f2e5d5, #eedeca);
+    line-height: 1.8rem;
+  }
+  .profile .right > p::before {
+    content: "ABOUT";
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #4d4d4d;
+  }
+  .profile .middle {
+    position: absolute;
+    z-index: 100;
+    top: 10vh;
+    width: 100vw;
+  }
+  .profile .middle .middle-info1 {
+    color: white;
+    width: 90vw;
+  }
+  .profile .middle .middle-info1 .logos .unlike {
+    filter: invert(1);
+  }
+  .profile .middle .middle-info2 {
+    color: white;
+    border: none;
+    width: 90vw;
+    padding: 0;
+  }
+  .profile .middle .middle-info2:hover {
+    background-color: transparent;
+  }
+  .profile .middle .edit-create {
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    padding-right: 5vw;
+    width: 90vw;
+  }
+  .profile .middle .edit-create a {
+    color: white;
+    font-size: 0.8rem;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .profile .middle .edit-create a:hover {
+    border-bottom: none;
+  }
+  .profile .middle .edit-create a img {
+    filter: invert(1);
+    width: 30px;
+  }
+  .profile .left {
+    width: 100vw;
+    border: none;
+    background-color: #f2e5d5;
+  }
+  .profile .left .player-container {
+    margin-left: 0;
+    margin-top: 10vh;
+    padding: 80px 10vw;
+    padding-bottom: 200px;
+  }
+  .profile .left .player-container iframe {
+    width: 100%;
+    height: 50vh;
+  }
+  .profile .left .player-container iframe:hover {
+    box-shadow: none;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 1024px) {
+  .profile .right > p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .profile .middle .middle-info1 h2 {
+    font-size: 6rem;
+  }
+  .profile .middle .middle-info1 .type {
+    font-size: 2.5rem;
+  }
+  .profile .middle .middle-info1 .text {
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+  .profile .middle .middle-info1 .logos img {
+    width: 40px;
+  }
+  .profile .middle .middle-info2 p {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .profile .middle .edit-create a p {
+    font-size: 1.1rem;
+  }
+}
 .project-list .nav {
   padding-top: 200px;
   width: 40vw;
