@@ -271,6 +271,11 @@
           text-decoration: none;
           color: gray;
           font-size: 1.5rem;
+
+          &.active{
+            color: black;
+            
+          }
         }
       }
 

@@ -64,7 +64,7 @@ class ProjectDetail extends Component {
   };
   render() {
     return (
-      <div id="project-detail">
+      <div className="project-detail">
         <div className="left">
           <img src={this.state.projectInfo.coverURL} alt="" />
           {this.state.requested ? (
@@ -77,7 +77,7 @@ class ProjectDetail extends Component {
         <div className="right">
         <img className="wusic-logo" src="/images/logo-wusic.svg" alt=""/>
           <h3>{this.state.projectInfo.title}</h3>
-          <p className="whiteLine">
+          <p className="created-time">
             CREATED TIME:{" "}
             {this.state.projectInfo.created_at
               ? this.formatter.format(
@@ -86,8 +86,8 @@ class ProjectDetail extends Component {
               : null}
           </p>
 
-          <div className="detail">
-            <div className="user">
+          <div className="info">
+            <div className="artist">
               <p className="name">
                 {this.state.projectInfo.owner &&
                   this.state.projectInfo.owner.username}
@@ -96,7 +96,7 @@ class ProjectDetail extends Component {
                 <Link
                   to={`/wusic/musicians/${this.state.projectInfo.owner._id}`}
                 >
-                  <img  className="profilePic" src={this.state.projectInfo.owner.profileURL} alt="" />
+                  <img  className="profile-pic" src={this.state.projectInfo.owner.profileURL} alt="" />
                 </Link>
               )}
             </div>
@@ -114,7 +114,7 @@ class ProjectDetail extends Component {
             <p className="text">{this.state.projectInfo.description}</p>
           </div>
 
-          <div className="back">
+          <div className="go-back">
             <Link to="/wusic/projects">
               <img src="/images/whitearrow-left.png" alt="" />
               <span>BACK</span>

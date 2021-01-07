@@ -1468,6 +1468,9 @@
     color: gray;
     font-size: 1.5rem;
   }
+  .profile .right .nav a.active {
+    color: black;
+  }
   .profile .right > p {
     color: gray;
     width: 100vw;
@@ -1696,6 +1699,148 @@
   }
   .profile .left .player-container iframe {
     height: 450px;
+  }
+}
+.project-detail {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.project-detail .left {
+  width: 40vw;
+  border-right: 2px white solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.project-detail .left img {
+  margin-top: 15vh;
+  width: 40vw;
+  height: 70vh;
+}
+.project-detail .left .request-btn {
+  border: 1px black solid;
+  padding: 10px 20px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.project-detail .left .request-btn:hover {
+  background-color: #e2cdba;
+  color: white;
+}
+.project-detail .right {
+  width: 60vw;
+  padding-top: 100px;
+  /* padding-left: 20px; */
+  padding-right: 50px;
+}
+.project-detail .right .wusic-logo {
+  margin-bottom: 30px;
+  position: absolute;
+  right: 80px;
+  top: 50px;
+}
+.project-detail .right h3 {
+  font-size: 3rem;
+  font-weight: 400;
+  padding-left: 20px;
+}
+.project-detail .right .created-time {
+  border-bottom: 2px white solid;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  font-weight: 300;
+}
+.project-detail .right .info {
+  margin-left: 10vw;
+  width: 70%;
+}
+.project-detail .right .info .artist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+}
+.project-detail .right .info .artist .name {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.project-detail .right .info .artist .profile-pic {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.project-detail .right .info .text {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.project-detail .right .go-back {
+  border: white 2px solid;
+  height: 120px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  right: 15vw;
+  cursor: pointer;
+}
+.project-detail .right .go-back:hover {
+  background-color: #e2cdba;
+}
+.project-detail .right .go-back a {
+  text-decoration: none;
+  color: white;
+}
+.project-detail .right .go-back a img {
+  width: 30px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .project-detail .right .wusic-logo {
+    right: 50px;
+    width: 100px;
+  }
+  .project-detail .right h3 {
+    font-size: 2.5rem;
+  }
+  .project-detail .right .info {
+    margin-left: 8vw;
+  }
+  .project-detail .right .info .artist .name {
+    font-size: 1.2rem;
+  }
+  .project-detail .right .info .artist .profile-pic {
+    width: 60px;
+    height: 60px;
+  }
+  .project-detail .right .info .text {
+    font-size: 1rem;
+  }
+  .project-detail .right .go-back {
+    height: 100px;
+    width: 100px;
+    right: 10vw;
+  }
+}
+@media screen and (orientation: portrait) {
+  .project-detail {
+    flex-direction: column;
+    height: auto;
+  }
+  .project-detail .left {
+    width: 100vw;
+    height: 100vh;
+  }
+  .project-detail .left img {
+    width: 100vw;
+    height: 80vh;
+  }
+  .project-detail .right {
+    width: 100vw;
+    height: 100vh;
   }
 }
 .project-list .nav {

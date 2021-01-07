@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { withAuth } from "./../context/auth-context";
 import apiService from "./../lib/api-service";
-import { Link } from "react-router-dom";
+import { Link,withRouter } from "react-router-dom";
 import SpotifyPlayer from "react-spotify-player";
+
 
 class Profile extends Component {
   state = {
@@ -28,6 +29,8 @@ class Profile extends Component {
       visitorId: visitorId,
     });
   }
+
+  
 
   getUserInfo = () => {
     apiService
@@ -180,8 +183,8 @@ class Profile extends Component {
           />
 
           <div className="nav">
-            <a href="#about">ABOUT</a>
-            <a href="#music-player">MUSIC PLAYER</a>
+            <a href="#about"  ref={a=>(this.navAbout=a)}>ABOUT</a>
+            <a href="#music-player" ref={a=>(this.navPlayer=a)}>MUSIC PLAYER</a>
           </div>
 
 
@@ -192,4 +195,4 @@ class Profile extends Component {
   }
 }
 
-export default withAuth(Profile);
+export default withRouter(withAuth(Profile));

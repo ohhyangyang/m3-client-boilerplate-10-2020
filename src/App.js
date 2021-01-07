@@ -3,13 +3,12 @@ import './styles/css/main.css'
 import { Switch } from 'react-router-dom';
 
 
+
+
 import Landing from './pages/Landing';
-
 import Private from './pages/Private';
-
 import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
-
 import Dashboard from './pages/Dashboard'
 import Profile from './pages/Profile'
 import MusicianList from './pages/MusicianList.js'
