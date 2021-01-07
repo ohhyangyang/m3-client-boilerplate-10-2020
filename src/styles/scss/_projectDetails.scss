@@ -114,62 +114,315 @@
   .project-detail {
     .right {
       .wusic-logo {
-       
         right: 50px;
         width: 100px;
-        
       }
 
       h3 {
-          font-size: 2.5rem;
+        font-size: 2.5rem;
       }
 
-      .info{
+      .info {
         margin-left: 8vw;
 
-        .artist{
-            .name{
-                font-size: 1.2rem;
-            }
-            .profile-pic{
-                width: 60px;
-                height: 60px;
-            }
+        .artist {
+          .name {
+            font-size: 1.2rem;
+          }
+          .profile-pic {
+            width: 60px;
+            height: 60px;
+          }
         }
 
-        .text{
-            font-size: 1rem;
+        .text {
+          font-size: 1rem;
         }
       }
 
-      .go-back{
-          height: 100px;
-          width: 100px;
-          right: 10vw;
-
+      .go-back {
+        height: 100px;
+        width: 100px;
+        right: 10vw;
       }
     }
   }
 }
 
-@include media-portrait{
+@include media-portrait {
+  .project-detail {
+    flex-direction: column;
+    height: auto;
+
+    .left {
+      width: 100vw;
+      height: 100vh;
+
+      img {
+        width: 100vw;
+        height: 85vh;
+      }
+
+      .request-btn {
+        margin-top: -15vh;
+        background-color: rgba($secondary-color, 0.9);
+        padding: 15px 30px;
+        border-radius: 10px;
+        color: white;
+        border: 1px white solid;
+      
+        font-weight: 300;
+
+        &:hover {
+          background-color: rgba($secondary-color, 0.9);
+        }
+
+        &:active{
+            background-color: rgba($secondary-color, 1);
+            
+        }
+      }
+    }
+
+    .right {
+      width: 100vw;
+      height: 100vh;
+      padding-right: 0;
+      padding-top: 15vh;
+      padding-left: 8vw;
+      padding-right: 8vw;
+
+  
+      .info{
+          width: auto;
+          margin:50px;
+      
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px){
     .project-detail{
-        flex-direction: column;
-        height: auto;
-
         .left{
-            width: 100vw;
-            height: 100vh;
-
-            img{
-                width: 100vw;
-                height: 80vh;
+            .request-btn{
+                font-size: 1.5rem;
             }
         }
 
         .right{
-            width: 100vw;
-            height: 100vh;
+            h3{
+                font-size: 4rem;
+            }
+
+            .created-time{
+                font-size: 1.5rem;
+                margin-top: 30px;
+            }
+
+            .info{
+                margin-top: 100px;
+
+                .artist{
+                    .name{
+                        font-size: 1.5rem;
+                    }
+
+                    .profile-pic{
+                        width: 100px;
+                       height: 100px;
+                    }
+                }
+
+                .text{
+                    font-size: 1.5rem;
+                }
+            }
+
+            .go-back{
+                a{
+
+                    img{
+                        width: 35px;
+                    }
+
+                    span{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
         }
     }
+  }
+
+  @media screen and (max-width: 768px){
+    .project-detail{
+        .left{
+            .request-btn{
+                font-size: 1.2rem;
+            }
+        }
+
+        .right{
+            h3{
+                font-size: 3rem;
+            }
+
+            .created-time{
+                font-size: 1.2rem;
+                margin-top: 30px;
+            }
+
+            .info{
+                margin-top: 50px;
+
+                .artist{
+                    .name{
+                        font-size: 1.5rem;
+                    }
+
+                    .profile-pic{
+                        width: 70px;
+                       height: 70px;
+                    }
+                }
+
+                .text{
+                    font-size: 1.2rem;
+                }
+            }
+
+            .go-back{
+                width: 100px;
+                height: 100px;
+                a{
+
+                    img{
+                        width: 30px;
+                    }
+
+                    span{
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width: 480px){
+    .project-detail{
+        .left{
+            .request-btn{
+                font-size: 0.8rem;
+            }
+        }
+
+        .right{
+            padding-top: 10vh;
+            padding-left: 5vw;
+            padding-right: 5vw;
+            height: auto;
+            h3{
+                font-size: 2rem;
+            }
+
+            .created-time{
+                font-size: 1rem;
+                margin-top: 30px;
+            }
+
+            .info{
+                
+                margin: 20px;
+
+                .artist{
+                    .name{
+                        font-size: 1.2rem;
+                    }
+
+                    .profile-pic{
+                        width: 50px;
+                       height: 50px;
+                    }
+                }
+
+                .text{
+                    font-size: 1rem;
+                }
+            }
+
+            .go-back{
+                position: relative;
+                right: 0;
+                width: 70px;
+                height: 70px;
+                left: 60vw;
+                margin-bottom: 50px;
+                a{
+
+                    img{
+                        width: 20px;
+                    }
+
+                    span{
+                        font-size: 0.6rem;
+                    }
+                }
+            }
+        }
+    }
+  }
+
+  @media screen and (max-width: 320px){
+    .project-detail{
+        .left{
+            .request-btn{
+                font-size: 0.8rem;
+                padding:10px 20px;
+            }
+        }
+
+        .right{
+            .wusic-logo{
+                right: 20px;
+                top: 30px;
+                width: 70px;
+            }
+            h3{
+                font-size: 1.5rem;
+            }
+
+            .created-time{
+                font-size: 0.8rem;
+           
+            }
+
+            .info{
+                margin: 10px;
+            
+
+                .artist{
+                    .name{
+                        font-size: 1rem;
+                    }
+
+                    .profile-pic{
+                        width: 40px;
+                       height: 40px;
+                    }
+                }
+
+                .text{
+                    font-size: 0.8rem;
+                }
+            }
+
+            .go-back{
+                
+                margin-bottom: 30px;
+                
+            }
+        }
+    }
+  }
 }

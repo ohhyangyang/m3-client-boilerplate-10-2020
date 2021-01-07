@@ -1836,11 +1836,178 @@
   }
   .project-detail .left img {
     width: 100vw;
-    height: 80vh;
+    height: 85vh;
+  }
+  .project-detail .left .request-btn {
+    margin-top: -15vh;
+    background-color: rgba(226, 205, 186, 0.9);
+    padding: 15px 30px;
+    border-radius: 10px;
+    color: white;
+    border: 1px white solid;
+    font-weight: 300;
+  }
+  .project-detail .left .request-btn:hover {
+    background-color: rgba(226, 205, 186, 0.9);
+  }
+  .project-detail .left .request-btn:active {
+    background-color: #e2cdba;
   }
   .project-detail .right {
     width: 100vw;
     height: 100vh;
+    padding-right: 0;
+    padding-top: 15vh;
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+  .project-detail .right .info {
+    width: auto;
+    margin: 50px;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 1024px) {
+  .project-detail .left .request-btn {
+    font-size: 1.5rem;
+  }
+  .project-detail .right h3 {
+    font-size: 4rem;
+  }
+  .project-detail .right .created-time {
+    font-size: 1.5rem;
+    margin-top: 30px;
+  }
+  .project-detail .right .info {
+    margin-top: 100px;
+  }
+  .project-detail .right .info .artist .name {
+    font-size: 1.5rem;
+  }
+  .project-detail .right .info .artist .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+  .project-detail .right .info .text {
+    font-size: 1.5rem;
+  }
+  .project-detail .right .go-back a img {
+    width: 35px;
+  }
+  .project-detail .right .go-back a span {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  .project-detail .left .request-btn {
+    font-size: 1.2rem;
+  }
+  .project-detail .right h3 {
+    font-size: 3rem;
+  }
+  .project-detail .right .created-time {
+    font-size: 1.2rem;
+    margin-top: 30px;
+  }
+  .project-detail .right .info {
+    margin-top: 50px;
+  }
+  .project-detail .right .info .artist .name {
+    font-size: 1.5rem;
+  }
+  .project-detail .right .info .artist .profile-pic {
+    width: 70px;
+    height: 70px;
+  }
+  .project-detail .right .info .text {
+    font-size: 1.2rem;
+  }
+  .project-detail .right .go-back {
+    width: 100px;
+    height: 100px;
+  }
+  .project-detail .right .go-back a img {
+    width: 30px;
+  }
+  .project-detail .right .go-back a span {
+    font-size: 1rem;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 480px) {
+  .project-detail .left .request-btn {
+    font-size: 0.8rem;
+  }
+  .project-detail .right {
+    padding-top: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    height: auto;
+  }
+  .project-detail .right h3 {
+    font-size: 2rem;
+  }
+  .project-detail .right .created-time {
+    font-size: 1rem;
+    margin-top: 30px;
+  }
+  .project-detail .right .info {
+    margin: 20px;
+  }
+  .project-detail .right .info .artist .name {
+    font-size: 1.2rem;
+  }
+  .project-detail .right .info .artist .profile-pic {
+    width: 50px;
+    height: 50px;
+  }
+  .project-detail .right .info .text {
+    font-size: 1rem;
+  }
+  .project-detail .right .go-back {
+    position: relative;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    left: 60vw;
+    margin-bottom: 50px;
+  }
+  .project-detail .right .go-back a img {
+    width: 20px;
+  }
+  .project-detail .right .go-back a span {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 320px) {
+  .project-detail .left .request-btn {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+  }
+  .project-detail .right .wusic-logo {
+    right: 20px;
+    top: 30px;
+    width: 70px;
+  }
+  .project-detail .right h3 {
+    font-size: 1.5rem;
+  }
+  .project-detail .right .created-time {
+    font-size: 0.8rem;
+  }
+  .project-detail .right .info {
+    margin: 10px;
+  }
+  .project-detail .right .info .artist .name {
+    font-size: 1rem;
+  }
+  .project-detail .right .info .artist .profile-pic {
+    width: 40px;
+    height: 40px;
+  }
+  .project-detail .right .info .text {
+    font-size: 0.8rem;
+  }
+  .project-detail .right .go-back {
+    margin-bottom: 30px;
   }
 }
 .project-list .nav {
