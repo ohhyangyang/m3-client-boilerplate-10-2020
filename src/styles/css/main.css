@@ -1346,13 +1346,13 @@
   color: black;
   font-size: 1.1rem;
   margin-bottom: 20px;
-  width: 60%;
+  width: 50%;
 }
 .profile .middle .edit-create a:hover {
   border-bottom: 1px solid black;
 }
 .profile .middle .edit-create a img {
-  width: 50px;
+  width: 30px;
   margin-left: 20px;
 }
 .profile .right {
@@ -1459,6 +1459,9 @@
     flex-direction: row;
     justify-content: space-around;
     border-bottom: 1px #e2cdba solid;
+    position: sticky;
+    top: 0;
+    background-color: #f4eadd;
   }
   .profile .right .nav a {
     text-decoration: none;
@@ -1508,13 +1511,13 @@
     z-index: 100;
     right: 0;
     padding-right: 5vw;
-    width: 90vw;
+    width: auto;
   }
   .profile .middle .edit-create a {
     color: white;
     font-size: 0.8rem;
     justify-content: flex-end;
-    width: 100%;
+    width: auto;
     margin-bottom: 10px;
   }
   .profile .middle .edit-create a:hover {
@@ -1533,7 +1536,6 @@
     margin-left: 0;
     margin-top: 10vh;
     padding: 80px 10vw;
-    padding-bottom: 200px;
   }
   .profile .left .player-container iframe {
     width: 100%;
@@ -1562,11 +1564,138 @@
     width: 40px;
   }
   .profile .middle .middle-info2 p {
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 300;
   }
   .profile .middle .edit-create a p {
     font-size: 1.1rem;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 768px) {
+  .profile .middle .middle-info1 h2 {
+    font-size: 4rem;
+  }
+  .profile .middle .middle-info1 .type {
+    font-size: 2rem;
+  }
+  .profile .middle .middle-info1 .text {
+    font-size: 1.1rem;
+  }
+  .profile .middle .middle-info1 .logos {
+    margin-bottom: 5px;
+  }
+  .profile .middle .middle-info2 p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+  .profile .middle .edit-create a p {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 480px) {
+  .profile .right .wusic-logo {
+    width: 100px;
+    right: 30px;
+    top: 30px;
+  }
+  .profile .right .nav {
+    padding: 10px 50px;
+  }
+  .profile .right .nav a {
+    font-size: 1rem;
+  }
+  .profile .right > p {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    padding: 50px 5vw;
+  }
+  .profile .right > p::before {
+    font-size: 1.2rem;
+  }
+  .profile .middle .middle-info1 h2 {
+    font-size: 3rem;
+  }
+  .profile .middle .middle-info1 .type {
+    font-size: 1.5rem;
+  }
+  .profile .middle .middle-info1 .text {
+    font-size: 1rem;
+  }
+  .profile .middle .middle-info1 .logos {
+    margin-bottom: 5px;
+  }
+  .profile .middle .middle-info1 .logos img {
+    width: 25px;
+  }
+  .profile .middle .middle-info2 p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+  }
+  .profile .middle .edit-create a p {
+    font-size: 0.8rem;
+  }
+  .profile .middle .edit-create a img {
+    width: 15px;
+  }
+  .profile .left .player-container {
+    width: 100%;
+    padding: 50px 5vw;
+    margin-top: 5vh;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 320px) {
+  .profile .right .wusic-logo {
+    width: 80px;
+  }
+  .profile .right .nav {
+    padding: 10px 30px;
+  }
+  .profile .right .nav a {
+    font-size: 0.8rem;
+  }
+  .profile .right > p {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    padding: 50px 5vw;
+  }
+  .profile .right > p::before {
+    font-size: 1.1rem;
+  }
+  .profile .middle .middle-info1 h2 {
+    font-size: 2.5rem;
+  }
+  .profile .middle .middle-info1 .type {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  .profile .middle .middle-info1 .text {
+    font-size: 0.8rem;
+  }
+  .profile .middle .middle-info1 .logos {
+    margin-bottom: 5px;
+  }
+  .profile .middle .middle-info1 .logos img {
+    width: 20px;
+  }
+  .profile .middle .middle-info2 {
+    margin: 5px 0;
+  }
+  .profile .middle .middle-info2 p {
+    margin-bottom: 2px;
+  }
+  .profile .middle .edit-create a p {
+    display: none;
+  }
+  .profile .middle .edit-create a img {
+    width: 15px;
+  }
+  .profile .left .player-container p {
+    font-size: 1.1rem;
+  }
+  .profile .left .player-container iframe {
+    height: 450px;
   }
 }
 .project-list .nav {
