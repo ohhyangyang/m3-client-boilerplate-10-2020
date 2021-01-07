@@ -190,7 +190,7 @@ class Profile extends Component {
 
           <p id="about">{this.state.userInfo.description}</p>
         </div>
-      </div>
+      </div> 
     );
   }
 }

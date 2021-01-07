@@ -181,32 +181,31 @@ class EditProject extends Component {
     this.setState({ lookingFor });
   };
 
-  closeProject=()=>{
+  closeProject = () => {
     apiService
       .closeOneProject(this.props.match.params.projectId)
-      .then((response)=>{
+      .then((response) => {
         // console.log(response.data)
         this.setState({
-          status:"close"
-        })
-      })
-  }
-  openProject=()=>{
+          status: "close",
+        });
+      });
+  };
+  openProject = () => {
     apiService
       .openOneProject(this.props.match.params.projectId)
-      .then((response)=>{
+      .then((response) => {
         // console.log(response.data)
         this.setState({
-          status:"open"
-        })
-      })
-    
-  }
-  
+          status: "open",
+        });
+      });
+  };
+
   render() {
     const { lookingFor } = this.state;
     return (
-      <div id="edit-project">
+      <div className="edit-project">
         <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
         <div className="left">
           <img src="/images/edit-project.svg" alt="" />
@@ -221,10 +220,10 @@ class EditProject extends Component {
 
         <form onSubmit={this.handleFormSubmit}>
           <div className="middle">
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
-                className="form-control bar"
+                className="form-control"
                 name="title"
                 value={this.state.title}
                 onChange={this.handleText}
@@ -233,10 +232,10 @@ class EditProject extends Component {
               <label htmlFor="floatingInput">TITLE</label>
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
-                className="form-control bar"
+                className="form-control"
                 name="location"
                 value={this.state.location}
                 onChange={this.handleText}
@@ -245,10 +244,10 @@ class EditProject extends Component {
               <label htmlFor="floatingInput">LOCATION</label>
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
-                className="form-control bar"
+                className="form-control"
                 name="fee"
                 value={this.state.fee}
                 onChange={this.handleText}
@@ -257,18 +256,8 @@ class EditProject extends Component {
               <label htmlFor="floatingInput">FEE</label>
             </div>
 
-            <div>
-              <p className="label">LOOKING FOR</p>
-              <Select
-                value={lookingFor}
-                onChange={this.handleLookingForSelect}
-                options={this.state.lookingForOptions}
-                isMulti
-              />
-            </div>
-
-            <div>
-              <p className="label">TYPE</p>
+            <div className="input-radio">
+              <p>TYPE</p>
               <div className="form-check">
                 <input
                   className="form-check-input"
@@ -277,7 +266,7 @@ class EditProject extends Component {
                   name="type"
                   onChange={this.handleText}
                 />
-                Live
+                <p>Live</p>
               </div>
 
               <div className="form-check">
@@ -288,7 +277,7 @@ class EditProject extends Component {
                   name="type"
                   onChange={this.handleText}
                 />
-                Song production
+                <p>Song production</p>
               </div>
 
               <div className="form-check">
@@ -299,7 +288,7 @@ class EditProject extends Component {
                   name="type"
                   onChange={this.handleText}
                 />
-                Recording
+                <p>Recording</p>
               </div>
 
               <div className="form-check">
@@ -310,16 +299,25 @@ class EditProject extends Component {
                   name="type"
                   onChange={this.handleText}
                 />
-                Movies&TV
+                <p>Movies&TV</p>
               </div>
+            </div>
+            <div className="select">
+              <p>LOOKING FOR</p>
+              <Select
+                value={lookingFor}
+                onChange={this.handleLookingForSelect}
+                options={this.state.lookingForOptions}
+                isMulti
+              />
             </div>
           </div>
           <div className="right">
-            <div className="">
+            <div className="input-file">
               <label className="label">COVER</label>
               <input
                 type="file"
-                className="form-control bar"
+                className="form-control"
                 name="coverURL"
                 onChange={this.handleFileUpload}
                 placeholder="COVER"
@@ -329,11 +327,10 @@ class EditProject extends Component {
                 style={{ width: "100px" }}
                 src={this.state.coverURL && this.state.coverURL}
                 alt=""
-                className="profile-img"
               ></img>
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 textarea">
               <textarea
                 type="text"
                 className="form-control"
@@ -343,27 +340,24 @@ class EditProject extends Component {
                 onChange={this.handleText}
                 placeholder="DESCRIPTION"
               />
-              <label htmlFor="floatingInput">MORE INFO</label>
-
-             
-
-              <div className="open-confirmation">
-                <p>OPEN FOR SEARCING?</p>
-
-                {this.state.status === "open" ? (
-                  <div onClick={this.closeProject}>OPEN</div>
-                ) : (
-                  <div onClick={this.openProject}>CLOSE</div>
-                )}
-              </div>
-
-              <button className="update-btn">UPDATE</button>
+              <label htmlFor="floatingInput">DESCRIPTION</label>
             </div>
+            <div className="open-for-searching">
+              <p>OPEN FOR SEARCING?</p>
+
+              {this.state.status === "open" ? (
+                <div onClick={this.closeProject}>OPEN</div>
+              ) : (
+                <div onClick={this.openProject}>CLOSE</div>
+              )}
+            </div>
+
+            <button className="update-btn">UPDATE</button>
           </div>
         </form>
 
         {this.state.showConfirmation ? (
-          <div className="delete-wrapper">
+          <div className="delete-box-container">
             <div>
               <p>ARE YOU SURE YOU WANT TO DELETE THIS PROJECT?</p>
               <button onClick={this.handleDelete}>YES</button>

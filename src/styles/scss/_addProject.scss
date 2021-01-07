@@ -1,0 +1,162 @@
+.add-project {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+
+  .wusic-logo {
+    margin-bottom: 30px;
+    position: absolute;
+    right: 80px;
+    top: 50px;
+  }
+
+  .left {
+    width: 28vw;
+    padding-top: 300px;
+    padding-left: 100px;
+    border-right: white 2px solid;
+
+    img {
+      width: 80px;
+      opacity: 0.6;
+      margin-bottom: 20px;
+    }
+  }
+
+  form {
+    padding-top: 200px;
+    display: flex;
+    flex-direction: row;
+
+    .middle {
+      width: 37vw;
+      padding-right: 100px;
+      padding-left: 50px;
+      margin-top: 20px;
+
+      .input-text {
+        input {
+          border-radius: 30px;
+          width: 28vw;
+          padding-left: 20px;
+          background-color: $background-color;
+          border: gray 0.5px solid;
+
+          &:hover {
+            background-color: $secondary-color;
+          }
+        }
+
+        label {
+          padding-left: 20px;
+        }
+      }
+
+      .input-radio {
+        & > p {
+          padding-left: 20px;
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
+
+        & > div > p {
+          font-size: 1rem;
+          font-weight: 300;
+        }
+      }
+
+      .select {
+        & > p {
+          padding-left: 20px;
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
+
+        .css-2b097c-container {
+          width: 28vw;
+        }
+
+        .css-yk16xz-control {
+          border-radius: 30px;
+          height: 60px;
+          background-color: $background-color;
+          border: gray 0.5px solid;
+          padding-left: 10px;
+
+          &:hover {
+            background-color: $secondary-color;
+            border-radius: 30px;
+          }
+        }
+        .css-1pahdxg-control {
+          border-radius: 30px;
+          height: 60px;
+          background-color: $background-color;
+          border: gray 0.5px solid;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .right {
+      width: 35vw;
+      padding-right: 100px;
+
+      .input-file {
+        p {
+          padding-left: 20px;
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
+
+        input {
+          border-radius: 30px;
+          width: 28vw;
+          padding-left: 20px;
+          background-color: $background-color;
+          border: gray 0.5px solid;
+        }
+      }
+
+      .textarea {
+        textarea {
+          background-color: $background-color;
+          border: gray 0.5px solid;
+          margin-top: 30px;
+          height: 150px;
+          border-radius: 0;
+          width: 28vw;
+
+          &:hover {
+            background-color: $secondary-color;
+          }
+        }
+      }
+
+      button {
+        background-color: $background-color;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border: 1px solid black;
+        border-radius: 10px;
+        position: absolute;
+        right: 8vw;
+        margin-top: 60px;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+
+        &:active {
+          background-color: $highlight-color;
+        }
+      }
+
+      .errorMessage {
+        height: 2rem;
+        color: $highlight-color;
+        margin-top: 20px;
+      }
+    }
+  }
+}

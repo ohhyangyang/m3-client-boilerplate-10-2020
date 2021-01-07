@@ -174,6 +174,136 @@
     width: 30px;
   }
 }
+.add-project {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.add-project .wusic-logo {
+  margin-bottom: 30px;
+  position: absolute;
+  right: 80px;
+  top: 50px;
+}
+.add-project .left {
+  width: 28vw;
+  padding-top: 300px;
+  padding-left: 100px;
+  border-right: white 2px solid;
+}
+.add-project .left img {
+  width: 80px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+.add-project form {
+  padding-top: 200px;
+  display: flex;
+  flex-direction: row;
+}
+.add-project form .middle {
+  width: 37vw;
+  padding-right: 100px;
+  padding-left: 50px;
+  margin-top: 20px;
+}
+.add-project form .middle .input-text input {
+  border-radius: 30px;
+  width: 28vw;
+  padding-left: 20px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+}
+.add-project form .middle .input-text input:hover {
+  background-color: #e2cdba;
+}
+.add-project form .middle .input-text label {
+  padding-left: 20px;
+}
+.add-project form .middle .input-radio > p {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.add-project form .middle .input-radio > div > p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.add-project form .middle .select > p {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.add-project form .middle .select .css-2b097c-container {
+  width: 28vw;
+}
+.add-project form .middle .select .css-yk16xz-control {
+  border-radius: 30px;
+  height: 60px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  padding-left: 10px;
+}
+.add-project form .middle .select .css-yk16xz-control:hover {
+  background-color: #e2cdba;
+  border-radius: 30px;
+}
+.add-project form .middle .select .css-1pahdxg-control {
+  border-radius: 30px;
+  height: 60px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  padding-left: 10px;
+}
+.add-project form .right {
+  width: 35vw;
+  padding-right: 100px;
+}
+.add-project form .right .input-file p {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.add-project form .right .input-file input {
+  border-radius: 30px;
+  width: 28vw;
+  padding-left: 20px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+}
+.add-project form .right .textarea textarea {
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  margin-top: 30px;
+  height: 150px;
+  border-radius: 0;
+  width: 28vw;
+}
+.add-project form .right .textarea textarea:hover {
+  background-color: #e2cdba;
+}
+.add-project form .right button {
+  background-color: #f4eadd;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  right: 8vw;
+  margin-top: 60px;
+}
+.add-project form .right button:hover {
+  background-color: #e2cdba;
+}
+.add-project form .right button:active {
+  background-color: #e91c2f;
+}
+.add-project form .right .errorMessage {
+  height: 2rem;
+  color: #e91c2f;
+  margin-top: 20px;
+}
+
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -607,6 +737,394 @@
     width: 80px;
   }
 }
+.edit-profile {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.edit-profile .wusic-logo {
+  margin-bottom: 30px;
+  position: absolute;
+  right: 80px;
+  top: 50px;
+}
+.edit-profile .left {
+  width: 26vw;
+  padding-top: 300px;
+  padding-left: 100px;
+  border-right: white 2px solid;
+}
+.edit-profile .left img {
+  height: 10vh;
+}
+.edit-profile .left .delete-profile {
+  background-color: #f4eadd;
+  padding: 10px 0;
+  width: 150px;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 50px;
+  color: #ff0000;
+  font-weight: 300;
+  text-align: center;
+  cursor: pointer;
+}
+.edit-profile form {
+  padding-top: 200px;
+  display: flex;
+  flex-direction: row;
+}
+.edit-profile form .middle {
+  padding-left: 50px;
+  width: 37vw;
+  padding-right: 100px;
+}
+.edit-profile form .middle .space {
+  margin-top: 20px;
+}
+.edit-profile form .middle .input-text input {
+  border-radius: 30px;
+  width: 28vw;
+  padding-left: 20px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+}
+.edit-profile form .middle .input-text input:hover {
+  background-color: #e2cdba;
+}
+.edit-profile form .middle .select > p {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.edit-profile form .middle .select .css-2b097c-container {
+  width: 28vw;
+}
+.edit-profile form .middle .select .css-yk16xz-control {
+  border-radius: 30px;
+  height: 60px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  padding-left: 10px;
+}
+.edit-profile form .middle .select .css-yk16xz-control:hover {
+  background-color: #e2cdba;
+  border-radius: 30px;
+}
+.edit-profile form .middle .select .css-1pahdxg-control {
+  border-radius: 30px;
+  height: 60px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  padding-left: 10px;
+}
+.edit-profile form .right {
+  width: 37vw;
+  padding-right: 100px;
+}
+.edit-profile form .right .input-file label {
+  padding-left: 0px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.edit-profile form .right .input-file input {
+  border-radius: 30px;
+  width: 28vw;
+  padding-left: 20px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  margin-bottom: 10px;
+}
+.edit-profile form .right .input-file img {
+  margin-bottom: 10px;
+}
+.edit-profile form .right .input-text input {
+  border-radius: 30px;
+  width: 28vw;
+  padding-left: 20px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+}
+.edit-profile form .right .input-text input:hover {
+  background-color: #e2cdba;
+}
+.edit-profile form .right .input-text label {
+  padding-left: 20px;
+}
+.edit-profile form .right .textarea textarea {
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  margin-top: 30px;
+  height: 150px;
+  border-radius: 0;
+  width: 28vw;
+}
+.edit-profile form .right .textarea textarea:hover {
+  background-color: #e2cdba;
+}
+.edit-profile form .right button {
+  background-color: #f4eadd;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  right: 150px;
+  margin-top: 10px;
+}
+.edit-profile form .right button:hover {
+  background-color: #e2cdba;
+}
+.edit-profile form .right button:active {
+  background-color: #e91c2f;
+  color: white;
+}
+.edit-profile .delete-box-container {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: gray; */
+  position: absolute;
+  background-color: rgba(150, 150, 150, 0.4);
+}
+.edit-profile .delete-box-container div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: white;
+  width: 600px;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  border-radius: 20px;
+}
+.edit-profile .delete-box-container div p {
+  font-size: 1.2rem;
+}
+.edit-profile .delete-box-container div button {
+  background-color: white;
+  width: 50px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid black;
+}
+.edit-profile .delete-box-container div button:hover {
+  background-color: #e2cdba;
+}
+
+.edit-project {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.edit-project .wusic-logo {
+  margin-bottom: 30px;
+  position: absolute;
+  right: 80px;
+  top: 50px;
+}
+.edit-project .left {
+  width: 28vw;
+  padding-top: 300px;
+  padding-left: 100px;
+  border-right: white 2px solid;
+}
+.edit-project .left img {
+  width: 80px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+.edit-project .left button {
+  background-color: #f4eadd;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 50px;
+  color: #e91c2f;
+  font-weight: 300;
+}
+.edit-project .left button:active {
+  background-color: #e91c2f;
+  color: white;
+}
+.edit-project .left button:hover {
+  background-color: #e2cdba;
+}
+.edit-project form {
+  padding-top: 200px;
+  display: flex;
+  flex-direction: row;
+}
+.edit-project form .middle {
+  width: 37vw;
+  padding-right: 100px;
+  padding-left: 50px;
+  margin-top: 20px;
+}
+.edit-project form .middle .input-text input {
+  border-radius: 30px;
+  width: 28vw;
+  padding-left: 20px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+}
+.edit-project form .middle .input-text input:hover {
+  background-color: #e2cdba;
+}
+.edit-project form .middle .input-text label {
+  padding-left: 20px;
+}
+.edit-project form .middle .input-radio > p {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.edit-project form .middle .input-radio > div > p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.edit-project form .middle .select > p {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.edit-project form .middle .select .css-2b097c-container {
+  width: 28vw;
+}
+.edit-project form .middle .select .css-yk16xz-control {
+  border-radius: 30px;
+  height: 60px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  padding-left: 10px;
+}
+.edit-project form .middle .select .css-yk16xz-control:hover {
+  background-color: #e2cdba;
+  border-radius: 30px;
+}
+.edit-project form .middle .select .css-1pahdxg-control {
+  border-radius: 30px;
+  height: 60px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  padding-left: 10px;
+}
+.edit-project form .right {
+  width: 35vw;
+  padding-right: 100px;
+}
+.edit-project form .right .input-file label {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.edit-project form .right .input-file input {
+  border-radius: 30px;
+  width: 28vw;
+  padding-left: 20px;
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  margin-bottom: 10px;
+}
+.edit-project form .right .textarea textarea {
+  background-color: #f4eadd;
+  border: gray 0.5px solid;
+  margin-top: 30px;
+  height: 150px;
+  border-radius: 0;
+  width: 28vw;
+}
+.edit-project form .right .textarea textarea:hover {
+  background-color: #e2cdba;
+}
+.edit-project form .right .open-for-searching {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.edit-project form .right .open-for-searching div {
+  border: 1px black solid;
+  padding-bottom: 0;
+  padding: 7px 12px;
+  font-size: 1rem;
+  margin-left: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.edit-project form .right .open-for-searching div:hover {
+  background-color: #e2cdba;
+}
+.edit-project form .right button {
+  background-color: #f4eadd;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: absolute;
+  right: 8vw;
+  margin-top: 60px;
+}
+.edit-project form .right button:hover {
+  background-color: #e2cdba;
+}
+.edit-project form .right button:active {
+  background-color: #e91c2f;
+}
+.edit-project form .right .errorMessage {
+  height: 2rem;
+  color: #e91c2f;
+  margin-top: 20px;
+}
+.edit-project .delete-box-container {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: gray; */
+  position: absolute;
+  background-color: rgba(150, 150, 150, 0.4);
+}
+.edit-project .delete-box-container div {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: white;
+  width: 600px;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  border-radius: 20px;
+}
+.edit-project .delete-box-container div p {
+  font-size: 1.2rem;
+}
+.edit-project .delete-box-container div button {
+  background-color: white;
+  width: 50px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid black;
+}
+.edit-project .delete-box-container div button:hover {
+  background-color: #e2cdba;
+}
+
 .login {
   position: absolute;
 }
@@ -1714,7 +2232,7 @@
   align-items: center;
 }
 .project-detail .left img {
-  margin-top: 15vh;
+  margin-top: 16vh;
   width: 40vw;
   height: 70vh;
 }

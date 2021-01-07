@@ -14,7 +14,7 @@ class AddProject extends Component {
     fee: "",
     coverURL: "",
     description: "",
-    errorMessage:false,
+    errorMessage: false,
     lookingForOptions: [
       { value: "Singer", label: "Singer" },
       { value: "Rapper", label: "Rapper" },
@@ -54,13 +54,11 @@ class AddProject extends Component {
       coverURL,
       description,
     } = this.state;
-    if(
-      title===""||
-      lookingFor===""
-    ){
+    if (title === "" || lookingFor === "") {
       this.setState({
-        errorMessage:"Must at least fill in the Title, Type and LookingFor fields"
-      })
+        errorMessage:
+          "Must at least fill in the Title, Type and LookingFor fields",
+      });
     }
     apiService
       .createProject(
@@ -129,8 +127,8 @@ class AddProject extends Component {
   render() {
     const { lookingFor } = this.state;
     return (
-      <div id="add-project">
-      <img className="wusic-logo" src="/images/logo-wusic.svg" alt=""/>
+      <div className="add-project">
+        <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
         <div className="left">
           <img src="/images/add-project.svg" alt="" />
           <h1>CREATE PROJECT</h1>
@@ -138,10 +136,10 @@ class AddProject extends Component {
 
         <form onSubmit={this.handleFormSubmit}>
           <div className="middle">
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
-                className="form-control bar"
+                className="form-control"
                 name="title"
                 value={this.state.title}
                 onChange={this.handleText}
@@ -150,10 +148,10 @@ class AddProject extends Component {
               <label htmlFor="floatingInput">TITLE</label>
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
-                className="form-control bar"
+                className="form-control"
                 name="location"
                 value={this.state.location}
                 onChange={this.handleText}
@@ -162,10 +160,10 @@ class AddProject extends Component {
               <label htmlFor="floatingInput">LOCATION</label>
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
-                className="form-control bar"
+                className="form-control"
                 name="fee"
                 value={this.state.fee}
                 onChange={this.handleText}
@@ -174,9 +172,9 @@ class AddProject extends Component {
               <label htmlFor="floatingInput">FEE</label>
             </div>
 
-            <div>
-              <p className="label">TYPE</p>
-              <div className="form-check radio">
+            <div className="input-radio">
+              <p>TYPE</p>
+              <div className="form-check">
                 <input
                   className="form-check-input"
                   type="radio"
@@ -184,10 +182,10 @@ class AddProject extends Component {
                   name="type"
                   onChange={this.handleText}
                 />
-                <p className="radio">Live</p>
+                <p>Live</p>
               </div>
 
-              <div className="form-check radio">
+              <div className="form-check">
                 <input
                   className="form-check-input"
                   type="radio"
@@ -195,10 +193,10 @@ class AddProject extends Component {
                   name="type"
                   onChange={this.handleText}
                 />
-                <p className="radio">Song production</p>
+                <p>Song production</p>
               </div>
 
-              <div className="form-check radio">
+              <div className="form-check">
                 <input
                   className="form-check-input"
                   type="radio"
@@ -206,7 +204,7 @@ class AddProject extends Component {
                   name="type"
                   onChange={this.handleText}
                 />
-                <p className="radio">Recording</p>
+                <p>Recording</p>
               </div>
 
               <div className="form-check">
@@ -217,11 +215,11 @@ class AddProject extends Component {
                   name="type"
                   onChange={this.handleText}
                 />
-                <p className="radio">Movies&TV</p>
+                <p>Movies&TV</p>
               </div>
             </div>
-            <div>
-              <p className="label">LOOKING FOR</p>
+            <div className="select">
+              <p>LOOKING FOR</p>
               <Select
                 value={lookingFor}
                 onChange={this.handleLookingForSelect}
@@ -232,13 +230,11 @@ class AddProject extends Component {
           </div>
 
           <div className="right">
-            
-
-            <div className="">
+            <div className="input-file">
               <p className="label">COVER</p>
               <input
                 type="file"
-                className="form-control bar"
+                className="form-control"
                 name="coverURL"
                 onChange={this.handleFileUpload}
                 placeholder="COVER"
@@ -248,11 +244,10 @@ class AddProject extends Component {
                 style={{ width: "100px" }}
                 src={this.state.coverURL && this.state.coverURL}
                 alt=""
-                
               ></img>
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 textarea" >
               <textarea
                 type="text"
                 className="form-control"
@@ -263,11 +258,9 @@ class AddProject extends Component {
                 placeholder="DESCRIPTION"
               />
               <label htmlFor="floatingInput">DESCRIPTION</label>
-              <div className='errorMessage'>
-                {this.state.errorMessage}
-              </div>
-              <button>CREATE</button>
             </div>
+            <div className="errorMessage">{this.state.errorMessage}</div>
+            <button>CREATE</button>
           </div>
         </form>
       </div>

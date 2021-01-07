@@ -42,7 +42,7 @@ class App extends Component {
 
           <PrivateRoute exact path="/wusic/dashboard" component={Dashboard} />
           {/* Dashboard中有ProjectCard */}
-          <PrivateRoute exact path="/wusic/musicians/:userId" component={Profile} />
+          <PrivateRoute exact path="/wusic/musicians/:userId" component={Profile} /> 
           <PrivateRoute exact path="/wusic/musicians" component={MusicianList} />
           <PrivateRoute exact path="/wusic/projects" component={ProjectList} />
           <PrivateRoute exact path="/wusic/projects/:projectId" component={ProjectDetail} />

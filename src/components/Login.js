@@ -7,7 +7,7 @@ class Login extends Component {
     password: "",
     errorMessage: false,
   };
-  login = (username, password) => {};
+  
   handleFormSubmit = (event) => {
     event.preventDefault();
     this.setState({
@@ -27,7 +27,8 @@ class Login extends Component {
         this.setState(
           {
             errorMessage: "User not found",
-          },
+          }
+          ,
           function () {
             console.log(this.state.errorMessage);
           }

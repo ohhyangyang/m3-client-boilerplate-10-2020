@@ -206,19 +206,19 @@ class EditProfile extends Component {
 
     const { artistType, instrument } = this.state;
     return (
-      <div id="edit-profile">
+      <div className="edit-profile">
         <img className="wusic-logo" src="/images/logo-wusic.svg" alt="" />
         <div className="left">
           <img src="/images/edit-profile.svg" alt="" />
           <h1>EDIT PROFILE</h1>
-          <div className="delete" onClick={this.handleDeleteConfirmation}>
+          <div className="delete-profile" onClick={this.handleDeleteConfirmation}>
             DELETE PROFILE
           </div>
         </div>
 
         <form onSubmit={this.handleFormSubmit}>
           <div className="middle">
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
                 className="form-control"
@@ -230,7 +230,7 @@ class EditProfile extends Component {
               <label htmlFor="floatingInput">NAME</label>
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
                 className="form-control"
@@ -241,7 +241,7 @@ class EditProfile extends Component {
               />
               <label htmlFor="floatingInput">EMAIL</label>
             </div>
-            <div>
+            <div className="select">
               <p className="label">ARTIST TYPE</p>
               <Select
                 value={artistType}
@@ -251,7 +251,7 @@ class EditProfile extends Component {
               />
             </div>
 
-            <div>
+            <div className="select">
               <p className="label">INSTRUMENT</p>
               <Select
                 value={instrument}
@@ -261,7 +261,7 @@ class EditProfile extends Component {
               />
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
                 className="form-control space"
@@ -272,7 +272,7 @@ class EditProfile extends Component {
               />
               <label htmlFor="floatingInput">LOCATION</label>
             </div>
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
                 className="form-control"
@@ -286,7 +286,7 @@ class EditProfile extends Component {
           </div>
 
           <div className="right">
-            <div>
+            <div className="input-file">
               <label className="label">PROFILE PHOTO</label>
               <input
                 type="file"
@@ -303,7 +303,7 @@ class EditProfile extends Component {
                 className="profile-img"
               ></img>
             </div>
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 input-text">
               <input
                 type="text"
                 className="form-control"
@@ -315,7 +315,7 @@ class EditProfile extends Component {
               <label htmlFor="floatingInput">SPOTIFY LINK</label>
             </div>
 
-            <div className="form-floating mb-3">
+            <div className="form-floating mb-3 textarea">
               <textarea
                 type="text"
                 className="form-control"
@@ -332,11 +332,11 @@ class EditProfile extends Component {
         </form>
 
         {this.state.showConfirmation ? (
-          <div className="delete-wrapper">
+          <div className="delete-box-container">
             <div>
               <p>ARE YOU SURE YOU WANT TO DELETE YOUR PROFILE?</p>
-              <div onClick={this.handleDeleteProfile}>YES</div>
-              <div onClick={this.handleDeleteConfirmation}>NO</div>
+              <button onClick={this.handleDeleteProfile}>YES</button>
+              <button onClick={this.handleDeleteConfirmation}>NO</button>
             </div>
           </div>
         ) : null}
