@@ -187,7 +187,7 @@
 }
 .add-project .left {
   width: 28vw;
-  padding-top: 300px;
+  padding-top: 30vh;
   padding-left: 100px;
   border-right: white 2px solid;
 }
@@ -197,13 +197,12 @@
   margin-bottom: 20px;
 }
 .add-project form {
-  padding-top: 200px;
+  padding-top: 20vh;
   display: flex;
   flex-direction: row;
 }
 .add-project form .middle {
   width: 37vw;
-  padding-right: 100px;
   padding-left: 50px;
   margin-top: 20px;
 }
@@ -257,7 +256,6 @@
 }
 .add-project form .right {
   width: 35vw;
-  padding-right: 100px;
 }
 .add-project form .right .input-file p {
   padding-left: 20px;
@@ -288,8 +286,8 @@
   font-size: 1.2rem;
   border: 1px solid black;
   border-radius: 10px;
-  position: absolute;
-  right: 8vw;
+  position: relative;
+  left: 15vw;
   margin-top: 60px;
 }
 .add-project form .right button:hover {
@@ -304,6 +302,226 @@
   margin-top: 20px;
 }
 
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .add-project .left h1 {
+    font-size: 2rem;
+  }
+  .add-project form .middle {
+    padding-left: 25px;
+  }
+  .add-project form .middle .input-text input {
+    height: 3rem;
+  }
+  .add-project form .middle .select .css-2b097c-container {
+    height: 3rem;
+  }
+  .add-project form .middle .select .css-yk16xz-control {
+    height: 3rem;
+  }
+  .add-project form .middle .select .css-1pahdxg-control {
+    height: 3rem;
+  }
+  .add-project form .right button {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .add-project {
+    flex-direction: row;
+  }
+  .add-project .left {
+    width: 30vw;
+    padding-top: 30vh;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .add-project .left button {
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+  .add-project form {
+    padding-top: 16vh;
+    flex-direction: column;
+  }
+  .add-project form .middle {
+    width: 70vw;
+    padding-left: 70px;
+  }
+  .add-project form .middle .input-text input {
+    width: 70%;
+  }
+  .add-project form .middle .select .css-2b097c-container {
+    width: 70%;
+  }
+  .add-project form .middle .select .css-yk16xz-control {
+    height: 38px;
+  }
+  .add-project form .middle .select .css-1pahdxg-control {
+    height: 38px;
+  }
+  .add-project form .right {
+    width: 70vw;
+    padding-left: 70px;
+  }
+  .add-project form .right .input-file input {
+    width: 70%;
+  }
+  .add-project form .right .textarea textarea {
+    width: 70%;
+  }
+  .add-project form .right button {
+    left: 35vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .add-project {
+    height: auto;
+  }
+  .add-project .wusic-logo {
+    width: 130px;
+  }
+  .add-project .left {
+    width: 30vw;
+    padding-top: 30vh;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .add-project .left img {
+    width: 70px;
+  }
+  .add-project .left h1 {
+    font-size: 1.8rem;
+  }
+  .add-project .left button {
+    padding: 5px 10px;
+    border-radius: 0;
+  }
+  .add-project form {
+    padding-top: 14vh;
+  }
+  .add-project form .middle {
+    padding-left: 50px;
+  }
+  .add-project form .middle .input-text input {
+    width: 80%;
+    height: 50px;
+  }
+  .add-project form .middle .select .css-2b097c-container {
+    width: 80%;
+  }
+  .add-project form .right {
+    width: 70vw;
+    padding-left: 50px;
+  }
+  .add-project form .right .input-file input {
+    width: 80%;
+  }
+  .add-project form .right .textarea textarea {
+    width: 80%;
+  }
+  .add-project form .right button {
+    font-size: 0.8rem;
+    left: 35vw;
+    margin-bottom: 80px;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .add-project {
+    flex-direction: column;
+  }
+  .add-project .wusic-logo {
+    width: 100px;
+    right: 40px;
+    top: 40px;
+  }
+  .add-project .left {
+    width: 100vw;
+    border: none;
+    padding-top: 15vh;
+  }
+  .add-project .left img {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  .add-project form {
+    padding-top: 5vh;
+  }
+  .add-project form .middle {
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .add-project form .middle .input-text input {
+    width: 100%;
+    height: 50px;
+  }
+  .add-project form .middle .select .css-2b097c-container {
+    width: 100%;
+  }
+  .add-project form .right {
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .add-project form .right .input-file input {
+    width: 100%;
+  }
+  .add-project form .right .textarea textarea {
+    width: 100%;
+  }
+  .add-project form .right button {
+    font-size: 0.8rem;
+    left: 60vw;
+    margin-bottom: 80px;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .add-project .wusic-logo {
+    width: 70px;
+    right: 30px;
+  }
+  .add-project .left img {
+    width: 40px;
+  }
+  .add-project .left h1 {
+    font-size: 1.5rem;
+  }
+  .add-project .left button {
+    font-size: 0.5rem;
+  }
+  .add-project form .middle {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .add-project form .middle .input-text input {
+    height: 40px;
+    font-size: 0.8rem;
+  }
+  .add-project form .middle .input-text label {
+    font-size: 0.8rem;
+  }
+  .add-project form .right {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .add-project form .right .input-file input {
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  .add-project form .right .open-for-searching {
+    font-size: 0.8rem;
+  }
+  .add-project form .right button {
+    padding: 6px 15px;
+    border-radius: 5px;
+  }
+}
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -750,7 +968,7 @@
 }
 .edit-profile .left {
   width: 26vw;
-  padding-top: 300px;
+  padding-top: 30vh;
   padding-left: 100px;
   border-right: white 2px solid;
 }
@@ -771,14 +989,13 @@
   cursor: pointer;
 }
 .edit-profile form {
-  padding-top: 200px;
+  padding-top: 20vh;
   display: flex;
   flex-direction: row;
 }
 .edit-profile form .middle {
   padding-left: 50px;
   width: 37vw;
-  padding-right: 100px;
 }
 .edit-profile form .middle .space {
   margin-top: 20px;
@@ -821,7 +1038,6 @@
 }
 .edit-profile form .right {
   width: 37vw;
-  padding-right: 100px;
 }
 .edit-profile form .right .input-file label {
   padding-left: 0px;
@@ -932,7 +1148,7 @@
 }
 .edit-project .left {
   width: 28vw;
-  padding-top: 300px;
+  padding-top: 30vh;
   padding-left: 100px;
   border-right: white 2px solid;
 }
@@ -959,13 +1175,12 @@
   background-color: #e2cdba;
 }
 .edit-project form {
-  padding-top: 200px;
+  padding-top: 20vh;
   display: flex;
   flex-direction: row;
 }
 .edit-project form .middle {
   width: 37vw;
-  padding-right: 100px;
   padding-left: 50px;
   margin-top: 20px;
 }
@@ -1019,7 +1234,6 @@
 }
 .edit-project form .right {
   width: 35vw;
-  padding-right: 100px;
 }
 .edit-project form .right .input-file label {
   padding-left: 20px;
@@ -1071,8 +1285,8 @@
   font-size: 1.2rem;
   border: 1px solid black;
   border-radius: 10px;
-  position: absolute;
-  right: 8vw;
+  position: relative;
+  left: 15vw;
   margin-top: 60px;
 }
 .edit-project form .right button:hover {
@@ -1080,11 +1294,6 @@
 }
 .edit-project form .right button:active {
   background-color: #e91c2f;
-}
-.edit-project form .right .errorMessage {
-  height: 2rem;
-  color: #e91c2f;
-  margin-top: 20px;
 }
 .edit-project .delete-box-container {
   width: 100vw;
@@ -1125,6 +1334,269 @@
   background-color: #e2cdba;
 }
 
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .edit-project .left h1 {
+    font-size: 2rem;
+  }
+  .edit-project .left button {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+  }
+  .edit-project form .middle {
+    padding-left: 25px;
+  }
+  .edit-project form .middle .input-text input {
+    height: 3rem;
+  }
+  .edit-project form .middle .select .css-2b097c-container {
+    height: 3rem;
+  }
+  .edit-project form .middle .select .css-yk16xz-control {
+    height: 3rem;
+  }
+  .edit-project form .middle .select .css-1pahdxg-control {
+    height: 3rem;
+  }
+  .edit-project form .right .open-for-searching p {
+    font-size: 1rem;
+  }
+  .edit-project form .right button {
+    font-size: 1rem;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .edit-project {
+    flex-direction: row;
+  }
+  .edit-project .left {
+    width: 30vw;
+    padding-top: 30vh;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .edit-project .left button {
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+  .edit-project form {
+    padding-top: 16vh;
+    flex-direction: column;
+  }
+  .edit-project form .middle {
+    width: 70vw;
+    padding-left: 70px;
+  }
+  .edit-project form .middle .input-text input {
+    width: 70%;
+  }
+  .edit-project form .middle .select .css-2b097c-container {
+    width: 70%;
+  }
+  .edit-project form .middle .select .css-yk16xz-control {
+    height: 38px;
+  }
+  .edit-project form .middle .select .css-1pahdxg-control {
+    height: 38px;
+  }
+  .edit-project form .right {
+    width: 70vw;
+    padding-left: 70px;
+  }
+  .edit-project form .right .input-file input {
+    width: 70%;
+  }
+  .edit-project form .right .textarea textarea {
+    width: 70%;
+  }
+  .edit-project form .right button {
+    left: 35vw;
+  }
+}
+@media screen and (max-width: 768px) {
+  .edit-project {
+    height: auto;
+  }
+  .edit-project .wusic-logo {
+    width: 130px;
+  }
+  .edit-project .left {
+    width: 30vw;
+    padding-top: 30vh;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .edit-project .left img {
+    width: 70px;
+  }
+  .edit-project .left h1 {
+    font-size: 1.8rem;
+  }
+  .edit-project .left button {
+    padding: 5px 10px;
+    border-radius: 0;
+  }
+  .edit-project form {
+    padding-top: 14vh;
+  }
+  .edit-project form .middle {
+    padding-left: 50px;
+  }
+  .edit-project form .middle .input-text input {
+    width: 80%;
+    height: 50px;
+  }
+  .edit-project form .middle .select .css-2b097c-container {
+    width: 80%;
+  }
+  .edit-project form .right {
+    width: 70vw;
+    padding-left: 50px;
+  }
+  .edit-project form .right .input-file input {
+    width: 80%;
+  }
+  .edit-project form .right .textarea textarea {
+    width: 80%;
+  }
+  .edit-project form .right .open-for-searching {
+    font-size: 1rem;
+  }
+  .edit-project form .right .open-for-searching div {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 0;
+  }
+  .edit-project form .right button {
+    font-size: 0.8rem;
+    left: 35vw;
+    margin-bottom: 80px;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit-project {
+    flex-direction: column;
+  }
+  .edit-project .wusic-logo {
+    width: 100px;
+    right: 40px;
+    top: 40px;
+  }
+  .edit-project .left {
+    width: 100vw;
+    border: none;
+    padding-top: 15vh;
+  }
+  .edit-project .left img {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  .edit-project form {
+    padding-top: 5vh;
+  }
+  .edit-project form .middle {
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .edit-project form .middle .input-text input {
+    width: 100%;
+    height: 50px;
+  }
+  .edit-project form .middle .select .css-2b097c-container {
+    width: 100%;
+  }
+  .edit-project form .right {
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .edit-project form .right .input-file input {
+    width: 100%;
+  }
+  .edit-project form .right .textarea textarea {
+    width: 100%;
+  }
+  .edit-project form .right .open-for-searching {
+    font-size: 1rem;
+  }
+  .edit-project form .right .open-for-searching div {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 0;
+  }
+  .edit-project form .right button {
+    font-size: 0.8rem;
+    left: 60vw;
+    margin-bottom: 80px;
+    margin-top: 40px;
+  }
+  .edit-project .delete-box-container div {
+    width: 80vw;
+    height: 40vw;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+  }
+  .edit-project .delete-box-container div p {
+    font-size: 1rem;
+  }
+  .edit-project .delete-box-container div button {
+    margin-bottom: 0px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .edit-project .wusic-logo {
+    width: 70px;
+    right: 30px;
+  }
+  .edit-project .left img {
+    width: 40px;
+  }
+  .edit-project .left h1 {
+    font-size: 1.5rem;
+  }
+  .edit-project .left button {
+    font-size: 0.5rem;
+  }
+  .edit-project form .middle {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .edit-project form .middle .input-text input {
+    height: 40px;
+    font-size: 0.8rem;
+  }
+  .edit-project form .middle .input-text label {
+    font-size: 0.8rem;
+  }
+  .edit-project form .right {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .edit-project form .right .input-file input {
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  .edit-project form .right .open-for-searching {
+    font-size: 0.8rem;
+  }
+  .edit-project form .right button {
+    padding: 6px 15px;
+    border-radius: 5px;
+  }
+  .edit-project .delete-box-container div p {
+    font-size: 0.8rem;
+  }
+  .edit-project .delete-box-container div button {
+    font-size: 0.5rem;
+  }
+}
 .login {
   position: absolute;
 }

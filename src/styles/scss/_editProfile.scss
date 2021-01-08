@@ -12,7 +12,7 @@
 
   .left {
     width: 26vw;
-    padding-top: 300px;
+    padding-top: 30vh;
     padding-left: 100px;
     border-right: white 2px solid;
 
@@ -36,14 +36,14 @@
   }
 
   form {
-    padding-top: 200px;
+    padding-top: 20vh;
     display: flex;
     flex-direction: row;
 
     .middle {
       padding-left: 50px;
       width: 37vw;
-      padding-right: 100px;
+      // padding-right: 100px;
 
       .space {
         margin-top: 20px;
@@ -98,7 +98,7 @@
 
     .right {
       width: 37vw;
-      padding-right: 100px;
+      // padding-right: 100px;
 
       .input-file {
         label {
@@ -220,3 +220,5 @@
   }
 
 }
+
+
