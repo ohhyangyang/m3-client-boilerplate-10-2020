@@ -974,6 +974,7 @@
 }
 .edit-profile .left img {
   height: 10vh;
+  opacity: 0.6;
 }
 .edit-profile .left .delete-profile {
   background-color: #f4eadd;
@@ -1040,7 +1041,7 @@
   width: 37vw;
 }
 .edit-profile form .right .input-file label {
-  padding-left: 0px;
+  padding-left: 20px;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -1085,8 +1086,8 @@
   font-size: 1.2rem;
   border: 1px solid black;
   border-radius: 10px;
-  position: absolute;
-  right: 150px;
+  position: relative;
+  left: 15vw;
   margin-top: 10px;
 }
 .edit-profile form .right button:hover {
@@ -1135,6 +1136,284 @@
   background-color: #e2cdba;
 }
 
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .edit-profile .left img {
+    margin-bottom: 20px;
+  }
+  .edit-profile .left h1 {
+    font-size: 2rem;
+  }
+  .edit-profile .left .delete-profile {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+  }
+  .edit-profile form .middle {
+    padding-left: 25px;
+  }
+  .edit-profile form .middle .input-text input {
+    height: 3rem;
+  }
+  .edit-profile form .middle .select .css-2b097c-container {
+    height: 3rem;
+  }
+  .edit-profile form .middle .select .css-yk16xz-control {
+    height: 3rem;
+  }
+  .edit-profile form .middle .select .css-1pahdxg-control {
+    height: 3rem;
+  }
+  .edit-profile form .right .input-text input {
+    height: 3rem;
+  }
+  .edit-profile form .right button {
+    font-size: 1rem;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .edit-profile {
+    flex-direction: row;
+  }
+  .edit-profile .left {
+    width: 30vw;
+    padding-top: 30vh;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .edit-profile .left .delete-profile {
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+  .edit-profile form {
+    padding-top: 16vh;
+    flex-direction: column;
+  }
+  .edit-profile form .middle {
+    width: 70vw;
+    padding-left: 70px;
+  }
+  .edit-profile form .middle .input-text input {
+    width: 70%;
+  }
+  .edit-profile form .middle .select .css-2b097c-container {
+    width: 70%;
+  }
+  .edit-profile form .middle .select .css-yk16xz-control {
+    height: 55px;
+  }
+  .edit-profile form .middle .select .css-1pahdxg-control {
+    height: 55px;
+  }
+  .edit-profile form .right {
+    width: 70vw;
+    padding-left: 70px;
+  }
+  .edit-profile form .right .input-text input {
+    width: 70%;
+  }
+  .edit-profile form .right .input-file input {
+    width: 70%;
+  }
+  .edit-profile form .right .textarea textarea {
+    width: 70%;
+  }
+  .edit-profile form .right button {
+    left: 35vw;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .edit-profile {
+    height: auto;
+  }
+  .edit-profile .wusic-logo {
+    width: 130px;
+  }
+  .edit-profile .left {
+    width: 30vw;
+    padding-top: 30vh;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .edit-profile .left img {
+    width: 70px;
+  }
+  .edit-profile .left h1 {
+    font-size: 1.8rem;
+  }
+  .edit-profile .left .delete-profile {
+    padding: 5px 10px;
+    border-radius: 0;
+  }
+  .edit-profile form {
+    padding-top: 14vh;
+  }
+  .edit-profile form .middle {
+    padding-left: 50px;
+  }
+  .edit-profile form .middle .input-text input {
+    width: 80%;
+    height: 50px;
+  }
+  .edit-profile form .middle .select .css-2b097c-container {
+    width: 80%;
+  }
+  .edit-profile form .middle .select .css-yk16xz-control {
+    height: 50px;
+  }
+  .edit-profile form .middle .select .css-1pahdxg-control {
+    height: 50px;
+  }
+  .edit-profile form .right {
+    width: 70vw;
+    padding-left: 50px;
+  }
+  .edit-profile form .right .input-text input {
+    width: 80%;
+    height: 50px;
+  }
+  .edit-profile form .right .input-file input {
+    width: 80%;
+  }
+  .edit-profile form .right .textarea textarea {
+    width: 80%;
+  }
+  .edit-profile form .right button {
+    font-size: 0.8rem;
+    left: 35vw;
+    margin-bottom: 80px;
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .edit-profile {
+    flex-direction: column;
+  }
+  .edit-profile .wusic-logo {
+    width: 100px;
+    right: 40px;
+    top: 40px;
+  }
+  .edit-profile .left {
+    width: 100vw;
+    border: none;
+    padding-top: 15vh;
+  }
+  .edit-profile .left img {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  .edit-profile form {
+    padding-top: 5vh;
+  }
+  .edit-profile form .middle {
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .edit-profile form .middle .input-text input {
+    width: 100%;
+    height: 50px;
+  }
+  .edit-profile form .middle .select .css-2b097c-container {
+    width: 100%;
+  }
+  .edit-profile form .right {
+    width: 100vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .edit-profile form .right .input-text input {
+    width: 100%;
+    height: 50px;
+  }
+  .edit-profile form .right .input-file input {
+    width: 100%;
+  }
+  .edit-profile form .right .textarea textarea {
+    width: 100%;
+  }
+  .edit-profile form .right button {
+    font-size: 0.8rem;
+    left: 60vw;
+    margin-bottom: 80px;
+    margin-top: 40px;
+  }
+  .edit-profile .delete-box-container div {
+    width: 80vw;
+    height: 40vw;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+  }
+  .edit-profile .delete-box-container div p {
+    font-size: 1rem;
+  }
+  .edit-profile .delete-box-container div button {
+    margin-bottom: 0px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .edit-profile .wusic-logo {
+    width: 70px;
+    right: 30px;
+  }
+  .edit-profile .left img {
+    width: 40px;
+  }
+  .edit-profile .left h1 {
+    font-size: 1.5rem;
+  }
+  .edit-profile .left .delete-profile {
+    font-size: 0.5rem;
+  }
+  .edit-profile form .middle {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .edit-profile form .middle .select .css-yk16xz-control {
+    height: 40px;
+  }
+  .edit-profile form .middle .select .css-1pahdxg-control {
+    height: 40px;
+  }
+  .edit-profile form .middle .input-text input {
+    height: 40px;
+    font-size: 0.8rem;
+  }
+  .edit-profile form .middle .input-text label {
+    font-size: 0.8rem;
+  }
+  .edit-profile form .right {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .edit-profile form .right .input-text input {
+    height: 40px;
+    font-size: 0.8rem;
+  }
+  .edit-profile form .right .input-text label {
+    font-size: 0.8rem;
+  }
+  .edit-profile form .right .input-file input {
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  .edit-profile form .right button {
+    padding: 6px 15px;
+    border-radius: 5px;
+  }
+  .edit-profile .delete-box-container div p {
+    font-size: 0.8rem;
+  }
+  .edit-profile .delete-box-container div button {
+    font-size: 0.5rem;
+  }
+}
 .edit-project {
   display: flex;
   flex-direction: row;

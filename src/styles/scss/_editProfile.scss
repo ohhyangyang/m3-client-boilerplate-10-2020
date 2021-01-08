@@ -18,6 +18,7 @@
 
     img {
       height: 10vh;
+      opacity: 0.6;
     }
 
     .delete-profile {
@@ -102,7 +103,7 @@
 
       .input-file {
         label {
-          padding-left: 0px;
+          padding-left: 20px;
           margin-top: 20px;
           margin-bottom: 10px;
         }
@@ -160,8 +161,8 @@
         font-size: 1.2rem;
         border: 1px solid black;
         border-radius: 10px;
-        position: absolute;
-        right: 150px;
+        position: relative;
+        left: 15vw;
         margin-top: 10px;
 
         &:hover {
@@ -221,4 +222,491 @@
 
 }
 
+@include media-lgl{
+  .edit-profile{
+    .left{
+      img{
+        margin-bottom: 20px;
+      }
+      h1{
+        font-size: 2rem;
+      }
 
+      .delete-profile{
+        font-size: 0.8rem;
+        padding: 10px 15px;
+      }
+    }
+
+    form{
+      .middle{
+        padding-left: 25px;
+
+        .input-text{
+          input{
+            height: 3rem;
+          }
+        }
+
+        .select{
+          .css-2b097c-container {
+            height: 3rem;
+          }
+  
+          .css-yk16xz-control {
+            height: 3rem;
+  
+         
+          }
+          .css-1pahdxg-control {
+            height: 3rem;
+          }
+        }
+      }
+
+      .right{
+
+        .input-text{
+          input{
+            height: 3rem;
+          }
+        }
+
+       
+        button{
+          font-size: 1rem;
+          margin-top: 40px;
+        }
+
+
+      }
+    }
+  }
+}
+
+@include media-lgp{
+  .edit-profile{
+    flex-direction: row;
+    // height: auto;
+
+    .wusic-logo{
+
+    }
+
+    .left{
+      width: 30vw;
+      padding-top: 30vh;
+      padding-left: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      // justify-content: center;
+
+      h1{
+        // margin-left: 20px;
+      }
+
+      .delete-profile{
+        margin-top: 10px;
+        // margin-left: 20vw;
+        font-size: 0.8rem;
+      }
+    }
+
+    form{
+      padding-top: 16vh;
+      flex-direction: column;
+
+      .middle{
+        width: 70vw;
+        padding-left: 70px;
+
+        .input-text{
+          input{
+            width: 70%;
+         
+          }
+        }
+
+        .select{
+          .css-2b097c-container {
+            width: 70%;
+            
+          }
+
+          .css-yk16xz-control {
+            height: 55px;
+          }
+          .css-1pahdxg-control {
+            height: 55px;
+          }
+        }
+      }
+
+      .right{
+        width: 70vw;
+        padding-left: 70px;
+
+        .input-text{
+          input{
+            width: 70%;
+         
+          }
+        }
+        .input-file{
+          input{
+            width: 70%;
+            // height: 30px;
+      
+          }
+        }
+
+        .textarea{
+          textarea{
+            width: 70%;
+          }
+        }
+
+        button{
+          left: 35vw;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@include media-md{
+  .edit-profile{
+    height: auto;
+    
+
+    .wusic-logo{
+      width: 130px;
+    }
+
+    .left{
+      width: 30vw;
+      padding-top: 30vh;
+      padding-left: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      // justify-content: center;
+
+      img{
+        width: 70px;
+      }
+      h1{
+        font-size: 1.8rem;
+      }
+
+      .delete-profile{
+        padding: 5px 10px;
+        border-radius: 0;
+      }
+    }
+
+    form{
+    padding-top: 14vh;
+
+      .middle{
+
+        padding-left: 50px;
+
+        .input-text{
+          input{
+            width: 80%;
+            height: 50px;
+         
+          }
+        }
+
+        .select{
+          .css-2b097c-container {
+            width: 80%;
+            
+          }
+
+          .css-yk16xz-control {
+            height: 50px;
+          }
+          .css-1pahdxg-control {
+            height: 50px;
+          }
+
+         
+        }
+      }
+
+      .right{
+        width: 70vw;
+        padding-left: 50px;
+
+        
+
+        .input-text{
+          input{
+            width: 80%;
+            height: 50px;
+         
+          }
+        }
+        .input-file{
+          input{
+            width: 80%;
+            // height: 30px;
+      
+          }
+        }
+
+        .textarea{
+          textarea{
+            width: 80%;
+          }
+        }
+
+      
+
+        button{
+          font-size: 0.8rem;
+          left: 35vw;
+          margin-bottom: 80px;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}
+
+@include media-sm{
+  .edit-profile{
+    flex-direction: column;
+    
+
+    .wusic-logo{
+      width: 100px;
+      right: 40px;
+      top: 40px;
+    }
+
+    .left{
+      width: 100vw;
+      border: none;
+      padding-top: 15vh;
+
+      img{
+        width: 60px;
+        margin-bottom: 10px;
+      }
+    
+
+      
+    }
+
+    form{
+    padding-top: 5vh;
+
+      .middle{
+
+        width: 100vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        
+
+        .input-text{
+          input{
+            width: 100%;
+            height: 50px;
+         
+          }
+        }
+
+        .select{
+          .css-2b097c-container {
+            width: 100%;
+            
+          }
+
+         
+        }
+      }
+
+      .right{
+        width: 100vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+
+        .input-text{
+          input{
+            width: 100%;
+            height: 50px;
+         
+          }
+        }
+
+        .input-file{
+          input{
+            width: 100%;
+            // height: 30px;
+      
+          }
+        }
+
+        .textarea{
+          textarea{
+            width: 100%;
+          }
+        }
+
+      
+
+        button{
+          font-size: 0.8rem;
+          left: 60vw;
+          margin-bottom: 80px;
+          margin-top: 40px;
+        }
+      }
+    }
+
+    .delete-box-container{
+      div{
+        width: 80vw;
+        height: 40vw;
+        padding-left: 5%;
+        padding-right: 5%;
+        border-radius: 10px;
+        
+
+        p{
+          font-size: 1rem;
+        }
+
+        button{
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+@include media-xs{
+  .edit-profile{
+
+    
+
+    .wusic-logo{
+      width: 70px;
+      right: 30px;
+
+    }
+
+    .left{
+   
+
+      img{
+        width: 40px;
+     
+      }
+
+      h1{
+        font-size: 1.5rem;
+      }
+
+      .delete-profile{
+        font-size: 0.5rem;
+      }
+    
+
+      
+    }
+
+    form{
+
+
+      .middle{
+
+  
+        padding-left: 6vw;
+        padding-right: 6vw;
+        
+        .select{
+     
+
+          .css-yk16xz-control {
+            height: 40px;
+          }
+          .css-1pahdxg-control {
+            height: 40px;
+          }
+
+         
+        }
+
+        .input-text{
+          input{
+      
+            height: 40px;
+            font-size: 0.8rem;
+         
+          }
+
+          label{
+            font-size: 0.8rem;
+          }
+        }
+
+      
+      }
+
+      .right{
+    
+        padding-left: 6vw;
+        padding-right: 6vw;
+
+        .input-text{
+          input{
+      
+            height: 40px;
+            font-size: 0.8rem;
+         
+          }
+
+          label{
+            font-size: 0.8rem;
+          }
+        }
+
+        .input-file{
+          input{
+            height: 35px;
+            font-size: 0.8rem;
+      
+          }
+        }
+      
+
+        button{
+          padding: 6px 15px;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .delete-box-container{
+      div{
+    
+        
+
+        p{
+          font-size: 0.8rem;
+        }
+
+        button{
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+}
