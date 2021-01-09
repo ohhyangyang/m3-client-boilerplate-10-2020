@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class About extends Component {
   render() {
     return (
-      <div id="about">
+      <div className="about">
         <h1>A HUMAN TOUCH IN MUSICIANS' WORLD</h1>
         <p>
           <strong>Wusic</strong> is a platform helping users to find a suitable

@@ -1,0 +1,116 @@
+.about {
+  height: 100vh;
+  padding: 22vh 20vw;
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    width: 55vw;
+  }
+
+  p {
+    width: 35vw;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  .wusic-logo {
+    width: 200px;
+    position: absolute;
+    right: 28vw;
+    bottom: 22vh;
+  }
+}
+
+@include media-lgl {
+  .about {
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+    }
+
+    .wusic-logo {
+      width: 150px;
+      right: 25vw;
+    }
+  }
+}
+
+@include media-lgp {
+  .about {
+    padding-top: 25vh;
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      width: 55vw;
+    }
+
+    .wusic-logo {
+      bottom: 18vh;
+    }
+  }
+}
+
+@include media-md {
+  .about {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    .wusic-logo {
+      width: 150px;
+    }
+  }
+}
+
+@include media-sm {
+  .about {
+    padding: 18vh 12vw;
+    h1 {
+      font-size: 1.8rem;
+      width: 100%;
+    }
+
+    p {
+      font-size: 1.1rem;
+      width: 100%;
+    }
+
+    .wusic-logo {
+      width: 100px;
+      bottom: 20vh;
+      right: 22vw;
+    }
+  }
+}
+
+@include media-xs {
+  .about {
+    padding-top: 18vh;
+    h1 {
+      font-size: 1.2rem;
+   
+    }
+
+    p {
+      font-size: 1rem;
+
+    }
+
+    .wusic-logo {
+      width: 80px;
+      bottom: 20vh;
+      right: 22vw;
+    }
+  }
+}

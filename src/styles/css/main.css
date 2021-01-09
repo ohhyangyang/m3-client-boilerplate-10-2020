@@ -174,6 +174,99 @@
     width: 30px;
   }
 }
+.about {
+  height: 100vh;
+  padding: 22vh 20vw;
+}
+.about h1 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+  width: 55vw;
+}
+.about p {
+  width: 35vw;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.about .wusic-logo {
+  width: 200px;
+  position: absolute;
+  right: 28vw;
+  bottom: 22vh;
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .about h1 {
+    font-size: 3rem;
+  }
+  .about p {
+    font-size: 1.3rem;
+  }
+  .about .wusic-logo {
+    width: 150px;
+    right: 25vw;
+  }
+}
+@media screen and (max-width: 1024px) and (orientation: portrait) {
+  .about {
+    padding-top: 25vh;
+  }
+  .about h1 {
+    font-size: 3.5rem;
+  }
+  .about p {
+    font-size: 1.5rem;
+    width: 55vw;
+  }
+  .about .wusic-logo {
+    bottom: 18vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about h1 {
+    font-size: 2.5rem;
+  }
+  .about p {
+    font-size: 1.4rem;
+  }
+  .about .wusic-logo {
+    width: 150px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .about {
+    padding: 18vh 12vw;
+  }
+  .about h1 {
+    font-size: 1.8rem;
+    width: 100%;
+  }
+  .about p {
+    font-size: 1.1rem;
+    width: 100%;
+  }
+  .about .wusic-logo {
+    width: 100px;
+    bottom: 20vh;
+    right: 22vw;
+  }
+}
+@media screen and (max-width: 320px) {
+  .about {
+    padding-top: 18vh;
+  }
+  .about h1 {
+    font-size: 1.2rem;
+  }
+  .about p {
+    font-size: 1rem;
+  }
+  .about .wusic-logo {
+    width: 80px;
+    bottom: 20vh;
+    right: 22vw;
+  }
+}
 .add-project {
   display: flex;
   flex-direction: row;
