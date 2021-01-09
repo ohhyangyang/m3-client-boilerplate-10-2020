@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { withAuth } from "./../context/auth-context";
 import apiService from "./../lib/api-service";
-import { Link,withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import SpotifyPlayer from "react-spotify-player";
-
 
 class Profile extends Component {
   state = {
@@ -30,7 +29,18 @@ class Profile extends Component {
     });
   }
 
-  
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.userId !== this.props.match.params.userId) {
+      this.setState({ userInfo: {} });
+      this.getUserInfo();
+      this.getLikeInfo();
+
+      this.setState({
+        userId: this.props.match.params.userId,
+        visitorId: this.props.user._id
+      });
+    }
+  }
 
   getUserInfo = () => {
     apiService
@@ -115,21 +125,19 @@ class Profile extends Component {
               {this.state.userId === this.state.visitorId ? null : this.state
                   .beingLiked ? (
                 <img
-                  
                   onClick={this.handleDisLike}
                   src="/images/like.png"
                   alt=""
                 />
               ) : (
                 <img
-                className="unlike"
+                  className="unlike"
                   onClick={this.handleLike}
                   src="/images/unlike.png"
                   alt=""
                 />
               )}
               {this.state.userInfo.spotifyLink ? (
-                
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -183,14 +191,17 @@ class Profile extends Component {
           />
 
           <div className="nav">
-            <a href="#about"  ref={a=>(this.navAbout=a)}>ABOUT</a>
-            <a href="#music-player" ref={a=>(this.navPlayer=a)}>MUSIC PLAYER</a>
+            <a href="#about" ref={(a) => (this.navAbout = a)}>
+              ABOUT
+            </a>
+            <a href="#music-player" ref={(a) => (this.navPlayer = a)}>
+              MUSIC PLAYER
+            </a>
           </div>
-
 
           <p id="about">{this.state.userInfo.description}</p>
         </div>
-      </div> 
+      </div>
     );
   }
 }

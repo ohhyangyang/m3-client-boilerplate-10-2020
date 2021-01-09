@@ -3080,6 +3080,12 @@
   width: 40vw;
   height: 70vh;
 }
+.project-detail .left .joined-btn {
+  padding: 10px 20px;
+  margin-top: 30px;
+  background-color: lightgray;
+  color: gray;
+}
 .project-detail .left .request-btn {
   border: 1px black solid;
   padding: 10px 20px;
@@ -3200,6 +3206,10 @@
     width: 100vw;
     height: 85vh;
   }
+  .project-detail .left .joined-btn {
+    padding: 15px 30px;
+    margin-top: -15vh;
+  }
   .project-detail .left .request-btn {
     margin-top: -15vh;
     background-color: rgba(226, 205, 186, 0.9);
@@ -3229,6 +3239,9 @@
   }
 }
 @media screen and (orientation: portrait) and (max-width: 1024px) {
+  .project-detail .left .joined-btn {
+    font-size: 1.5rem;
+  }
   .project-detail .left .request-btn {
     font-size: 1.5rem;
   }
@@ -3260,6 +3273,9 @@
   }
 }
 @media screen and (orientation: portrait) and (max-width: 768px) {
+  .project-detail .left .joined-btn {
+    font-size: 1.2rem;
+  }
   .project-detail .left .request-btn {
     font-size: 1.2rem;
   }
@@ -3295,6 +3311,9 @@
   }
 }
 @media screen and (orientation: portrait) and (max-width: 480px) {
+  .project-detail .left .joined-btn {
+    font-size: 0.8rem;
+  }
   .project-detail .left .request-btn {
     font-size: 0.8rem;
   }
@@ -3340,6 +3359,10 @@
   }
 }
 @media screen and (orientation: portrait) and (max-width: 320px) {
+  .project-detail .left .joined-btn {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+  }
   .project-detail .left .request-btn {
     font-size: 0.8rem;
     padding: 10px 20px;

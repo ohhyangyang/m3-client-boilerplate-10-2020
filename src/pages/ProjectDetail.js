@@ -7,24 +7,26 @@ class ProjectDetail extends Component {
   state = {
     projectInfo: {},
     requested: false,
+    participated:false
   };
   componentDidMount() {
     apiService
       .getOneProject(this.props.match.params.projectId)
       .then((response) => {
         const projectInfo = response.data;
-        // console.log(projectInfo);
-        const { requests } = projectInfo;
+ 
+        const { requests,participants } = projectInfo;
 
-        // console.log(requests)
-        // console.log(requests.includes(this.props.user._id))
         this.setState({
           projectInfo: projectInfo,
           requested: requests.includes(this.props.user._id),
+          participated: participants.includes(this.props.user._id)
         });
       });
   }
-  getRequestInfo() {}
+ 
+
+
   formatter = new Intl.DateTimeFormat("en-GB", {
     year: "numeric",
     month: "long",
@@ -67,11 +69,18 @@ class ProjectDetail extends Component {
       <div className="project-detail">
         <div className="left">
           <img src={this.state.projectInfo.coverURL} alt="" />
-          {this.state.requested ? (
+          {
+            this.state.participated
+          ?(<div className="joined-btn">JOINED</div>)
+          :(this.state.requested ? (
             <div className="request-btn" onClick={this.cancelRequest}>CANCEL YOUR REQUEST</div>
           ) : (
             <div className="request-btn" onClick={this.sendRequest}>SEND REQUEST</div>
-          )}
+          ))
+          }
+
+
+          
         </div>
 
         <div className="right">

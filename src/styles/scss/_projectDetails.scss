@@ -16,6 +16,14 @@
       height: 70vh;
     }
 
+    .joined-btn{
+
+      padding: 10px 20px;
+      margin-top: 30px;
+      background-color: lightgray;
+      color: gray;
+    }
+
     .request-btn {
       border: 1px black solid;
       padding: 10px 20px;
@@ -162,6 +170,12 @@
         width: 100vw;
         height: 85vh;
       }
+      .joined-btn{
+
+        padding: 15px 30px;
+        margin-top: -15vh;
+      
+      }
 
       .request-btn {
         margin-top: -15vh;
@@ -204,6 +218,11 @@
   @media screen and (max-width: 1024px){
     .project-detail{
         .left{
+          .joined-btn{
+
+            font-size: 1.5rem;
+          
+          }
             .request-btn{
                 font-size: 1.5rem;
             }
@@ -257,6 +276,11 @@
   @media screen and (max-width: 768px){
     .project-detail{
         .left{
+          .joined-btn{
+
+            font-size: 1.2rem;
+          
+          }
             .request-btn{
                 font-size: 1.2rem;
             }
@@ -312,6 +336,11 @@
   @media screen and (max-width: 480px){
     .project-detail{
         .left{
+          .joined-btn{
+
+            font-size: 0.8rem;
+          
+          }
             .request-btn{
                 font-size: 0.8rem;
             }
@@ -376,6 +405,12 @@
   @media screen and (max-width: 320px){
     .project-detail{
         .left{
+          .joined-btn{
+
+            font-size: 0.8rem;
+            padding:10px 20px;
+          
+          }
             .request-btn{
                 font-size: 0.8rem;
                 padding:10px 20px;
