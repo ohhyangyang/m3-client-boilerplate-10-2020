@@ -835,6 +835,9 @@
     margin-top: 5px;
     margin-bottom: 0px;
   }
+  .dashboard .ongoing-projects .project-cards__for-scroll .project-cards__item .title p {
+    white-space: normal;
+  }
 }
 @media screen and (max-width: 320px) {
   .dashboard .ongoing-projects h3 {
@@ -2389,13 +2392,16 @@
     margin-left: 30px;
   }
 }
+.musician-list {
+  display: flex;
+  flex-direction: row;
+}
 .musician-list .nav {
   padding-top: 200px;
   width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  float: left;
   background-color: #f4eadd;
   height: 100vh;
 }
@@ -2484,7 +2490,6 @@
 }
 .musician-list .main-container {
   width: 60vw;
-  float: right;
   height: 100vh;
   overflow: auto;
 }
@@ -2511,6 +2516,9 @@
   }
 }
 @media screen and (max-width: 1024px) and (orientation: portrait) {
+  .musician-list {
+    flex-direction: column;
+  }
   .musician-list .nav {
     padding-top: 90px;
     width: 100vw;
@@ -2530,7 +2538,7 @@
   }
   .musician-list .main-container {
     width: 100vw;
-    float: left;
+    height: auto;
   }
   .musician-list .main-container .main img {
     width: 33.33333vw;
@@ -3395,13 +3403,16 @@
     margin-bottom: 30px;
   }
 }
+.project-list {
+  display: flex;
+  flex-direction: row;
+}
 .project-list .nav {
   padding-top: 200px;
   width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  float: left;
   background-color: #f4eadd;
   height: 100vh;
 }
@@ -3490,7 +3501,6 @@
 }
 .project-list .main-container {
   width: 60vw;
-  float: right;
   height: 100vh;
   overflow: auto;
 }
@@ -3503,8 +3513,6 @@
   filter: grayscale(80%);
 }
 .project-list .main-container .main img:hover {
-  height: 20vw;
-  width: 20vw;
   filter: grayscale(0%);
 }
 
@@ -3517,6 +3525,9 @@
   }
 }
 @media screen and (max-width: 1024px) and (orientation: portrait) {
+  .project-list {
+    flex-direction: column;
+  }
   .project-list .nav {
     padding-top: 90px;
     width: 100vw;
@@ -3536,7 +3547,7 @@
   }
   .project-list .main-container {
     width: 100vw;
-    float: left;
+    height: auto;
   }
   .project-list .main-container .main img {
     width: 33.33333vw;
