@@ -145,11 +145,14 @@
 @include media-lgp {
   .project-list {
     flex-direction: column;
+    height: 100vh;
  
     .nav {
       padding-top: 90px;
       width: 100vw;
       height: auto;
+      position: sticky;
+      top: 0;
       
      
   

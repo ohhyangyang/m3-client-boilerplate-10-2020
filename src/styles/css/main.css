@@ -2518,11 +2518,14 @@
 @media screen and (max-width: 1024px) and (orientation: portrait) {
   .musician-list {
     flex-direction: column;
+    height: 100vh;
   }
   .musician-list .nav {
     padding-top: 90px;
     width: 100vw;
     height: auto;
+    position: sticky;
+    top: 0;
   }
   .musician-list .nav h2 {
     font-size: 2.3rem;
@@ -3527,11 +3530,14 @@
 @media screen and (max-width: 1024px) and (orientation: portrait) {
   .project-list {
     flex-direction: column;
+    height: 100vh;
   }
   .project-list .nav {
     padding-top: 90px;
     width: 100vw;
     height: auto;
+    position: sticky;
+    top: 0;
   }
   .project-list .nav h2 {
     font-size: 2.3rem;
