@@ -4,9 +4,10 @@
   .nav {
     padding-top: 200px;
     width: 40vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
+    padding-left: 80px;
+    // flex-direction: column;
+    // align-items: center;
     // float: left;
     background-color: $background-color;
     height: 100vh;
@@ -14,7 +15,7 @@
     h2 {
       font-size: 4rem;
       /* border-bottom: 1px solid black; */
-      margin-bottom: 50px;
+      // margin-bottom: 50px;
       width: 28vw;
     }
 
@@ -149,6 +150,8 @@
  
     .nav {
       padding-top: 90px;
+      padding-left: 0;
+      
       width: 100vw;
       height: auto;
       position: sticky;
@@ -160,17 +163,24 @@
       h2 {
         font-size: 2.3rem;
         width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 30px;
+        
         //   text-align: center;
       }
 
       .toggle-filters {
         width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       form {
         width: 60vw;
         margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
@@ -190,6 +200,8 @@
 @include media-md {
   .project-list {
     .nav {
+      margin: auto;
+     
       h2 {
         font-size: 1.8rem;
       }
@@ -238,6 +250,7 @@
 }
 @include media-sm {
   .project-list {
+    
     .nav {
       h2 {
         width: 80vw;

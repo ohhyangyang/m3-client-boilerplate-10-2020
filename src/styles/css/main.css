@@ -2399,9 +2399,8 @@
 .musician-list .nav {
   padding-top: 200px;
   width: 40vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  padding-left: 80px;
   background-color: #f4eadd;
   height: 100vh;
 }
@@ -2522,6 +2521,7 @@
   }
   .musician-list .nav {
     padding-top: 90px;
+    padding-left: 0;
     width: 100vw;
     height: auto;
     position: sticky;
@@ -2530,14 +2530,20 @@
   .musician-list .nav h2 {
     font-size: 2.3rem;
     width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
   }
   .musician-list .nav .toggle-filters {
     width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
   }
   .musician-list .nav form {
     width: 60vw;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .musician-list .main-container {
     width: 100vw;
@@ -3413,16 +3419,14 @@
 .project-list .nav {
   padding-top: 200px;
   width: 40vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  padding-left: 80px;
   background-color: #f4eadd;
   height: 100vh;
 }
 .project-list .nav h2 {
   font-size: 4rem;
   /* border-bottom: 1px solid black; */
-  margin-bottom: 50px;
   width: 28vw;
 }
 .project-list .nav .toggle-filters {
@@ -3534,6 +3538,7 @@
   }
   .project-list .nav {
     padding-top: 90px;
+    padding-left: 0;
     width: 100vw;
     height: auto;
     position: sticky;
@@ -3542,14 +3547,20 @@
   .project-list .nav h2 {
     font-size: 2.3rem;
     width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
   }
   .project-list .nav .toggle-filters {
     width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
   }
   .project-list .nav form {
     width: 60vw;
     margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .project-list .main-container {
     width: 100vw;
@@ -3561,6 +3572,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .project-list .nav {
+    margin: auto;
+  }
   .project-list .nav h2 {
     font-size: 1.8rem;
   }
