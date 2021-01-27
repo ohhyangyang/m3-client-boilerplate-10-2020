@@ -124,8 +124,6 @@
         filter: grayscale(80%);
 
         &:hover {
-          height: 20vw;
-          width: 20vw;
           filter: grayscale(0%);
         }
       }

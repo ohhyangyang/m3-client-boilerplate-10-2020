@@ -2501,8 +2501,6 @@
   filter: grayscale(80%);
 }
 .musician-list .main-container .main img:hover {
-  height: 20vw;
-  width: 20vw;
   filter: grayscale(0%);
 }
 
